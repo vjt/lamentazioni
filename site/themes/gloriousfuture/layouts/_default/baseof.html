@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ site.Title }} &raquo; {{ .Title }}{{ end }}</title>
 <link rel="stylesheet" href="/wp-content/themes/gloriousfuture/style.css">
-<link rel="stylesheet" href="/lamentazioni.css">
+<link rel="stylesheet" href="/lamentazioni.css?v={{ substr (md5 (os.ReadFile "static/lamentazioni.css")) 0 8 }}">
 <link rel="stylesheet" href="/pagefind/pagefind-ui.css">
 {{ partial "head-meta.html" . }}
 </head>
