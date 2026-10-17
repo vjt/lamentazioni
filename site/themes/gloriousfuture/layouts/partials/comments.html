@@ -1,9 +1,9 @@
 {{- with .Params.comments }}
 <h3 id="comments">{{ len . }} {{ if eq (len .) 1 }}Response{{ else }}Responses{{ end }} to &#8220;{{ $.Title }}&#8221;</h3>
-<ol class="commentlist">
+<ol class="commentlist" data-pagefind-body>
 {{- range $i, $c := . }}
 <li id="comment-{{ $c.id }}" class="{{ if modBool $i 2 }}alt{{ end }}{{ if $c.by_post_author }} authorcomment{{ end }}">
-  <div class="cmtinfo"><cite>{{ with $c.author_url }}<a href="{{ . }}" rel="external nofollow">{{ $c.author }}</a>{{ else }}{{ $c.author }}{{ end }}</cite><em>{{ with $c.date }}on {{ (time .).Format "2 Jan 2006 at 3:04 pm" }}{{ end }}</em><a href="#comment-{{ $c.id }}"><span class="number">{{ add $i 1 }}</span></a></div>
+  <div class="cmtinfo"><cite>{{ with $c.author_url }}<a href="{{ . }}" rel="external nofollow">{{ $c.author }}</a>{{ else }}{{ $c.author }}{{ end }}</cite><em data-pagefind-ignore>{{ with $c.date }}on {{ (time .).Format "2 Jan 2006 at 3:04 pm" }}{{ end }}</em><a href="#comment-{{ $c.id }}" data-pagefind-ignore><span class="number">{{ add $i 1 }}</span></a></div>
   {{ $c.body | safeHTML }}
 </li>
 {{- end }}
