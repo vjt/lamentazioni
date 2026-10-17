@@ -1,0 +1,4 @@
+---
+title: pidgin
+slug: pidgin
+---

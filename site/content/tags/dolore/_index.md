@@ -1,0 +1,4 @@
+---
+title: dolore
+slug: dolore
+---

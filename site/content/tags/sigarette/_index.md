@@ -1,0 +1,4 @@
+---
+title: sigarette
+slug: sigarette
+---

@@ -1,0 +1,6 @@
+{{ define "main" }}
+{{- if not (eq .Section "posts") }}<h2 class="pagetitle">{{ with .Data.Singular }}{{ . | title }}: {{ end }}{{ .Title }}</h2>{{ end }}
+{{- $pag := .Paginate (where .Pages "Section" "posts").ByDate.Reverse }}
+{{- range $pag.Pages }}{{ partial "post.html" . }}{{ end }}
+{{ partial "pager.html" $pag }}
+{{ end }}

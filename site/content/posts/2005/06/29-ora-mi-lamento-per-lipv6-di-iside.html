@@ -1,0 +1,100 @@
+---
+title: Ora mi lamento, per l’Ipv6 di ISIDE!
+date: '2005-06-29T23:40:00+02:00'
+url: /2005/06/29/ora-mi-lamento-per-lipv6-di-iside/
+aliases:
+- /blog-static/2005/06/29/ora-mi-lamento-per-lipv6-di-iside/
+wp_id: 50
+authors:
+- alpt
+avatar: AlpT.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 43
+  author: guly
+  date: '2005-07-02T14:55:00+02:00'
+  body: <p>netsukuku e` insieme geniale e malsano. e` un gelsomino.</p>
+---
+<p>Intanto incominciamo col dire che lamentarsi e’ inutile ed e’ uno spreco di energia. Percio’ mi lamento di lamentarmi, ma visto che <em>niente a senso</em> continuo a farlo.<br/>
+Da dove incominciare?<br/>
+Bhe’, si incominciamo col dire:</p>
+<p>IPV6 MERDA MALE MALE MORTE</p>
+<p>E’ PAZZESCO<br/>
+P A Z Z E S C O</p>
+<p>Hanno fatto una merda, hanno complicato TUTTO.<br/>
+Perche’ usare 128bit per un indirizzo <acronym title="Internet Protocol">IP</acronym>????????????<br/>
+NON C’E’ BISOGNO DI 340282366920938463463374607431768211456 (2^128) di indirizzi ip,<br/>
+bastava semplicemente un ip da 64bit se proprio si voleva allargare di molto<br/>
+il range. MA NO, DAI, USIAMO QUATTRO INTEGER da 32bit, cosi’ siamo piu’<br/>
+felici. Per fare una semplice operazione di somma o di sottrazione bisogna<br/>
+lavorare con 4 int, e quindi se uno non vuole impazzire con le divisioni deve<br/>
+usare le libgmp: Gnu Mathematic Precision, una libreria che lavora con numeri<br/>
+che tendono all’INFINITO.</p>
+<p>Hanno reso TUTTO automatico, per non far funzionare NULLA. Adesso esiste<br/>
+l’addrconf stateless che ti gestisce automaticamente gli indirizzi da<br/>
+prendere, poi non c’e’ piu’ bisogno dell’arp ma c’e’ il NDP che lavora<br/>
+in MULTICAST, ale’ o/</p>
+<p>Ancora nel 2004 ci sono RFC che dichiarano pezzi di ipv6 DEPRECATED<br/>
+e propongono dei sistemi alternatici che sono ancora UNDER DEVElOPMENT.</p>
+<p>Ora nel concreto:</p>
+<p>Per mandare dei semplici pacchetti udp in broadcast devo usare il<br/>
+MULTICAST, e devo stare attento alla configurazione automatica del kernel e<br/>
+non togliere l’ip con SCOPE link-local perche’ la SCOPERTA DEL VICINATO non<br/>
+funzionerebbe, perche’ il broadcast non esiste piu’.</p>
+<p>Quindi per usare il vecchio semplice broadcast ho dovuto scrivere +100 righe<br/>
+di codice dove per l’ipv4 ne uso QUATTRO.<br/>
+DANNAZIONE io voglio mandare solamente un pacchetto a quei dannati di nodi che<br/>
+mi stanno accanto, non voglio usare il MULTICAST.<br/>
+Ma vabbe’…</p>
+<p>Impazzendo col caffe’, alla fine il codice ti e’ sempre fedele.</p>
+<p>Parlando con dei tizi vengo a scoprire per caso che nel Settembre del 2004 e’<br/>
+apparso un nuovo RFC che dichiara deprecati gli indirizzi site scoped, questo<br/>
+significa che gli indirizzi che potevano essere utilizzati per creare una<br/>
+sottorete privata sono considerati DEPRECATI.<br/>
+BENE! ma allora come faccio a creare una sottorete privata che sia separata da<br/>
+Internet?<br/>
+Mi rispondono dicendo di farmi dare dal mio <acronym title="Internet Service Provider">ISP</acronym> un’allocazioni di idirizzi ip<br/>
+da usare per la rete privata.<br/>
+ahahaha, che soluzione stupenda.<br/>
+Dopo un intero pomeriggio di lacrime e sudore, riesco a fare capire ai tizi che mi SERVE<br/>
+ASSOLUTAMENTE avere una sottorete privata per una fottutissima mesh network<br/>
+dove ogni nodo puo’ collegarsi ad internet.<br/>
+Cosa mi rispondono?<br/>
+&gt; Ah, perche’ non lo dicevi prima?<br/>
+&gt; Si, allora hai un problema.<br/>
+Ecco, LO SO GIA’ CHE HO UN PROBLEMA A CAUSA DEL VOSTRO FOTTUTISSIMO AMATO<br/>
+IPV6, THE NEXT GENERATION INTERNET PROTOCOL.</p>
+<p>Forse a Settembre di quest’anno esce un altro RFC che dice che i site scoped<br/>
+addresses non sono piu’ deprecated.</p>
+<p>A parte questo decido di fottermene della compatibilita’ con Internet e quindi<br/>
+rinunciare ad una sottorete privata.</p>
+<p>Peccato pero’ che il multicast mi viene in aiuto confermando ancora una volta<br/>
+quanto sia misericordioso l’Ipv6:<br/>
+Visto che con l’Ipv6 un interfaccia puo’ avere piu’ di un indirizzo ip<br/>
+associato ad essa, quando viene mandato un pacchetto in un multicast<br/>
+LINK-SCOPED asdasd, il nodo che lo riceve vede come ip mittente solo l’ip<br/>
+link-local.<br/>
+Ora gli indirizzi link-local non servono ad un emirito NULLA poiche’ sono<br/>
+validi solamente sul link: Se c’e’ il nodo x collegato ad y allora possono<br/>
+comunicare tra loro usando un ip link-local, ma se c’e’ z collegato solo a y,<br/>
+x non puo’ parlare con il fottutissimo z usando un link-local ip. OK?<br/>
+PERO’ il link-local non si puo’ togliere, perche’ se no MUORI. I furbastri<br/>
+dell’ipv6 hanno deciso di togliere l’arp ed usare il Neighbourd Discovery<br/>
+Protocol che senza indirizzi link=local NON FUNZIONA, percio’ NON FARE MAI UN<br/>
+ip addr flush dev eth0, o filtrare il traffico di indirizzi che incominciano<br/>
+con FE80:, NON FUNZIONA NULLA.<br/>
+Ora ritornando a noi: se non voglio ricevere come ip mittente un ip link-local<br/>
+devo usare un multicast diverso.<br/>
+BENE, USO il SITE-SCOPED.<br/>
+PECCATO CHE NON FUNZIONI! E CHE IL KERNEL MI MANDI AFFANCULO.</p>
+<p>Conclusione?<br/>
+Morte all’Ipv6. Netsukuku girera’ sull’Ipv4, almeno fino a quando un altro RFC<br/>
+non decidera’ di sistemare un po’ le cose.<br/>
+L’unico motivo che mi spingeva ad usare l’ipv6 erano quei bei indirizzi grassi<br/>
+e tozzi, ma ora BASTA.</p>
+<p>GRAZIE, dico grazie a tutti gli sviluppaturi dell’ipv6.</p>
+<p>Che sia benedetto.</p>
+<p>Pace, Amore e Prosperita’ e morte all’Ipv6</p>
+<p>Vi ricorda qualcosa il 6? Ipv666</p>

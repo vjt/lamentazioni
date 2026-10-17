@@ -1,0 +1,40 @@
+---
+title: KISMET, KISMERDA
+date: '2006-09-02T18:39:00+02:00'
+url: /2006/09/02/kismet-kismerda/
+aliases:
+- /blog-static/2006/09/02/kismet-kismerda/
+wp_id: 638
+authors:
+- asbesto
+avatar: asbesto.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 3515
+  author: maaaatteo
+  date: '2009-02-02T09:27:00+02:00'
+  body: <p><acronym title="Laughing out loud">LOL</acronym></p>
+---
+<p>Ficco la scheda wireless, e lancio KISMET.</p>
+<p><code><br/>
+Source 0 (addme): Opening none source interface none...<br/>
+FATAL: Please configure at least one packet source.  Kismet will not function if no packet sources are defined in kismet.conf or on the command line.  Please read the README for more information about configuring Kismet.<br/>
+Kismet exiting.<br/>
+</code></p>
+<p>OK, dico io. vado a configurare kismet</p>
+<p><strong>joe</strong> /etc/kismet/kismet.conf</p>
+<p><code><br/>
+# Sources are defined as:<br/>
+# source=sourcetype,interface,name[,initialchannel]<br/>
+# Source types and required drivers are listed in the README under the<br/>
+# CAPTURE SOURCES section.<br/>
+# The initial channel is optional, if hopping is not enabled it can be used<br/>
+# to set the channel the interface listens on.<br/>
+# YOU MUST CHANGE THIS TO BE THE SOURCE YOU WANT TO USE<br/>
+source=none,none,addme<br/>
+</code></p>
+<p><img alt="orribile.jpg" id="image637" src="/wp-content/upload/2006/09/orribile.jpg"/></p>
+<p><strong>CHE COMODO,</strong> per capire come CAZZO DEVO MODIFICARE source devo andarmi a cercare un <strong>FOTTUTO README</strong> che sta <strong>SALCAZZO DOVE, PUTTANA DEL PAPA</strong></p>
+<p><strong>mettere qualche esempio direttamente nei commenti di kismet.conf evidentemente gli FACEVA MALE AL BUCO DEL CULO SCASSATO, PORCO DDIO</strong></p>

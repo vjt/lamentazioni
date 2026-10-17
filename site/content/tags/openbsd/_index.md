@@ -1,0 +1,4 @@
+---
+title: openbsd
+slug: openbsd
+---

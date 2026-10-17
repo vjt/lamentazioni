@@ -1,0 +1,61 @@
+---
+title: Ma tu sei contro o pro ftpd?
+date: '2005-12-12T17:57:00+02:00'
+url: /2005/12/12/ma-tu-sei-contro-o-pro-ftpd/
+aliases:
+- /blog-static/2005/12/12/ma-tu-sei-contro-o-pro-ftpd/
+wp_id: 271
+authors:
+- tripz
+avatar: tripz.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>Io sono CONTRO, CONTRO TUTTO, AMO NIENTE!<br/>
+Premettendo il fatto che CRISTO E’ L’ECO DELLA PAROLA PORCO, andiamo in contro all’ODIO:<br/>
+devo trasferire un sito web da un server <acronym title="Internet Information Services">IIS</acronym> MERDA a un server APACHE KRSNA, ok… faccio.<br/>
+Ora pero’ bisogna creare gli account ftp!<br/>
+VA BENE<br/>
+Che ti trovo dentro? lo script: ftpadduser…<br/>
+BON USIAMOLO, HAH!</p>
+<p>IN QUESTO MOMENTO DIO E’ PORCO!</p>
+<p>La sintassi del fantastico script fatto da cani morti nel culo di dio vuole l’argv 1…<br/>
+IO NON SAPENDOLO NON LO PASSAI, ED EGLI CREO’ L’INFERNO, SCRISSE FILE NELLA DIRECTORY CORRENTE…<br/>
+DIRECTORY NELLA QUALE VI ERA IL FILE PROFTPD.CONF CHE CONTENEVA TUTTI GLI INCLUDE DEGLI _ALTRI_ FILE (SEMPRE PROFTPD.CONF LI CHIAMANO EH) CONTENENTI TUTTO SUGLI UTONTI DI MERDA.<br/>
+L’HA _SOVRASCRITTO_!</p>
+<p>PORCO IDDIO!</p>
+<p>FAI</p>
+<p>DEI</p>
+<p>FOTTUTI</p>
+<p>CONTROLLI</p>
+<p>CUNT<br/>
+ROLL</p>
+<p>GOD PIG!</p>
+<p>La gente e’ pazza, fa script che scrivono A BUFFO su file, senza controllare UN CAZZO…. SEI UN IMBECILLE!<br/>
+Allora che faccio?</p>
+<blockquote><p> for i in *; do if test -e $i/proftpd.conf; then echo “Include /var/vdomains/$i/proftpd.conf” &gt;&gt; proftpd.conf; fi; done </p></blockquote>
+<p>Evviva mi dico…<br/>
+root@okweb /var/vdomains# /etc/init.d/proftpd start<br/>
+Starting proftpd:  – Fatal: User: missing arguments<br/>
+COSA?<br/>
+CHI?<br/>
+DOVE?<br/>
+PORCODDIO COSA?<br/>
+MA DOVE??<br/>
+SI’ MA CHI?<br/>
+USER?<br/>
+USER CHI?<br/>
+OK, deduco che manchi un nome utente in un file di conf, probabilmente nel vecchio era commentato e ora col mio ciclo for l’ho incluso…<br/>
+D’accordo…<br/>
+MA VUOI DIRMI PORCODDIO DOVE SUCCEDE?<br/>
+CHI?<br/>
+MADONNA PUTTANA!<br/>
+DIMMI CHIIIIII!<br/>
+STAI APRENDO UN FILE, TU PROFTPD DEI MIEI COGLIONI… LO STAI APRENDO E PARSANDO…<br/>
+C’E’ UN ERRORE… MI STAMPI, PORCODDIO, IL NOME DEL FILE?<br/>
+NO!<br/>
+DOVEVO FARE QUESTO:</p>
+<blockquote><p>for i in *; do if test -e $i/proftpd.conf; then echo “$i:” &gt;&gt; CRISTOFTP; cat $i/proftpd.conf |grep User &gt;&gt; CRISTOFTP; fi; done</p></blockquote>
+<p>APRIRE CRISTOFTP E TROVARMI IL PORCODDIO DI UTENTE MONGOLOIDE…<br/>
+PORCO IDDIO BESTIA!</p>

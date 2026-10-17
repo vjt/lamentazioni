@@ -1,0 +1,4 @@
+---
+title: fastidio
+slug: fastidio
+---

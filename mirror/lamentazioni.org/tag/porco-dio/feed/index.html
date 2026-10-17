@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Lamentazioni &#187; porco dio</title>
+	<atom:link href="http://www.lamentazioni.org/tag/porco-dio/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.lamentazioni.org</link>
+	<description>Ci lamentiamo di tutto perche' AMIAMO NIENTE - siamo PAZZI, non fateci CAZO</description>
+	<lastBuildDate>Wed, 05 Aug 2009 13:10:47 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.8.3</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>Differenze tra Programmatori e &#8220;programmatori&#8221;</title>
+		<link>http://www.lamentazioni.org/blog-static/2009/07/22/differenze-tra-programmatori-e-programmatori/</link>
+		<comments>http://www.lamentazioni.org/blog-static/2009/07/22/differenze-tra-programmatori-e-programmatori/#comments</comments>
+		<pubDate>Wed, 22 Jul 2009 11:48:54 +0000</pubDate>
+		<dc:creator>asbesto</dc:creator>
+				<category><![CDATA[niente a senso]]></category>
+		<category><![CDATA[complicarsi la vita]]></category>
+		<category><![CDATA[fuori di testa]]></category>
+		<category><![CDATA[mancanza di senso della realta']]></category>
+		<category><![CDATA[pazzia]]></category>
+		<category><![CDATA[porco dio]]></category>
+		<category><![CDATA[programmatori del cazzo]]></category>
+
+		<guid isPermaLink="false">http://www.lamentazioni.org/?p=1289</guid>
+		<description><![CDATA[&#8230;ovvero, dell&#8217;arte di risolvere i problemi senza complicarsi la vita.
+Problema: aggiornare il proprio ip su dyndns.org
+Soluzione 1, da &#8220;programmatore&#8221;: ddclient
+http://ddclient.wiki.sourceforge.net/
+Un client in PERL per aggiornare un cazzo di ip. Che gia&#8217; l&#8217;idea di dover scrivere un pezzo di codice del genere in PERL per una cazzata simile&#8230; e per giunta metterlo SUL SORCIOFROCIO&#8230; mi viene [...]]]></description>
+			<content:encoded><![CDATA[<p>&#8230;ovvero, dell&#8217;arte di risolvere i problemi senza complicarsi la vita.</p>
+<p><strong>Problema: aggiornare il proprio ip su dyndns.org</strong></p>
+<p><em>Soluzione 1, da &#8220;programmatore&#8221;:</em> <strong>ddclient</strong></p>
+<p>http://ddclient.wiki.sourceforge.net/</p>
+<p>Un client in PERL per aggiornare un cazzo di ip. Che gia&#8217; l&#8217;idea di dover scrivere un pezzo di codice del genere in PERL per una cazzata simile&#8230; e per giunta metterlo SUL SORCIOFROCIO&#8230; mi viene l&#8217;orticaria al crocifisso in culo. Pazzesco. </p>
+<p>Analizziamo questo pezzo di STERCO:</p>
+<p><code><br />
+Ddclient doesn't have any automatic installation procedure. Get the tar-file from sourceforge<br />
+</code></p>
+<p>Grazie al cazzo.</p>
+<p><code><br />
+# /etc/ddclient/ddclient.conf<br />
+#<br />
+protocol=dyndns2<br />
+use=web<br />
+login=mylogin<br />
+password=mypassword<br />
+myhost.dyndns.org<br />
+</code></p>
+<p>Ah, il file di configurazione, gia&#8217;. Mi serve UN FILE per metterci dentro 4 cose in croce. ok. Peccato che vai a vedere il file di esempio, e sono 40 K DI STRONZATE.</p>
+<p><code><br />
+Copy the perl script to your favorite location (ex. /usr/sbin) and create a /etc/ddclient/ddclient.conf configuration file. Don't forget to create the cache directory.<br />
+</code></p>
+<p>Cioe&#8217;, mi raccomando eh, <strong>Don&#8217;t forget to create the cache directory</strong>, eh!!! LA CACHE DIRECTORY, mi raccomando! PER AGGIORNARE UN CAZZO DI <acronym title="Internet Protocol">IP</acronym>. <strong>IL CRISTO CICLOPE</strong>.</p>
+<p><code><br />
+root@medialab:~# ls -la ddclient-3.8.0.tar.gz<br />
+-rw-r--r-- 1 root root 45893 Jul 22 13:25 ddclient-3.8.0.tar.gz<br />
+</code></p>
+<p>40K di programma targizzato. QUARANTA K.</p>
+<p><code><br />
+root@medialab:~# tar xzvf ddclient-3.8.0.tar.gz<br />
+ddclient-3.8.0/<br />
+ddclient-3.8.0/sample-etc_ppp_ip-up.local<br />
+ddclient-3.8.0/sample-ddclient-wrapper.sh<br />
+ddclient-3.8.0/COPYING<br />
+ddclient-3.8.0/RELEASENOTE<br />
+ddclient-3.8.0/TODO<br />
+ddclient-3.8.0/sample-etc_ddclient.conf<br />
+ddclient-3.8.0/README.cisco<br />
+ddclient-3.8.0/Changelog<br />
+ddclient-3.8.0/sample-etc_rc.d_init.d_ddclient.ubuntu<br />
+ddclient-3.8.0/README.ssl<br />
+ddclient-3.8.0/COPYRIGHT<br />
+ddclient-3.8.0/sample-etc_dhcpc_dhcpcd-eth0.exe<br />
+ddclient-3.8.0/sample-etc_rc.d_init.d_ddclient.lsb<br />
+ddclient-3.8.0/sample-etc_rc.d_init.d_ddclient.redhat<br />
+ddclient-3.8.0/sample-etc_dhclient-exit-hooks<br />
+ddclient-3.8.0/sample-etc_cron.d_ddclient<br />
+ddclient-3.8.0/sample-etc_rc.d_init.d_ddclient<br />
+ddclient-3.8.0/ddclient<br />
+ddclient-3.8.0/README<br />
+ddclient-3.8.0/ChangeLog<br />
+root@medialab:~#<br />
+</code></p>
+<p>IL SANTO MADONNO. Ma che cazzo c&#8217;e&#8217; qua dentro? Tutto sto MACELLO per AGGIORNARE UN CAZZO DI <acronym title="Internet Protocol">IP</acronym>? Vabe&#8217;. Proviamolo.</p>
+<p>Configuro, sbatto, creo dir, edito files&#8230; va bene, ma il succo del discorso e&#8217;:</p>
+<p><strong><br />
+FATAL:    Error loading the <acronym title="Practical Extraction and Report Language">Perl</acronym> module IO::Socket::<acronym title="Secure Sockets Layer">SSL</acronym> needed for <acronym title="Secure Sockets Layer">SSL</acronym> connect.<br />
+FATAL:     On Debian, the package libio-socket-ssl-perl must be installed.<br />
+</strong></p>
+<p><img src="http://www.lamentazioni.org/wp-content/upload/2009/07/mayhem.jpg" alt="mayhem" title="mayhem" width="374" height="466" class="aligncenter size-full wp-image-1290" /></p>
+<p>che il succo del discorso, indipendentemente dal fatto che</p>
+<p><code><br />
+root@medialab:~/ddclient-3.8.0# cpan<br />
+su: cpan: command not found<br />
+root@medialab:~/ddclient-3.8.0# uname -a<br />
+Linux medialab 2.2.19 #39 Wed Jun 3 17:23:24 CEST 2009 i686 unknown<br />
+root@medialab:~/ddclient-3.8.0#<br />
+</code></p>
+<p>(e quindi non posso fare un cazzo, dato che trattasi di una slackware dell&#8217;anteguerra&#8230; dicevo, il succo del discorso e&#8217; che solo l&#8217;idea di programmare un macello del genere, fatto di moduli <acronym title="Practical Extraction and Report Language">Perl</acronym>, software del cazzo, una DIR CACHE, ed un file di configurazione, e&#8217; semplicemente</p>
+<p><strong>ABERRANTE.</strong></p>
+<p><em>Soluzione 2, da Programmatore con la P maiuscola:<br />
+</em></p>
+<p><code><br />
+wget http://USERNAME:PASSWORD@members.dyndns.org:8245/nic/update?hostname=ILTUOHOSTNAME.TUODOMINIO.ORG<br />
+</code></p>
+<p><strong>UNA RIGA DI COMANDO.<br />
+UNA SOLA.<br />
+UNA SOLA RIGA DI COMANDO, COMPATIBILE CON QUALSIASI SISTEMA ABBIA WGET, DAL 1995 A OGGI.<br />
+UNA RIGA DI COMANDO, PERFETTA PER crontab.<br />
+</strong></p>
+<p>E MUOIANO <strong>ORA</strong> TUTTI I PROGRAMMATORI.</p>
+<p>Possa il KRYSTO NON avere pieta&#8217; di programmatori di tal specie. </p>]]></content:encoded>
+			<wfw:commentRss>http://www.lamentazioni.org/blog-static/2009/07/22/differenze-tra-programmatori-e-programmatori/feed/</wfw:commentRss>
+		<slash:comments>24</slash:comments>
+		</item>
+		<item>
+		<title>CRISTO UCCIDIMI PERCHE&#8217; HO TENTATO</title>
+		<link>http://www.lamentazioni.org/blog-static/2009/02/16/cristo-uccidimi-perche-ho-tentato/</link>
+		<comments>http://www.lamentazioni.org/blog-static/2009/02/16/cristo-uccidimi-perche-ho-tentato/#comments</comments>
+		<pubDate>Mon, 16 Feb 2009 20:17:44 +0000</pubDate>
+		<dc:creator>sand</dc:creator>
+				<category><![CDATA[niente a senso]]></category>
+		<category><![CDATA[porco dio]]></category>
+
+		<guid isPermaLink="false">http://www.lamentazioni.org/blog-static/2009/uno_in_particolare/cristo-uccidimi-perche-ho-tentato/</guid>
+		<description><![CDATA[HO TENTATO DI FARE ANDARE QUESTO PEZZO DI MERDA DI SOFTWARE.]]></description>
+			<content:encoded><![CDATA[<p>HO TENTATO DI FARE ANDARE QUESTO PEZZO DI MERDA DI SOFTWARE.</p>]]></content:encoded>
+			<wfw:commentRss>http://www.lamentazioni.org/blog-static/2009/02/16/cristo-uccidimi-perche-ho-tentato/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Siamo nel terzo millennio ma qualcuno nun ce sta&#8217;</title>
+		<link>http://www.lamentazioni.org/blog-static/2009/01/28/siamo-nel-terzo-millennio-ma-qualcuno-nun-ce-sta/</link>
+		<comments>http://www.lamentazioni.org/blog-static/2009/01/28/siamo-nel-terzo-millennio-ma-qualcuno-nun-ce-sta/#comments</comments>
+		<pubDate>Wed, 28 Jan 2009 17:23:02 +0000</pubDate>
+		<dc:creator>asbesto</dc:creator>
+				<category><![CDATA[niente a senso]]></category>
+		<category><![CDATA[incapacita' di fare le cose semplici]]></category>
+		<category><![CDATA[kismet]]></category>
+		<category><![CDATA[porco dio]]></category>
+		<category><![CDATA[programmatori preteen cazzo duro]]></category>
+		<category><![CDATA[terzo millennio]]></category>
+
+		<guid isPermaLink="false">http://www.lamentazioni.org/?p=1123</guid>
+		<description><![CDATA[Che PORCO DDIO uno si aspetta un minimo di evoluzione, invece da anni a questa parte, niente, NULLA, STICAZZI, PORCODIO
+E dire che gia&#8217; ebbi parlato di KISMET. KISMERDA. 
+http://www.lamentazioni.org/blog-static/2006/uno_in_particolare/kismet-kismerda/
+ma DIO CANCRO SCHIFOSO, non solo non e&#8217; cambiato un cazzo di cristo di niente, ma per giunta che cazzo fanno? Si inventano sempre nuove STRONZATE, per [...]]]></description>
+			<content:encoded><![CDATA[<p>Che <strong>PORCO DDIO</strong> uno si aspetta un minimo di evoluzione, invece da anni a questa parte, <strong>niente, NULLA, STICAZZI, PORCODIO</strong></p>
+<p>E dire che gia&#8217; ebbi parlato di KISMET. <strong>KISMERDA</strong>. </p>
+<p><a href="http://www.lamentazioni.org/blog-static/2006/uno_in_particolare/kismet-kismerda/">http://www.lamentazioni.org/blog-static/2006/uno_in_particolare/kismet-kismerda/</a></p>
+<p>ma DIO CANCRO SCHIFOSO, non solo non e&#8217; cambiato <strong>un cazzo di cristo di niente</strong>, ma per giunta che cazzo fanno? Si inventano sempre nuove <strong>STRONZATE</strong>, per cui il device che una volta si chiamava <strong>orinoco</strong>, e mi <strong>piscio nelle mutande</strong>, poi si chiamo&#8217; <strong>airtraf-ng</strong>, e vado a <strong>dirigere il traffico di NANI e PUTTANE in MONGOLIA</strong>, poi si chiamo&#8217; qualcosa tipo <strong>airtraf-salcazzo</strong>, mo&#8217; invece oggi si chiama <strong>ath5k</strong>. Domani che cazzo succede? <strong>si svegliano col CAZZO VIAGRATO IN CULO, E LO CHIAMANO AO8S7DYF8QEWR098QREW0Q87WYRE ???</strong></p>
+<p><img src='http://italy.indymedia.org/uploads/2005/03/01porco.jpg' alt='' class='aligncenter' /></p>
+<p>Ora, siamo nel 2009, che <strong>STRACAZZO DI CRISTO CI VUOLE</strong> ad implementare un <strong>CAZZO DI CONTROLLO AUTOMATICO</strong> a colpi di <strong>lspci, sed, awk</strong> per capire <strong>in modo inequivocabile e trasparente all&#8217;utente</strong> come cazzo impostare il <strong>porcodio di file di configurazione</strong> affinche&#8217; non solo non ci sia da configurarlo <strong>a mano come nel 1640, ma che non si debba anche andare a cercare un cazzo di README DI MERDA, di cui neanche mi dai il percorso?</strong></p>
+<p><img src='http://1.bp.blogspot.com/_n8i5sjMf3mI/RnGKm7Ca7xI/AAAAAAAAABE/jyBdhh875Yc/s400/porco_dio.png' alt='' class='alignnone' /></p>
+<p><strong>ARCIPORCO CRISTRONZO, MADONNA IPERNANA, DIO TRICEFALO</strong></p>]]></content:encoded>
+			<wfw:commentRss>http://www.lamentazioni.org/blog-static/2009/01/28/siamo-nel-terzo-millennio-ma-qualcuno-nun-ce-sta/feed/</wfw:commentRss>
+		<slash:comments>8</slash:comments>
+		</item>
+		<item>
+		<title>L&#8217;epifania giusto mi nonna non se porta via</title>
+		<link>http://www.lamentazioni.org/blog-static/2008/01/07/lepifania-giusto-mi-nonna-non-se-porta-via/</link>
+		<comments>http://www.lamentazioni.org/blog-static/2008/01/07/lepifania-giusto-mi-nonna-non-se-porta-via/#comments</comments>
+		<pubDate>Mon, 07 Jan 2008 15:31:09 +0000</pubDate>
+		<dc:creator>sand</dc:creator>
+				<category><![CDATA[niente a senso]]></category>
+		<category><![CDATA[ebay]]></category>
+		<category><![CDATA[gesu']]></category>
+		<category><![CDATA[lunedi']]></category>
+		<category><![CDATA[nonna]]></category>
+		<category><![CDATA[odio]]></category>
+		<category><![CDATA[porco dio]]></category>
+
+		<guid isPermaLink="false">http://www.lamentazioni.org/blog-static/2008/uno_in_particolare/lepifania-giusto-mi-nonna-non-se-porta-via/</guid>
+		<description><![CDATA[PORCO DIO.
+Una di quelle giornate in cui l&#8217;artifizio divino ti si ritorce comunque contro. E il rotto in culo che non mi lascia feedback su ebay, mortacci sua gli potesse veni&#8217; la gotta, maledetto il cristo che gli ha dato la forza di pigiare i tasti, e l&#8217;altro stracciacazzi teen che NON comunica e mi [...]]]></description>
+			<content:encoded><![CDATA[<p>PORCO DIO.<br />
+Una di quelle giornate in cui l&#8217;artifizio divino ti si ritorce comunque contro. E il rotto in culo che non mi lascia feedback su ebay, mortacci sua gli potesse veni&#8217; la gotta, maledetto il cristo che gli ha dato la forza di pigiare i tasti, e l&#8217;altro stracciacazzi teen che NON comunica e mi manda un prodotto OSCENAMENTE TRATTATO. Popolo di ebay, manica di EBREI.</p>
+<p><a href='http://www.lamentazioni.org/wp-content/upload/2008/01/tn1.jpg' title='cristo desktop'><img src='http://www.lamentazioni.org/wp-content/upload/2008/01/tn1.jpg' alt='cristo desktop' /></a></p>
+<p>E lamentazioni e&#8217; lento, e lamentazioni e&#8217; giu&#8217;. E ho quella rompicoioni de mi nonna che gira per casa, fa AGGRO per ogni motivo, URLA, come tutti gli INUTILI VECCHI. INUTILI. No, non e&#8217; un parente, non e&#8217; di famiglia, e&#8217; un cataclisma ambulante, porco iddio rana-pesce Dagon.</p>
+<p>ED ECCO.</p>
+<p>LO SWAPPO INTERSPECIE NON PIU&#8217; GERONTO, L&#8217;ALTO E IL BASSO.<br />
+Divertiti di piu&#8217;, e SCOPATI GESU&#8217;!<br />
+Divertiti di piu&#8217;, e SCOPATI GESU&#8217;!<br />
+Divertiti di piu&#8217;, e SCOPATI GESU&#8217;!<br />
+Divertiti di piu&#8217;, e SCOPATI GESU&#8217;!</p>
+<p><a href='http://www.lamentazioni.org/wp-content/upload/2008/01/3664_5d73_534.jpg' title='fotti gesu'><img src='http://www.lamentazioni.org/wp-content/upload/2008/01/3664_5d73_534.jpg' alt='fotti gesu' /></a></p>
+<p>AHHH, che VELENO.</p>]]></content:encoded>
+			<wfw:commentRss>http://www.lamentazioni.org/blog-static/2008/01/07/lepifania-giusto-mi-nonna-non-se-porta-via/feed/</wfw:commentRss>
+		<slash:comments>6</slash:comments>
+		</item>
+	</channel>
+</rss>

@@ -1,0 +1,4 @@
+---
+title: stalin
+slug: stalin
+---

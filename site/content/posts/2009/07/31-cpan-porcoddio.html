@@ -1,0 +1,44 @@
+---
+title: CPAN, porcoddio
+date: '2009-07-31T18:27:00+02:00'
+url: /2009/07/31/cpan-porcoddio/
+aliases:
+- /blog-static/2009/07/31/cpan-porcoddio/
+wp_id: 1316
+authors:
+- darkpand
+avatar: darkpand.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 3739
+  author: hektisch
+  date: '2009-07-31T21:35:00+02:00'
+  body: <p>brrr. paura.</p>
+---
+<p># perl -MCPAN -eshell</p>
+<p>o conf prerequisites_policy = follow</p>
+<p>PISCIO IN FACCIA.</p>
+<p>install Mail::Internet<br/>
+[...]</p>
+<p>ORO.</p>
+<p>Recursive dependency detected:<br/>
+    Mail::Internet<br/>
+ =&gt; M/MA/MARKOV/MailTools-2.04.tar.gz<br/>
+ =&gt; Test::More<br/>
+ =&gt; M/<acronym title="Microsoft">MS</acronym>/MSCHWERN/Test-Simple-0.92.tar.gz<br/>
+ =&gt; Test::Harness<br/>
+ =&gt; A/AN/ANDYA/Test-Harness-3.17.tar.gz<br/>
+ =&gt; File::Spec<br/>
+ =&gt; S/SM/SMUELLER/PathTools-3.30.tar.gz<br/>
+ =&gt; Scalar::Util<br/>
+ =&gt; G/<acronym title="Gigabyte">GB</acronym>/GBARR/Scalar-List-Utils-1.21.tar.gz<br/>
+ =&gt; Test::More.<br/>
+Cannot continue.</p>
+<p>PORCO MADONNO.</p>
+<p>cpan&gt; quit</p>
+<p># perl -MCPAN -eshell</p>
+<p>cpan&gt; install Mail::Internet<br/>
+Mail::Internet is up to date.</p>
+<p>…</p>

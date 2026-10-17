@@ -1,0 +1,34 @@
+---
+title: sendmail buciardo (e pure mmerda)
+date: '2005-10-05T12:01:00+02:00'
+url: /2005/10/05/sendmail-buciardo-e-pure-mmerda/
+aliases:
+- /blog-static/2005/10/05/sendmail-buciardo-e-pure-mmerda/
+wp_id: 143
+authors:
+- sand
+avatar: sand.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p><strong>sendmail sendamme’ tu si na mmerda.</strong></p>
+<blockquote><p>
+$ ls -l .forward<br/>
+-rw-r–r–   1 otrs     nobody        22 Oct  5 11:45 .forward
+</p></blockquote>
+<p><strong>Ma tu si na mmerd’: </strong><br/>
+<em>Oct  5 11:55:24 bombolo sendmail[14610]: [ID 801593 mail.warning] j959tNbC014609: forward <strong>/opt/otrs/.forward.bombolo+: Group writable directory</strong><br/>
+Oct  5 11:55:24 bombolo sendmail[14610]: [ID 801593 mail.warning] j959tNbC014609: forward <strong>/opt/otrs/.forward+: Group writable directory</strong><br/>
+Oct  5 11:55:24 bombolo sendmail[14610]: [ID 801593 mail.warning] j959tNbC014609: forward <strong>/opt/otrs/.forward.bombolo: Group writable directory</strong><br/>
+Oct  5 11:55:24 bombolo sendmail[14610]: [ID 801593 mail.warning] j959tNbC014609: forward <strong>/opt/otrs/.forward: Group writable directory</strong></em></p>
+<p><strong>TU SI NA MMERD:</strong></p>
+<blockquote><p>$ ls -ld .f*<br/>
+-rwxrwxr-x   1 nobody   nobody       994 Sep 29  2004 .fetchmailrc.dist<br/>
+-rw——-   1 otrs     nobody        22 Oct  5 11:45 .forward</p></blockquote>
+<p><strong><br/>
+NON<br/>
+VE<br/>
+N’E’ !!!</strong></p>
+<blockquote><p>You can redirect your own mail by creating a .forward file in your home directory. If a .forward file exists in your home directory and is owned by you, sendmail will redirect mail addressed to you to the addresses in the .forward file.</p></blockquote>
+<p>NON E’ VERO !!!! SANTA POLENTA, MADONNA !CONTENTA !!!</p>

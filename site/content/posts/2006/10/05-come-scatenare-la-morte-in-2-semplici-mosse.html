@@ -1,0 +1,52 @@
+---
+title: Come scatenare la morte in 2 semplici mosse
+date: '2006-10-05T23:07:00+02:00'
+url: /2006/10/05/come-scatenare-la-morte-in-2-semplici-mosse/
+aliases:
+- /blog-static/2006/10/05/come-scatenare-la-morte-in-2-semplici-mosse/
+wp_id: 685
+authors:
+- theosprey
+avatar: TheOsprey.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 1374
+  author: giorgio
+  date: '2006-10-06T09:15:00+02:00'
+  body: <p>ma non e’ che gira dentro un cazzo di chroot e tocca fare /bin/mknod /dev/null c 2 2?</p>
+- id: 1390
+  author: kraba
+  date: '2006-10-07T20:09:00+02:00'
+  body: <p>NO, BISOGNA UCCIDERE AIX. E tenerli per mano verso la via della morte rettale. ISSO vuole IBM, isso vuole GESU</p>
+- id: 1391
+  author: LupoCri
+  date: '2006-10-08T11:42:00+02:00'
+  body: <p>A mè stà già tenendo la mano, il Bastardo!</p>
+- id: 1393
+  author: eagle1
+  date: '2006-10-08T19:02:00+02:00'
+  body: <p>ma morte male che cosa intelligente brasare la home dell’utente senza alcune opzione specifica :D</p>
+- id: 1439
+  author: Alberto Santini
+  date: '2006-10-19T20:07:00+02:00'
+  body: <p>Ma come hai fatto a mettere AIX 5L su un RS/6000??? Sul mio non ha manco resistito l’installazione… ho dovuto mettere il 4.3 … Che versione hai dell’ RS/6000?</p>
+  author_url: http://unix-monk.com
+---
+<p>Gia’ sentivo presagi di morte nell’aria qui, l’unica macchina con attaccato un display decente e connessa alla rete in modo umano e’ un rs6000 con aix 5.3 e vabbe’, aix si lascia usare alla fine….(o quantomeno mi illudo e ignoro il ghigno su colui che sta sempre sul legno). Compilo rdesktop su aix, SI, DEVO USARE WINDOWS, ma a distanza, cosi’ magari non prendo il colera purulento al colon. Rdesktop si compila e si installa senza rogne e FUNZIONA. ORA, perche’ gesu’ non mi ha fulminato subito prima che io dicessi AH, FIGO, AGGIORNIAMO <acronym title="Secure Shell">SSH</acronym>! Compila openssl compila zlib compila openssh, tutto ok, dai, si fa presto, gmake install : ORRORRO! non trovo libz.so.1 in /usr/lib/libz.a…..</p>
+<p>Dunque, io posso capire che io ti abbia dato un bel configure –fatti-con-le-lib-dinamiche e tu te ne sia bellamente fottuto, ma ora che mi vieni a dire che un file che c’e’ non esiste mi pare troppo, malefico il dio di chi ti ha codato!</p>
+<p>Orrori attraversano la mia mente mentre ricompilo in tutti i modi possibili zlib e ssh, ma NIENTE, cristo nebbioso mi si mette davanti al monitor e io cosi’ preso dalla follia decido di fotterlo e ricreo il .a a m-ANO dopo n ore di bestemmie a capire la sintassi delle binutils male di aix.</p>
+<p>e</p>
+<p>INCREDIBILE</p>
+<p><acronym title="Secure Shell">SSH</acronym> FUNZIONA, MA…</p>
+<p>sshd user not found, cannot use privilege separation e esce…</p>
+<p>e questo scatena la fine e l’inizio del devasto termonucleare della macchina</p>
+<p>#useradd -d /dev/null -g nobody -s /bin/false sshd</p>
+<p>ok, lanciamo ssh</p>
+<p>sshd: cannot access /dev/null!</p>
+<p>forse non vuole la home in /dev/null, in fondo in aix anche nobody ha la home in / , proviamo</p>
+<p>deluser sshd, E MAGIA</p>
+<p>ls /dev/null</p>
+<p>ls: 0653-341 The file /dev/null does not exist.</p>
+<p>CHE DIO VI TENGA PER MANO NEL BUIO, MALEDETTI!</p>

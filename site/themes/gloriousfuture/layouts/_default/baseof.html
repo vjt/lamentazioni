@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ site.Title }} &raquo; {{ .Title }}{{ end }}</title>
+<link rel="stylesheet" href="/wp-content/themes/gloriousfuture/style.css">
+<link rel="stylesheet" href="/lamentazioni.css">
+<link rel="stylesheet" href="/pagefind/pagefind-ui.css">
+<link rel="alternate" type="application/rss+xml" title="Lamentazioni" href="/index.xml">
+</head>
+<body>
+<div id="header">
+  <div id="logo">
+    <div id="search"></div>
+    <h1><a href="/" title="{{ site.Title }}">{{ site.Title }}</a></h1>
+    <h2>{{ site.Params.tagline }}</h2>
+  </div>
+  <div id="menu">
+  <ul>
+    <li id="rss"><a title="RSS Feed of Posts" href="/index.xml">Subscribe</a></li>
+    <li{{ if .IsHome }} class="current_page_item"{{ end }}><a href="/" title="Disclaimer">Disclaimer</a></li>
+    <li{{ if eq .RelPermalink "/le-lamentazioni/" }} class="current_page_item"{{ end }}><a href="/le-lamentazioni/" title="Le lamentazioni">Le lamentazioni</a></li>
+    <li{{ if eq .RelPermalink "/about/" }} class="current_page_item"{{ end }}><a href="/about/" title="about">about</a></li>
+    <li{{ if eq .RelPermalink "/anche-i-nani-hanno-cominciato-da-piccoli/" }} class="current_page_item"{{ end }}><a href="/anche-i-nani-hanno-cominciato-da-piccoli/" title="Anche i nani hanno cominciato da piccoli">Anche i nani</a></li>
+  </ul>
+  </div>
+</div>
+<div id="splash"></div>
+<div id="main">
+  <div id="content">
+{{ block "main" . }}{{ end }}
+  </div>
+{{ partialCached "sidebar.html" . }}
+</div>
+<div id="footer">
+  <p><span>tema <a href="http://wpthemeshop.com/free-themes/">GloriousFuture</a>, portato a Hugo</span><strong>Lamentazioni</strong> 2005&ndash;2009. Archivio statico, commenti chiusi.</p>
+</div>
+<script src="/pagefind/pagefind-ui.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  if (window.PagefindUI) new PagefindUI({ element: '#search', showSubResults: false, showImages: false,
+    translations: { placeholder: 'Cerca le lamentazioni', zero_results: 'Niente. Lamentati.' } });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+---
+title: Io ti odio!
+date: '2009-02-14T12:22:00+02:00'
+url: /2009/02/14/io-ti-odio/
+aliases:
+- /blog-static/2009/02/14/io-ti-odio/
+wp_id: 1125
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags:
+- colleghi
+- nerd
+- odio
+- perl
+- saputelli
+- sed
+comments:
+- id: 3525
+  author: pallotron
+  date: '2009-02-14T13:00:00+02:00'
+  body: "<p>attenzione. RILASCIO I BENCHMARK:</p>\n<p>$ time cat tmp.big.log | \\<br/>\n   sed ’s/^\\(\\W*\\w\\+\\W\\+\\w\\+\\W\\+\\W*\\w\\+\\)/\\1 NAME/g’ &gt; sedout</p>\n<p>cat tmp.big.log<br/>\n      0.01s user 0.27s system 0% cpu 36.300 total<br/>\nsed ’s/^\\(\\W*\\w\\+\\W\\+\\w\\+\\W\\+\\W*\\w\\+\\)/\\1 NAME/g’ &gt; sedout<br/>\n      35.58s user 0.68s system 99% cpu 36.318 total</p>\n<p>$ time perl -lpne ’s/^((\\w+\\W+){3})/$1NAME /;’ tmp.big.log &gt; perlout</p>\n<p>perl -lpne ’s/^((\\w+\\W+){3})/$1NAME /;’ tmp.big.log &gt; perlout  </p>\n<p>4.25s user 0.55s system 99% cpu 4.799 total</p>\n<p><strong><acronym title=\"Practical Extraction and Report Language\">Perl</acronym> vince, 4.79 secondi contro 36.</strong></p>"
+  author_url: http://www.pallotron.net
+  by_post_author: true
+- id: 3526
+  author: dioporco
+  date: '2009-02-14T13:23:00+02:00'
+  body: '<p>Beh, però c’è da dire che sei anche un po’ strunz chiamando sed dopo una pipe… prova a fare un bel sed ‘quellarobali’ timp.big.log, magari ci mette di meno… dubito comunque sia più veloce di pIrl, epperò magari qualcosa guadagna…</p>
+
+    <p>SUSU un po’ di ONESTÀ PORCODIO!</p>'
+- id: 3527
+  author: asd
+  date: '2009-02-14T14:22:00+02:00'
+  body: <p>siete veramente tristi, voi e il perl.</p>
+- id: 3528
+  author: ubi
+  date: '2009-02-14T14:51:00+02:00'
+  body: '<p>io non mi preoccupare.<br/>
+
+    la giustizia arriva a tempo debito.<br/>
+
+    tutti noi ci siamo passati ma la rivincita arriva inaspettata.<br/>
+
+    the geek shall inherit the earth.</p>'
+  author_url: http://www.twodotone.com
+- id: 3529
+  author: pallotron
+  date: '2009-02-14T14:55:00+02:00'
+  body: '<p>@dioporco: porcoddio non sai leggere, il sed l’ha fatto lui. non sai manco leggere che ho fatto time per testare il tempo impiegato :D VAI AL LOURDE.</p>'
+  author_url: http://www.pallotron.net
+  by_post_author: true
+- id: 3530
+  author: d1s4st3r
+  date: '2009-02-14T16:26:00+02:00'
+  body: <p>… e sono pronto a scommettere che il tuo collega nerdone saputello e scassaminchia ha la stessa faccia da cazzo del nerd nella foto! :-D</p>
+  author_url: http://d1s4st3r.blogspot.com/
+- id: 3531
+  author: Mark
+  date: '2009-02-14T18:03:00+02:00'
+  body: '<p>Non è che me ne freghi più di tanto, ma se non ho capito male dioporco intendeva dire di provare così:<br/>
+
+    $ time sed ’s/^\(\W*\w\+\W\+\w\+\W\+\W*\w\+\)/\1 NAME/g’ tmp.big.log &gt; sedout</p>'
+- id: 3532
+  author: dioporco
+  date: '2009-02-14T21:34:00+02:00'
+  body: '<p>Pallotron e ci ha ragione Mark, quello intendevo… :D<br/>
+
+    Ho capito che l’ha fatto lui quel sed terrificante, epperò tu hai usato la PIPE PER IL BENCHMARK! HAI FATTO LE PIPPE AL SED! PERVERTITO!<br/>
+
+    :D</p>'
+- id: 3533
+  author: pallotron
+  date: '2009-02-15T11:09:00+02:00'
+  body: '<p>@dioporco: haahha. cmq se ne capissi un po’ di unix capiresti che il cat non influisce “quasi” per niente sul totale del tempo perso. (0.27s su 36s).</p>'
+  author_url: http://www.pallotron.net
+  by_post_author: true
+- id: 3534
+  author: sand
+  date: '2009-02-17T02:25:00+02:00'
+  body: <p>sed e awk sono come la paletta e il secchiello di quando sei piccolo, ed e’ DEPRIMENTE sapere che c’e’ gente che si sbatte per scrivere regexp PRIMITIVE e ILLEGIBILI.</p>
+  author_url: http://soup.spatof.org
+- id: 3537
+  author: diocaneporco
+  date: '2009-02-21T18:09:00+02:00'
+  body: <p>madonna che sfigati del cazzo che siete</p>
+---
+<p>Caro collega,</p>
+<p>stavolta lo scrivo qui: ieri ti ho <strong>odiato</strong>, per l’ennesima volta!</p>
+<p>Quando il nostro collega <acronym title="Database Administrator">DBA</acronym> indiano e’ venuto da me chiedendomi:</p>
+<blockquote><p>«Angelo, come faccio ad inserire una stringa “NAME” su un file “tmp.log” da 1 <acronym title="Gigabyte">GB</acronym> tra la quarta e la quinta riga con VI/VIM?»</p></blockquote>
+<p><strong>Tu hai sentito… ti sei voluto alzare… con quell’aria da saccente… *dovevi* intrometterti… il tuo istinto da “nerdone-primo-della-classe-so-tutto-io” ti ha fatto venire alla mia scrivania mentre io scrivevo il one-liner perl necessario alla magia, consigliandomi di poterlo fare cosi’ e coli’… con sed piuttosto che con awk, e blabla…</strong></p>
+<p style="center;"><a href="/wp-content/upload/2009/02/nerd.jpg"><img alt="" class="aligncenter size-full wp-image-1126" height="370" src="/wp-content/upload/2009/02/nerd.jpg" width="300"/></a></p>
+<p>Non e’ stato sufficiente che ti dicessi di farti i cazzi tuoi… dovevi gareggiare… dovevi farti sputtanare… e dopo 2 minuti hai avuto anche la sfacciataggine di mandare una email al collega col subject “sed version”, scrivendo questa zozzeria:</p>
+<pre>$ cat tmp.log | sed 's/^\(\W*\w\+\W\+\w\+\W\+\W*\w\+\)/\1 fff/g'</pre>
+<p>Ma ti ho punito con la eleganza del Perl:</p>
+<pre>$ perl -lpne 's/^((\w+\W+){3})/$1NAME /;' tmp.log</pre>
+<p><strong>Sei old! OLD! Mettitelo in testa. Guarda quella linea, e’ ILLEGGIBILE. Con tutte quelle sequenze di escape!<br/>
+</strong></p>
+<p><strong>Peccato che il <acronym title="Database Administrator">DBA</acronym> abbia scelto il tuo sed. In questo mondo non c’e’ giustizia.<br/>
+</strong></p>

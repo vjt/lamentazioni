@@ -1,0 +1,70 @@
+---
+title: Mai installare solarix 9 x86! NON FATELO.
+date: '2005-10-17T11:54:00+02:00'
+url: /2005/10/17/mai-installare-solarix-9-x86-non-fatelo/
+aliases:
+- /blog-static/2005/10/17/mai-installare-solarix-9-x86-non-fatelo/
+wp_id: 165
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>ok, mi hanno costretto ad installare <strong>SLOWLARIS 9 X86!</strong><br/>
+Lo installo!<br/>
+A parte che alla prima schermata rimane freezato su “probing hardware” o quacosa del genere.<br/>
+Dopo innumerevoli reset riesce a fare il probing. Faccio tutte le schermate, arrivo al partizionamento disco, faccio le mie fottute partizioni.<br/>
+Inizio la installazione dei file… e via <strong>CON UN PUTIFERIO DI WARNING E FAULT DEL DRIVER ATA. SCLERO PER UN ORA.</strong><br/>
+POI MI ACCORGO CHE AVEVO MESSO I JUMPER DEL DISCO MALE. FISSANDO LA DIMENSIONE A 32GB. CORREGGO.<br/>
+REBOOTTO.<br/>
+ORA IL BIOS VEDE 80 <acronym title="Gigabyte">GB</acronym>. BENE!<br/>
+<strong>vado avanti: stesso problema!</strong><br/>
+CONTROLLO SUL SITO SUN E LEGGO:</p>
+<p><a href="http://supportforum.sun.com/sunos/index.php?t=msg&amp;goto=6304&amp;rid=0">forum sun frequentato da poveri cristi:</a></p>
+<blockquote><p>
+The error message …</p>
+<p>Error for command ‘read sector’ Error Level: Retryable<br/>
+Sense Key: bad block detected<br/>
+Vendor ‘Gen-ATA ‘ error code: 0×8</p>
+<p>… is really a bug in the Solaris ata driver: it prints obsolete error messages<br/>
+for modern IDE disks. The correct message for a modern IDE disk is:<br/>
+“interface CRC error has occurred during an Ultra DMA data transfer”.</p>
+<p>–&gt; http://groups.yahoo.com/group/solarisx86/message/16132</p>
+<p>So, I guess there’s a hardware issue with the use of UDMA on your<br/>
+system. Make sure to use short 80-pin IDE cables for UDMA.</p>
+<p>Maybe chaning the (U)DMA mode, changing it to/from automatic mode,<br/>
+or disabling DMA in the system’s BIOS helps.</p>
+<p><strong>You can also try to disable DMA disk transfers in Solaris 9 x86, by setting<br/>
+the “ata-dma-enabled” property to a value of “0″. This can be changed<br/>
+in a sub-menu on the last DCA screen, the “boot device” menu.</strong>
+</p></blockquote>
+<p><strong>CIOE’ DEVO DISATTIVARE IL DMA!!??!?! MA SONO PAZZI!?!?!</strong></p>
+<p>Cmq leggendo su <a href="http://groups.yahoo.com/group/solarisx86/message/16132">altri forum</a>:</p>
+<blockquote><p>
+The “bad block detected” message appears to be an old/obsolete error<br/>
+message text, somewhere in the Solaris “ata” driver.</p>
+<p>The ATA-1 standard (1997?) defined the 0×80 bit in the IDE<br/>
+controller’s error register as “bad block detected”. (See page 32 on<br/>
+<url :http:="">)</url></p>
+<p>The 0×80 bit seems to be “reserved” (undefined, not used any more)<br/>
+with ATA-2 and ATA-3.</p>
+<p>ATA-4 and newer now defines this bit 0×80 as ICRC “interface CRC error<br/>
+has occurred during an Ultra DMA data transfer” when using ultra dma<br/>
+transfers. (see the description of the “READ DMA” or “WRITE DMA”<br/>
+command in <url :http:="">).</url></p>
+<p><strong><br/>
+The Solaris ata driver seems to interpret the 0×80 bit according to<br/>
+the old / obsolete 1997 ATA-1 standard.</strong></p>
+<p>So the “bad block detected” message seems to be a hint that some sort<br/>
+of data corruption is happening on the IDE interface during UDMA data<br/>
+transfers with the <acronym title="Hard Disk Drive">HDD</acronym>. With UDMA capable disks it apparently does<br/>
+*not* mean “the disk drive is dying”.</p>
+<p><strong>Solaris’ ata driver should print a more appropriate error<br/>
+message for ATA-4 or newer disks, similar to what NetBSD does<br/>
+in wdperror():</strong><br/>
+</p></blockquote>
+<p><strong><br/>
+MA CHE MERDA!!!!!!!!!! CHE MEVDA PUVISSIMA POVCODDIO!!!!!!</strong></p>
+<p>PS: E pensare che un mio collega mi diceva: <acronym title="Read The Fucking Manual">RTFM</acronym>, MA VAFFANCULO ANCHE A LUI. I FORUM SONO MEGLIO DEI MANUALI AHAHHA</p>

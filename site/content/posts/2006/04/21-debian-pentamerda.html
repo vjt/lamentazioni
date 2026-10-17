@@ -1,0 +1,90 @@
+---
+title: DEBIAN PENTAMERDA
+date: '2006-04-21T16:26:00+02:00'
+url: /2006/04/21/debian-pentamerda/
+aliases:
+- /blog-static/2006/04/21/debian-pentamerda/
+wp_id: 436
+authors:
+- asbesto
+avatar: asbesto.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 618
+  author: bigdick21cm
+  date: '2006-04-21T16:58:00+02:00'
+  body: <p>sono i permessi</p>
+  author_url: http://www.ampland.com
+- id: 619
+  author: SevenSix
+  date: '2006-04-21T20:50:00+02:00'
+  body: <p>ma come kazzo l’hai? ma che NERD sei? ma le foto sono tue? sembri SOLDATO PALLA DI LARDO madonna brutta puttana sei una merda!</p>
+  author_url: http://www.supertangas.com
+- id: 622
+  author: asbesto
+  date: '2006-04-22T00:13:00+02:00'
+  body: <p>AMMAZZATI, STOLTO</p>
+  author_url: http://www.freaknet.org/~asbesto/
+  by_post_author: true
+- id: 624
+  author: giorgio giorgioni
+  date: '2006-04-22T13:17:00+02:00'
+  body: '<p>ma nella prima foto<br/>
+
+    ti eri<br/>
+
+    strozzato<br/>
+
+    un paletto<br/>
+
+    nel culo?</p>'
+---
+<p><strong>impazzisco</strong> per settare <strong>autofs</strong></p>
+<p><img alt="" src="/wp-content/upload/asbestasi.jpg"/></p>
+<p>lo installo al volo, poi setto <strong>auto.master</strong>, il quale richiama <strong>auto.tutto anziche’ 23 stronzissimi auto.qualcosa</strong></p>
+<p>(credo di aver gia’ scritto una lamentazione sull’<strong>INFERNO AUTOMOUNT</strong> e sul perche’ devo <strong>configurare un file di cfg su un software solo per dirgli quali sono i file di cfg</strong> da usare… sono una <strong>palla di nervi</strong>)</p>
+<p>a sto punto setto auto.tutto con i miei mount point</p>
+<p>poi non trovo il file di cfg di /etc/init.d/autofs (l’ho trovato <strong>DOPO</strong> su questa MERDEBIAN, ma non e’ questo il punto)</p>
+<p>allora entro in /etc/init.d/autofs, perche’ voglio settare il timeout a 1, anziche’ 300 secondi, che e’ il default, in modo da poter leggere un cd ed espellerlo poi subito senza menaggi …</p>
+<p>edito …</p>
+<p><code><br/>
+#<br/>
+# Daemon options<br/>
+# e.g. --timeout=60<br/>
+#<br/>
+daemonoptions=''<br/>
+</code></p>
+<p>potrei settarlo qua, ma piu’ sotto leggo</p>
+<p><code><br/>
+elif [ "$system" = "debian" ]; then<br/>
+        TIMEOUT=300<br/>
+        DISABLE_DIRECT=1<br/>
+        DAEMON_EXIT_WAIT=1<br/>
+</code></p>
+<p>AH <strong>perfetto. lo setto li.</strong></p>
+<p><code><br/>
+        TIMEOUT=1<br/>
+</code></p>
+<p>rilancio autofs, provo, monta al volo! <strong>e non smonta PIU’.</strong></p>
+<p>verifico, il timeout e’ a <strong>300. TRECENTO PALLE CHE GIRANO.</strong></p>
+<p><strong>IMPAZZISCO 1 ORA. setto a 1, diventa 300. metto degli echo,<br/>
+setto altre variabili, da DOVE MINCHIA GLI SPUNTA QUEL 300 PORCO CRISTO DIO</strong></p>
+<p><img alt="" src="/wp-content/upload/impazzito.jpg"/></p>
+<p>poi mi accorgo di questo:</p>
+<p><code><br/>
+elif [ "$system" = "debian" ]; then<br/>
+        TIMEOUT=1<br/>
+        DISABLE_DIRECT=1<br/>
+        DAEMON_EXIT_WAIT=1</code></p>
+<p>        [ -f /etc/default/autofs ] &amp;&amp; . /etc/default/autofs</p>
+<p>        daemonoptions="$daemonoptions --timeout $TIMEOUT"<br/>
+        echo LE FOTTUTE OPZIONI SONO: $daemonoptions<br/>
+fi<br/>
+</p>
+<p>e mi rendo conto della <strong>STRONZATA: ti fa settare TIMEOUT, poi<br/>
+richiama /etc/default/autofs e CHISSA’ PERCHE’ TIMEOUT diventa<br/>
+300</strong></p>
+<p><strong>MA CHE CAZZO DI SENSO HA</strong></p>
+<p>scopro <strong>SOLO ORA</strong> che <strong>/etc/defaults/autofs setta il timeout</strong>. lo setto, bestemmio profondamente debian ed il creatore, ed ora e’ tutto ok, ma <strong>debian MERDA, definitivamente sempre piu’ merda.</strong></p>

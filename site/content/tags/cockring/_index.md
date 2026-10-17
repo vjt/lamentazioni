@@ -1,0 +1,4 @@
+---
+title: cockring
+slug: cockring
+---

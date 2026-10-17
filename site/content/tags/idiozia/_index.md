@@ -1,0 +1,4 @@
+---
+title: idiozia
+slug: idiozia
+---

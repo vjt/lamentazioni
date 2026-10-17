@@ -1,0 +1,63 @@
+---
+title: UNDERAGE SYSADMIN SWALLOW BAD ROUTED COCKPACKETS
+date: '2006-02-28T18:28:00+02:00'
+url: /2006/02/28/routa-il-roito/
+aliases:
+- /blog-static/2006/02/28/routa-il-roito/
+wp_id: 373
+authors:
+- sand
+avatar: sand.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 484
+  author: newmark
+  date: '2006-03-06T15:19:00+02:00'
+  body: '<p>PRIMA IMPARA!<br/>
+
+    ifconfig eth1 DOWN</p>
+
+    <p>e ti si toglie</p>
+
+    <p>o al massimo ifconfig eth1 unplumb.</p>
+
+    <p>route lo hai scoperto da solo<br/>
+
+    ma in fondo<br/>
+
+    MAN IFCONFIG NO EH???</p>'
+  author_url: http://www.gniu.org
+---
+<p>Instrada il miscredente nella valle dei DRITTISSIMI CAZZI.<br/>
+ifconfig e route su linux fanno SCHIFO AL CAZZO, IL CAZZO CON L’ORRORE, RIGETTO IL MIDGETTO. SCHIFO !!!</p>
+<pre># ifconfig
+eth1      Link encap:Ethernet  HWaddr 00:0D:9D:D6:60:4B
+          inet addr:10.0.0.28  Bcast:10.255.255.255  Mask:255.255.0.0
+
+# ifconfig eth1 del 10.0.0.28 netmask 255.255.0.0 broadcast 10.255.255.255
+
+# ifconfig
+eth1      Link encap:Ethernet  HWaddr 00:0D:9D:D6:60:4B
+          inet addr:10.0.0.28  Bcast:10.255.255.255  Mask:255.255.0.0
+</pre>
+<p>Forse ci stiamo prendendo per il culo. Ogni porcoddio su UNIX restituisce un <strong>EXIT VALUE</strong> e/o un <strong>ERRORE</strong>, eppure ifconfig <strong>NO</strong>.</p>
+<p>Se fai CUSCI’, rimane appeso, tentando di risolvere CHISSA’ COSA:</p>
+<pre># ifconfig eth1 del 10.0.0.28/255.255.0.0</pre>
+<p>Provo ogni malsana combinazione di PEZZI di ifconfig, MA NON RIESCO. L’indirizzo LI’ E’, E LI’ RIMANE, <em>COME UN RAMO DI CAZZO SECOLARE PIANTATO NELLA SGNACCHERA DI GEA, DEA DELLA TERRA</em>.</p>
+<p>E perche’, <strong>route</strong>? ???</p>
+<blockquote><p># route del 10.0.0.0<br/>
+SIOCDELRT: No such process</p></blockquote>
+<p><strong>VAFFANCRISTO</strong></p>
+<pre># route flush
+Flushing `inet' routing table not supported
+Usage: inet_route [-vF] del ...</pre>
+<p><strong>PER LE MAMMELLONE DI SABRINA FERILLI !!!</strong></p>
+<pre># route -h
+Usage: route [-nNvee] [-FC] [af] ...
+       route [-v] [-FC] {add|del|flush} ... </pre>
+<p>PERCHE’ LO STESSO COMANDO HA DUE HELP DIVERSI? PERCHE’ NONOSTANTE TU SIA UNO, AGISCI DA BINO ?</p>
+<p>E’ cosi’, COSI’:</p>
+<pre>route del -net 192.168.5.0/24 [eth1]</pre>
+<p><strong>GERONTO ROUTING</strong></p>

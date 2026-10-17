@@ -1,0 +1,4 @@
+---
+title: poste
+slug: poste
+---

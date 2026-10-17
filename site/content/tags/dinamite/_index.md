@@ -1,0 +1,4 @@
+---
+title: dinamite
+slug: dinamite
+---

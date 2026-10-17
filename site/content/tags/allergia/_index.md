@@ -1,0 +1,4 @@
+---
+title: allergia
+slug: allergia
+---

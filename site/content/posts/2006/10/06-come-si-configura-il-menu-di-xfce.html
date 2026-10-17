@@ -1,0 +1,148 @@
+---
+title: Come si configura il menu’ di XFCE ?
+date: '2006-10-06T10:52:00+02:00'
+url: /2006/10/06/come-si-configura-il-menu-di-xfce/
+aliases:
+- /blog-static/2006/10/06/come-si-configura-il-menu-di-xfce/
+wp_id: 688
+authors:
+- asbesto
+avatar: asbesto.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 1375
+  author: asbesto
+  date: '2006-10-06T12:50:00+02:00'
+  body: '<p>HO TROVATO LA SOLUZIONE DOPO MEZZ’ORA</p>
+
+    <p>HO INSTALLATO GNOME</p>
+
+    <p>CIAO</p>'
+  author_url: http://www.freaknet.org/~asbesto/
+  by_post_author: true
+- id: 1377
+  author: DORCACCIOIPPIO
+  date: '2006-10-06T13:55:00+02:00'
+  body: '<p>Prevedo una lamentazione su gnome,i suoi settaggi di default e l’esistenza di gconf entro la fine di settimana prossima.<br/>
+
+    Che ESR sia con te</p>'
+- id: 1378
+  author: ZioP
+  date: '2006-10-06T14:43:00+02:00'
+  body: '<p>Blog davvero molto ben fatto.complimenti.</p>
+
+    <p>Però fatemi un piacere non bestemmiate che sono cattolico praticante convinto.</p>
+
+    <p>Porco Dio grazie.</p>'
+- id: 1381
+  author: andreacatania
+  date: '2006-10-06T15:58:00+02:00'
+  body: <p>Che il Porco Dio sia con te mio caro ZioP</p>
+- id: 1388
+  author: barbera
+  date: '2006-10-07T13:44:00+02:00'
+  body: '<p>Mi sa che stiamo litigando con le stesse cose ultimamente -e infatti anche io son passato a gnome.<br/>
+
+    La voce system in pratica va a pescare in /usr/share/applications tutti i file .desktop<br/>
+
+    e a runtime ti crea il menu’. Ci ho messo un’ora a trovarlo…forse a leggere i sorgenti facevo prima.<br/>
+
+    morte.</p>'
+- id: 1396
+  author: PDC
+  date: '2006-10-09T09:50:00+02:00'
+  body: <p>torniamo tutti al basic!!!</p>
+- id: 1401
+  author: Roccatello Eduard
+  date: '2006-10-09T16:24:00+02:00'
+  body: '<p>.config è la directory standard prevista da Freedesktop. Se le altre applicazioni non seguono lo standard non è affar di xfce :-)</p>
+
+    <p>by the way se vuoi l’automount usa HAL e Thunar, basta che lo installi e diventa trasparente all’utente.</p>'
+  author_url: http://www.xfce.org
+- id: 1402
+  author: Fabrizio M.
+  date: '2006-10-09T17:03:00+02:00'
+  body: <p>Asbe’ guarda che il path per la configurazione del menu c’era scritto nella titlebar dello shot che hai postato ;)</p>
+  author_url: http://www.mirabito.it
+- id: 1404
+  author: frab
+  date: '2006-10-09T22:09:00+02:00'
+  body: <p>ma come cazzo sdazzo si fa a registarsi? anche io voglio lamentarmi, dio spilungone</p>
+- id: 1405
+  author: eagle1
+  date: '2006-10-10T14:15:00+02:00'
+  body: '<p>x frab:</p>
+
+    <p>CE NE FOTTE.</p>
+
+    <p>NON CI SI REGISTRA.</p>
+
+    <p>RINGRAZIATE L’EBBREOLAIDO SE POTETE COMMENTARE.</p>'
+- id: 1409
+  author: crawl
+  date: '2006-10-11T20:01:00+02:00'
+  body: '<p>abse’ sei un coglione.</p>
+
+    <p><acronym title="Read The Fucking Manual">RTFM</acronym> N00B DEL CAZZO.</p>'
+- id: 1410
+  author: giorgio
+  date: '2006-10-11T21:13:00+02:00'
+  body: <p>Ma io sono contento lo stesso, posso commentare, e contribuire con i miei PORCO DIO</p>
+- id: 1412
+  author: Il Dorcoippìo
+  date: '2006-10-12T10:43:00+02:00'
+  body: <p>Crawl…ma cacati in mano e pigliati a schiaffi…</p>
+- id: 1413
+  author: giorgio
+  date: '2006-10-12T23:41:00+02:00'
+  body: <p>tocca fare l’abbonamento lamentazioni.org. chi vuole bestemmiare paga. se berlusca fa l’abbonamento mediaset premium, perché non fare l’abbonamento PORCO DIO PREMIUM, MADONNA SFONDATA, PADRE PIO ROTTO IN CULO e cosi via?</p>
+---
+<p>… Forse dall’apposita opzione Menu Configuration del menu’ Settings? </p>
+<p><img alt="stocazzo.jpg" id="image686" src="/wp-content/upload/2006/10/stocazzo.jpg"/></p>
+<p><strong>STOCAZZO!</strong></p>
+<p>perche’ accade questo:</p>
+<p><img alt="menuconf.gif" id="image687" src="/wp-content/upload/2006/10/menuconf.gif"/></p>
+<p>cioe’ : <strong>tutte le voci del menu’ fanno parte di un fantomatico “system” che viene incluso a parte, quindi NON SI POSSONO MODIFICARE.</strong></p>
+<p>e allora partiamo alla <strong>RICERCA DEL CAZZO DI FILE DI CFG:</strong></p>
+<p><code><br/>
+asbesto@gemini:~$ locate .xfcerc<br/>
+asbesto@gemini:~$ locate xfcerc<br/>
+asbesto@gemini:~$ locate xfce-cfg<br/>
+asbesto@gemini:~$ locate xfce | less<br/>
+(seguono 23823 miliardi di righe)<br/>
+asbesto@gemini:~$ locate PORCO DE DDIO<br/>
+asbesto@gemini:~$ cd .xfce/<br/>
+asbesto@gemini:~/.xfce$ ls<br/>
+lmhosts.xfsamba  trash  xfsambarc  xftreerc  xtree.reg<br/>
+asbesto@gemini:~/.xfce$<br/>
+(NESSUN CONFIG PER I MENU!!!)<br/>
+</code></p>
+<p>(GOOGLE, 1 ORA DOPO)</p>
+<p><code><br/>
+asbesto@gemini:~$ cd <b>.config</b><br/>
+asbesto@gemini:~/.config$ ls<br/>
+Terminal  Thunar  autostart  mousepad  xfce4  xfce4-session  xfmedia<br/>
+asbesto@gemini:~/.config$ cd xfce4<br/>
+asbesto@gemini:~/.config/xfce4$ ls<br/>
+Xcursor.xrdb  Xft.xrdb  desktop  mcs_settings  orage  panel  shortcuts  xfwm4<br/>
+asbesto@gemini:~/.config/xfce4$<br/>
+</code></p>
+<p>cioe’, fai un programma che si chiama <strong>XFCE</strong>, ed il <strong>suo file di configurazione, dove lo metti?</strong></p>
+<p>in .xfce? <strong>NOOOOOO</strong>, mettiamolo dentro un generico ed anonimo <strong>.config, dai</strong>, cosi’ vediamo quanto diventano <strong>idioti gli utenti nel cercare sto cazzo di config dei menu’ del PORCO DI DDIO</strong></p>
+<p><strong>PORCO DE DDIO, DOVETE MORIRE TUTTI, CHE SIATE MALEDETTI</strong></p>
+<p>AGGIORNAMENTO, pochi minuti dopo</p>
+<p><strong>Il menu.xml di merda contiene QUESTO:</strong></p>
+<p><code><br/>
+include type="system" style="simple" unique="true" legacy="true"/</code></p>
+<p>ometto i simboli che smerdano la visualizzazione...<br/>
+</p>
+<p>NDO CAZZO STA, il maledetto system, dove STRACAZZO STA, <strong>PORCO DDIO, DOVE STA LA PARTE SYSTEM CHE VIENE INCLUSA, PORCODDIOOOOOO, DOVE STAAAAAAAAAAAAA</strong></p>
+<p>E’ FORSE <strong>HARD CODED DENTRO IL BINARIO DI XFCE, PORCO DE DDIO ?!??!</strong></p>
+<p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+<p>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+<p>e, MENTRE CI SIAMO, <strong>come si configura il mount automatico dei devices, sotto sta merda di xfce/xubuntu, porco dio? </strong></p>
+<p>CHISSA’, <strong>CHISSA’, usa HAL, sta MERDA DI HAL, che NON E’ DOCUMENTATO</strong></p>
+<p><img alt="furio.jpg" id="image689" src="/wp-content/upload/2006/10/furio.jpg"/></p>
+<p><strong>NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO</strong></p>

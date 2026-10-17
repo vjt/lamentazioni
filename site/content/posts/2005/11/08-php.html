@@ -1,0 +1,40 @@
+---
+title: PHP
+date: '2005-11-08T13:50:00+02:00'
+url: /2005/11/08/php/
+aliases:
+- /blog-static/2005/11/08/php/
+wp_id: 202
+authors:
+- guly
+avatar: guly.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 1329
+  author: jesus
+  date: '2006-10-02T14:18:00+02:00'
+  body: '<p>perché gli altri server han register_global = On<br/>
+
+    la foto giusta è questa:<br/>
+
+    <a href="http://krijnen.com/pics/webmonkey.gif" rel="nofollow">http://krijnen.com/pics/webmonkey.gif</a></p>'
+---
+<p>secondo voi perche` non va e il cliente mi dice che “e` perfettamente funzionale su altri server”?<br/>
+gliele passiamo tramite aere le variabili allo script?</p>
+<p>&lt; ?php<br/>
+$campi = "Nome:$nome\n";<br/>
+$campi .= "Cognome:$cognome\n";<br/>
+$campi .= "Residenza:$resid\n";<br/>
+$campi .= "CittÃ :$citta\n";<br/>
+$campi .= "Provincia:$prov\n";<br/>
+$campi .= "Telefono:$tel\n";<br/>
+$campi .= "Cellulare:$cell\n";<br/>
+$campi .= "E-mail:$email\n";<br/>
+$campi .= "Sito Web:$web\n";<br/>
+$campi .= "Richiesta info:$info\n";</p>
+<p>mail("mail@dominio.it", $oggetto, $campi,"From:".$email."\nReply-To:".$$<br/>
+email);<br/>
+?&gt;</p>
+<p>asbesto trovami una foto che esprima il concetto.</p>

@@ -1,0 +1,4 @@
+---
+title: diarrea
+slug: diarrea
+---

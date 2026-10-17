@@ -1,0 +1,20 @@
+---
+title: PORCA MADONNA
+date: '2005-11-17T22:43:00+02:00'
+url: /2005/11/17/porca-madonna/
+aliases:
+- /blog-static/2005/11/17/porca-madonna/
+wp_id: 222
+authors:
+- sand
+avatar: sand.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+PORCA PORCA MADONNA PORCA  
+INFORMATICA, TECNOLOGIA, SOFTWARE, CI PISCIO SOPRA.  
+PROBLEMI CONTINUAMENTE.  
+VITA PIU’ FACILE? SI, PER CHI IL COMPUTER LO SPEGNE.  
+PORCO DIO, PORCO DIO.  
+SCLERARE PER LE COSE PIU’ STUPIDE, ECCO PERCHE’ IL MONDO E’ FERMO, PORCO CRISTO NEI CIELI.

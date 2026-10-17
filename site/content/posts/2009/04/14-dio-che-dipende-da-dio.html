@@ -1,0 +1,213 @@
+---
+title: dio che dipende da dio
+date: '2009-04-14T14:16:00+02:00'
+url: /2009/04/14/dio-che-dipende-da-dio/
+aliases:
+- /blog-static/2009/04/14/dio-che-dipende-da-dio/
+wp_id: 1199
+authors:
+- unixman
+avatar: unixman.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>Massi’, invece di usare una galleria statica usiamo un comodo Gallery 1.5, che<br/>
+tanto su sta’ zona de openvz un po’ de memoria ce sta’ …..</p>
+<p><strong>COR CAZZO ! </strong></p>
+<p>[root@apache ~]# yum install ImageMagick<br/>
+Loaded plugins: priorities<br/>
+Setting up Install Process<br/>
+Parsing package install arguments<br/>
+Resolving Dependencies<br/>
+–&gt; Running transaction check<br/>
+—&gt; Package ImageMagick.i386 0:6.2.8.0-4.el5_1.1 set to be updated<br/>
+–&gt; Processing Dependency: libfontconfig.so.1 for package: ImageMagick<br/>
+–&gt; Processing Dependency: libgdk_pixbuf-2.0.so.0 for package: ImageMagick<br/>
+–&gt; Processing Dependency: libX11.so.6 for package: ImageMagick<br/>
+–&gt; Processing Dependency: libXt.so.6 for package: ImageMagick<br/>
+–&gt; Processing Dependency: libpng12.so.0 for package: ImageMagick<br/>
+–&gt; Processing Dependency: libXext.so.6 for package: ImageMagick<br/>
+–&gt; Processing Dependency: libfreetype.so.6 for package: ImageMagick<br/>
+–&gt; Processing Dependency: libICE.so.6 for package: ImageMagick<br/>
+–&gt; Processing Dependency: libpng12.so.0(PNG12_0) for package: ImageMagick<br/>
+–&gt; Processing Dependency: libjpeg.so.62 for package: ImageMagick<br/>
+–&gt; Processing Dependency: liblcms.so.1 for package: ImageMagick<br/>
+–&gt; Processing Dependency: libwmflite-0.2.so.7 for package: ImageMagick<br/>
+–&gt; Processing Dependency: libgs.so.8 for package: ImageMagick<br/>
+–&gt; Processing Dependency: libtiff.so.3 for package: ImageMagick<br/>
+–&gt; Processing Dependency: libSM.so.6 for package: ImageMagick<br/>
+–&gt; Processing Dependency: librsvg-2.so.2 for package: ImageMagick<br/>
+–&gt; Running transaction check<br/>
+—&gt; Package libXext.i386 0:1.0.1-2.1 set to be updated<br/>
+–&gt; Processing Dependency: libXau.so.6 for package: libXext<br/>
+—&gt; Package libpng.i386 2:1.2.10-7.1.el5_3.2 set to be updated<br/>
+—&gt; Package freetype.i386 0:2.2.1-20.el5_2 set to be updated<br/>
+—&gt; Package libtiff.i386 0:3.8.2-7.el5_2.2 set to be updated<br/>
+—&gt; Package libSM.i386 0:1.0.1-3.1 set to be updated<br/>
+—&gt; Package yukon.i386 0:1.0-0.5.svn.155.196.rew.el5 set to be updated<br/>
+–&gt; Processing Dependency: libasound.so.2(ALSA_0.9.0rc4) for package: yukon<br/>
+–&gt; Processing Dependency: nvidia-graphics-devel for package: yukon<br/>
+–&gt; Processing Dependency: libasound.so.2 for package: yukon<br/>
+–&gt; Processing Dependency: mplayer for package: yukon<br/>
+–&gt; Processing Dependency: libasound.so.2(ALSA_0.9) for package: yukon<br/>
+—&gt; Package fontconfig.i386 0:2.4.1-7.el5 set to be updated<br/>
+—&gt; Package libICE.i386 0:1.0.1-2.1 set to be updated<br/>
+—&gt; Package libXt.i386 0:1.0.2-3.1.fc6 set to be updated<br/>
+—&gt; Package gtk2.i386 0:2.10.4-20.el5 set to be updated<br/>
+–&gt; Processing Dependency: pango &gt;= 1.13.0-1 for package: gtk2<br/>
+–&gt; Processing Dependency: atk &gt;= 1.9.0-1 for package: gtk2<br/>
+–&gt; Processing Dependency: libXrandr.so.2 for package: gtk2<br/>
+–&gt; Processing Dependency: libXrender.so.1 for package: gtk2<br/>
+–&gt; Processing Dependency: libXcursor.so.1 for package: gtk2<br/>
+–&gt; Processing Dependency: libcairo.so.2 for package: gtk2<br/>
+–&gt; Processing Dependency: libatk-1.0.so.0 for package: gtk2<br/>
+–&gt; Processing Dependency: libXi.so.6 for package: gtk2<br/>
+–&gt; Processing Dependency: libcups.so.2 for package: gtk2<br/>
+–&gt; Processing Dependency: libpangocairo-1.0.so.0 for package: gtk2<br/>
+–&gt; Processing Dependency: libXfixes.so.3 for package: gtk2<br/>
+–&gt; Processing Dependency: libpango-1.0.so.0 for package: gtk2<br/>
+–&gt; Processing Dependency: libXinerama.so.1 for package: gtk2<br/>
+–&gt; Processing Dependency: hicolor-icon-theme for package: gtk2<br/>
+—&gt; Package libwmf.i386 0:0.2.8.4-10.1 set to be updated<br/>
+–&gt; Processing Dependency: gd &gt;= 2.0.21 for package: libwmf<br/>
+—&gt; Package lcms.i386 0:1.18-0.1.beta1.el5_3.2 set to be updated<br/>
+—&gt; Package librsvg2.i386 0:2.16.1-1.el5 set to be updated<br/>
+–&gt; Processing Dependency: gnome-vfs2 &gt;= 1.9.16 for package: librsvg2<br/>
+–&gt; Processing Dependency: libcroco &gt;= 0.6.1 for package: librsvg2<br/>
+–&gt; Processing Dependency: libgsf &gt;= 1.6.0 for package: librsvg2<br/>
+–&gt; Processing Dependency: libgsf-1.so.114 for package: librsvg2<br/>
+–&gt; Processing Dependency: libgnomevfs-2.so.0 for package: librsvg2<br/>
+–&gt; Processing Dependency: libORBit-2.so.0 for package: librsvg2<br/>
+–&gt; Processing Dependency: libgconf-2.so.4 for package: librsvg2<br/>
+–&gt; Processing Dependency: libcroco-0.6.so.3 for package: librsvg2<br/>
+—&gt; Package ghostscript.i386 0:8.15.2-9.4.el5_3.4 set to be updated<br/>
+–&gt; Processing Dependency: urw-fonts &gt;= 1.1 for package: ghostscript<br/>
+–&gt; Processing Dependency: ghostscript-fonts for package: ghostscript<br/>
+—&gt; Package libjpeg.i386 0:6b-37 set to be updated<br/>
+–&gt; Running transaction check<br/>
+—&gt; Package nvidia-graphics-devel.i386 3:180.44-37 set to be updated<br/>
+–&gt; Processing Dependency: nvidia-graphics180.44-devel for package: nvidia-graphics-devel<br/>
+—&gt; Package libXrender.i386 0:0.9.1-3.1 set to be updated<br/>
+—&gt; Package cups-libs.i386 1:1.3.7-8.el5 set to be updated<br/>
+–&gt; Processing Dependency: libgnutls.so.13 for package: cups-libs<br/>
+–&gt; Processing Dependency: libgnutls.so.13(GNUTLS_1_3) for package: cups-libs<br/>
+—&gt; Package libcroco.i386 0:0.6.1-2.1 set to be updated<br/>
+—&gt; Package libXcursor.i386 0:1.1.7-1.1 set to be updated<br/>
+—&gt; Package libXau.i386 0:1.0.1-3.1 set to be updated<br/>
+—&gt; Package ghostscript-fonts.noarch 0:5.50-13.1.1 set to be updated<br/>
+—&gt; Package alsa-lib.i386 0:1.0.17-1.el5 set to be updated<br/>
+—&gt; Package gnome-vfs2.i386 0:2.16.2-4.el5 set to be updated<br/>
+–&gt; Processing Dependency: gnome-mount &gt;= 0.4 for package: gnome-vfs2<br/>
+–&gt; Processing Dependency: gnome-mime-data &gt;= 2.0.0-11 for package: gnome-vfs2<br/>
+–&gt; Processing Dependency: libdbus-1.so.3 for package: gnome-vfs2<br/>
+–&gt; Processing Dependency: libavahi-glib.so.1 for package: gnome-vfs2<br/>
+–&gt; Processing Dependency: libhal.so.1 for package: gnome-vfs2<br/>
+–&gt; Processing Dependency: libfam.so.0 for package: gnome-vfs2<br/>
+–&gt; Processing Dependency: shared-mime-info for package: gnome-vfs2<br/>
+–&gt; Processing Dependency: libavahi-client.so.3 for package: gnome-vfs2<br/>
+–&gt; Processing Dependency: libavahi-common.so.3 for package: gnome-vfs2<br/>
+–&gt; Processing Dependency: libhal-storage.so.1 for package: gnome-vfs2<br/>
+–&gt; Processing Dependency: libdbus-glib-1.so.2 for package: gnome-vfs2<br/>
+—&gt; Package cairo.i386 0:1.2.4-5.el5 set to be updated<br/>
+—&gt; Package gd.i386 0:2.0.33-9.4.el5_1.1 set to be updated<br/>
+–&gt; Processing Dependency: libXpm.so.4 for package: gd<br/>
+—&gt; Package atk.i386 0:1.12.2-1.fc6 set to be updated<br/>
+—&gt; Package mplayer.i386 4:1.0-66_snap20090315.el5 set to be updated<br/>
+–&gt; Processing Dependency: liblirc_client.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libgif.so.4 for package: mplayer<br/>
+–&gt; Processing Dependency: libXvMC.so.1 for package: mplayer<br/>
+–&gt; Processing Dependency: libartsc.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libXv.so.1 for package: mplayer<br/>
+–&gt; Processing Dependency: libogg.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libSDL-1.2.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libungif.so.4 for package: mplayer<br/>
+–&gt; Processing Dependency: libmad.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libdirectfb-1.0.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libxmms.so.1 for package: mplayer<br/>
+–&gt; Processing Dependency: libsmbclient.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libXvMCW.so.1 for package: mplayer<br/>
+–&gt; Processing Dependency: libesd.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: mplayer-fonts for package: mplayer<br/>
+–&gt; Processing Dependency: libmp3lame.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libvga.so.1 for package: mplayer<br/>
+–&gt; Processing Dependency: liblzo2.so.2 for package: mplayer<br/>
+–&gt; Processing Dependency: libfaac.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libtheora.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libspeex.so.1 for package: mplayer<br/>
+–&gt; Processing Dependency: libXxf86dga.so.1 for package: mplayer<br/>
+–&gt; Processing Dependency: libfaad.so.2 for package: mplayer<br/>
+–&gt; Processing Dependency: libxvidcore.so.4 for package: mplayer<br/>
+–&gt; Processing Dependency: libXxf86vm.so.1 for package: mplayer<br/>
+–&gt; Processing Dependency: libx264.so.65 for package: mplayer<br/>
+–&gt; Processing Dependency: libcdda_paranoia.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libtheora.so.0(libtheora.so.1.0) for package: mplayer<br/>
+–&gt; Processing Dependency: libaudiofile.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libdv.so.4 for package: mplayer<br/>
+–&gt; Processing Dependency: libjack.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libcdda_interface.so.0 for package: mplayer<br/>
+–&gt; Processing Dependency: libaa.so.1 for package: mplayer<br/>
+—&gt; Package hicolor-icon-theme.noarch 0:0.9-2.1 set to be updated<br/>
+—&gt; Package ORBit2.i386 0:2.14.3-5.el5 set to be updated<br/>
+–&gt; Processing Dependency: libIDL-2.so.0 for package: ORBit2<br/>
+—&gt; Package libXi.i386 0:1.0.1-3.1 set to be updated<br/>
+—&gt; Package GConf2.i386 0:2.14.0-9.el5 set to be updated<br/>
+—&gt; Package libXinerama.i386 0:1.0.1-2.1 set to be updated<br/>
+—&gt; Package pango.i386 0:1.14.9-3.el5.centos set to be updated<br/>
+–&gt; Processing Dependency: libXft.so.2 for package: pango<br/>
+–&gt; Processing Dependency: libX11 for package: pango<br/>
+–&gt; Processing Dependency: libXft for package: pango<br/>
+—&gt; Package libgsf.i386 0:1.14.1-6.1 set to be updated<br/>
+–&gt; Processing Dependency: libbonobo-2.so.0 for package: libgsf<br/>
+–&gt; Processing Dependency: libbonobo-activation.so.4 for package: libgsf<br/>
+—&gt; Package libXrandr.i386 0:1.1.1-3.1 set to be updated<br/>
+—&gt; Package libXfixes.i386 0:4.0.1-2.1 set to be updated<br/>
+—&gt; Package urw-fonts.noarch 0:2.3-6.1.1 set to be updated<br/>
+–&gt; Processing Dependency: mkfontscale for package: urw-fonts<br/>
+–&gt; Processing Dependency: mkfontdir for package: urw-fonts<br/>
+–&gt; Processing Dependency: chkfontpath for package: urw-fonts<br/>
+–&gt; Running transaction check<br/>
+—&gt; Package shared-mime-info.i386 0:0.19-5.el5 set to be updated<br/>
+—&gt; Package libIDL.i386 0:0.8.7-1.fc6 set to be updated<br/>
+—&gt; Package libx264_65.i386 0:0.65-9_20090117.2245.el5 set to be updated<br/>
+—&gt; Package gnutls.i386 0:1.4.1-3.el5_2.1 set to be updated<br/>
+–&gt; Processing Dependency: libgcrypt &gt;= 1.2.2 for package: gnutls<br/>
+–&gt; Processing Dependency: libgpg-error.so.0 for package: gnutls<br/>
+–&gt; Processing Dependency: libgcrypt.so.11 for package: gnutls<br/>
+–&gt; Processing Dependency: libgcrypt.so.11(GCRYPT_1.2) for package: gnutls<br/>
+—&gt; Package gnome-mount.i386 0:0.5-3.el5 set to be updated<br/>
+–&gt; Processing Dependency: dbus &gt;= 0.90 for package: gnome-mount<br/>
+–&gt; Processing Dependency: libgnomecanvas-2.so.0 for package: gnome-mount<br/>
+–&gt; Processing Dependency: libbonoboui-2.so.0 for package: gnome-mount<br/>
+–&gt; Processing Dependency: libgnome-keyring.so.0 for package: gnome-mount<br/>
+–&gt; Processing Dependency: libgnome-2.so.0 for package: gnome-mount<br/>
+–&gt; Processing Dependency: libart_lgpl_2.so.2 for package: gnome-mount<br/>
+–&gt; Processing Dependency: libnotify.so.1 for package: gnome-mount<br/>
+–&gt; Processing Dependency: libgnomeui-2.so.0 for package: gnome-mount<br/>
+—&gt; Package lirc.i386 0:0.6.6-4.el5.rf set to be updated<br/>
+—&gt; Package svgalib.i386 0:1.9.25-3.0.el5 set to be updated<br/>
+—&gt; Package libXxf86vm.i386 0:1.0.1-3.1 set to be updated<br/>
+—&gt; Package esound.i386 1:0.2.36-3 set to be updated<br/>
+—&gt; Package gamin.i386 0:0.1.7-8.el5 set to be updated<br/>
+—&gt; Package chkfontpath.i386 0:1.10.1-1.1 set to be updated<br/>
+–&gt; Processing Dependency: xfs for package: chkfontpath<br/>
+—&gt; Package SDL.i386 0:1.2.10-8.el5 set to be updated<br/>
+—&gt; Package mplayer-fonts.noarch 4:1.0-7.at set to be updated<br/>
+—&gt; Package libXvMC.i386 0:1.0.2-2.1 set to be updated<br/>
+—&gt; Package libmad.i386 0:0.15.1b-4.el5.rf set to be updated<br/>
+—&gt; Package libXxf86dga.i386 0:1.0.1-3.1 set to be updated<br/>
+—&gt; Package dbus-glib.i386 0:0.73-8.el5 set to be updated<br/>
+—&gt; Package samba-common.i386 0:3.0.33-3.7.el5 set to be updated<br/>
+—&gt; Package speex.i386 0:1.0.5-4.el5_1.1 set to be updated<br/>
+—&gt; Package lzo2.i386 0:2.02-3.el5.rf set to be updated<br/>
+—&gt; Package hal.i386 0:0.5.8.1-38.el5 set to be updated<br/>
+–&gt; Processing Dependency: dmidecode &gt;= 2.7 for package: hal<br/>
+–&gt; Processing Dependency: cryptsetup-luks &gt;= 1.0.1-2 for package: hal<br/>
+–&gt; Processing Dependency: libusb &gt;= 0.1.10a-1 for package: hal<br/>
+–&gt; Processing Dependency: pm-utils &gt;= 0.99.3-6 for package: hal<br/>
+–&gt; Processing Dependency: libvolume_id &gt;= 089-1 for package: hal<br/>
+–&gt; Processing Dependency: libvolume_id.so.0 for package: hal<br/>
+–&gt; Processing Dependency: libusb-0.1.so.4 for package: hal<br/>
+—&gt; Package giflib.i386 0:4.1.3-7.1.el5.1 set to be updated<br/>
+—&gt; Package xmms.i386 1:1.2.10-14.el5.rf set to be updated<br/>
+<img alt="" class="alignnone" height="259" src="http://www.blougou.com/edika/Edika.gif" width="300"/></p>

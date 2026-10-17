@@ -1,0 +1,43 @@
+---
+title: Binario STITICO
+date: '2006-04-06T15:07:00+02:00'
+url: /2006/04/06/binario-stitico/
+aliases:
+- /blog-static/2006/04/06/binario-stitico/
+wp_id: 426
+authors:
+- darkpand
+avatar: darkpand.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>Ora… no, dico.<br/>
+Devo compilare un binario statico perche’ <strong>CHI LO DEVE INSTALLARE</strong> non e’ capace, <strong>FIGURATI</strong> se un <strong>SISTEMISTA</strong> e’ capace di <strong>SCARICARE e INSTALLARE</strong> dei pacchetti che NON GLI FORNISCI TE, che <strong>IDDIO</strong> TI FULMINI…<br/>
+Faccio le prove sul mio portatile con MacOs X, ICCHESE, l’<acronym title="Operating System">OS</acronym> ARI-ANO, che SE COMPILA A ME, BUONA CAMICIA A TUTTI.<br/>
+$ ./configure –enable-static<br/>
+[...]<br/>
+$ make<br/>
+[...]<br/>
+$ otool -L src/stunnel<br/>
+src/stunnel:<br/>
+        /usr/lib/libz.1.dylib (compatibility version 1.0.0, current version 1.2.3)<br/>
+        /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 88.1.5)<br/>
+        /usr/lib/libssl.0.9.7.dylib (compatibility version 0.9.7, current version 0.9.7)<br/>
+        /usr/lib/libcrypto.0.9.7.dylib (compatibility version 0.9.7, current version 0.9.7)<br/>
+        /usr/lib/libwrap.7.dylib (compatibility version 7.0.0, current version 7.6.0)</p>
+<p>se questo e’ statico io FACCIO ER <strong>BIBBITARO</strong></p>
+<p>mah, magari…</p>
+<p>$ ./configure –enable-static=yes –enable-shared=no<br/>
+(COSI’ mi sembra <strong>CHIARO</strong>, no?)<br/>
+[...]<br/>
+$ make<br/>
+[...]<br/>
+$ otool -L src/stunnel<br/>
+src/stunnel:<br/>
+        /usr/lib/libz.1.dylib (compatibility version 1.0.0, current version 1.2.3)<br/>
+        /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 88.1.5)<br/>
+        /usr/lib/libssl.0.9.7.dylib (compatibility version 0.9.7, current version 0.9.7)<br/>
+        /usr/lib/libcrypto.0.9.7.dylib (compatibility version 0.9.7, current version 0.9.7)<br/>
+        /usr/lib/libwrap.7.dylib (compatibility version 7.0.0, current version 7.6.0)</p>
+<p>…ed era solo l’inizio della giornata…</p>

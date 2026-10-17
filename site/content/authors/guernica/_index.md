@@ -1,0 +1,4 @@
+---
+title: guernica
+slug: guernica
+---

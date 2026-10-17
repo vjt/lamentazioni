@@ -1,0 +1,4 @@
+---
+title: wiki
+slug: wiki
+---

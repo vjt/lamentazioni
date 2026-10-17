@@ -1,0 +1,91 @@
+---
+title: ma che cazzo parlo a fare?
+date: '2005-12-02T13:20:00+02:00'
+url: /2005/12/02/ma-che-cazzo-parlo-a-fare/
+aliases:
+- /blog-static/2005/12/02/ma-che-cazzo-parlo-a-fare/
+wp_id: 254
+authors:
+- newmark
+avatar: newmark.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 212
+  author: sand
+  date: '2005-12-02T13:40:00+02:00'
+  body: '<p>questa gente va DEBELLATA dal CREATO.<br/>
+
+    PAROLE IN LIBERTA’, BLA BLA BLA</p>'
+  author_url: http://www.spatof.org
+- id: 213
+  author: tripz
+  date: '2005-12-02T14:26:00+02:00'
+  body: '<p>Se il mio flusso/input di cibo e’ riso in bianco oppure verdure fritte miste, il mio flusso/output di merda e’ sempre merda marrone…<br/>
+
+    GROSSE FECI AZZURRE MAI ME NE FLUSSANO/OUTPUTTANO, PERCHE’?<br/>
+
+    E’ UN PROBLEMA A LIVELLO 9 DELL OSO/ESA O SOSO/SASO?</p>'
+  author_url: http://tripz.sfrajone.org
+---
+<p>Saro’ lamentato aalungamente, discusatemi.</p>
+<p>Questa la mail ricevuta ieri con carattere di URGENZA:</p>
+<p>abbiamo bisogno di un trouble shooting, la connessione non funziona.<br/>
+Ecco l’output del telnet effettuato sulla porta 10443:</p>
+<p>14:53:43.337249 webmail1.posta.PORCO.it.35869 &gt; fecoll48.10443: S 1792424435:1792424435(0) win 24820 <mss> (DF)<br/>
+14:53:43.337282 fecoll48.10443 &gt; webmail1.posta.PORCO.it.35869: S 1317604646:1317604646(0) ack 1792424436 win 5840 </mss><mss> (DF)<br/>
+14:53:43.338622 webmail1.posta.PORCO.it.35869 &gt; fecoll48.10443: P 1:17(16) ack 1 win 24820 (DF)<br/>
+14:53:43.338635 fecoll48.10443 &gt; webmail1.posta.PORCO.it.35869: . ack 17 win 5840 (DF)<br/>
+14:53:43.338639 webmail1.posta.PORCO.it.35869 &gt; fecoll48.10443: P 17:19(2) ack 1 win 24820 (DF)<br/>
+14:53:43.338645 fecoll48.10443 &gt; webmail1.posta.PORCO.it.35869: . ack 19 win 5840 (DF)<br/>
+14:53:43.338885 fecoll48.10443 &gt; webmail1.posta.PORCO.it.35869: P 1:605(604) ack 19 win 5840 (DF)<br/>
+14:53:43.338897 fecoll48.10443 &gt; webmail1.posta.PORCO.it.35869: F 605:605(0) ack 19 win 5840 (DF)<br/>
+ Saluti,<br/>
+Roberto.<br/>
+=======<br/>
+Noi rispondiamo cosi’:</mss></p>
+<p>Non so quali siano gli indirizzi ip, al di la di questo, tutto funziona no?<br/>
+Il problema e’ evidentemente applicativo, il firewall ti fa passare e il routing e’ corretto.<br/>
+=======<br/>
+e LUI NO.. PERCHE’ LUI NE SA EH.</p>
+<p>Scusate ma l’output è relativo al telnet<br/>
+(la domanda era :”Roberto puoi chiedere di fare, dal server 213.230.128.226 un telnet alla porta 10443 dell’ip 10.6.128.107  e darmi l’output?”)<br/>
+il flusso del servizio è in HTTPS.</p>
+<p>QUINDI PER LUI NON FUNZIONA </p>
+<p>e NOI RISPONDIAMO PORCO IL TUO DIO INFORMATICO CHE TI HA MESSO LI:</p>
+<p>Francesco,</p>
+<p>tanto per capire bene. Il servizio e’ in HTTPS sulla porta 443 o sulla porta 10443?<br/>
+se il servizio e’ sulla porta 443 allora abbiamo bisogno di una prova di telnet verso quella porta, se al contrario (come penso) la porta e’ la 10443, lo snoop di Roberto evidenzia come la comunicazione tra il server e il client sia completa a livello TCP, Gli apparati Firewall non agiscono a livello applicativo, cio’ significa che se riuscite a fare un telnet su quella porta (ovviamente basta la risposta connect visto che il telnet non e’ un applicativo HTTPS) allora significa che tra il client e il server la comunicazione e’ completa. Almeno possiamo dire questo fino al livello 5 della scala <acronym title="International Organization for Standardization">ISO</acronym>/OSI, i livelli superiori al 5 sono competenza dell’applicativo e quindi controllabili solo dal responsabile dell’applicativo.</p>
+<p>MA LUI ANCORA NIENTE EH… E’ COLPA NOSTRA.</p>
+<p>e allora risponde</p>
+<p>spiacente ma non concordo</p>
+<p>l’applicativo entra in gioco quando non gestisce i flussi/input che gli arrivano<br/>
+se il tcp dump è stato fatto correttamente, all’applicativo non arriva nulla (il trace è vuoto) e quindi correttamente la piattaforma non risponde nulla.</p>
+<p>la connessione a livello TCP non basta per la corretta fruizione del servizio ovvero la comunicazione tra client e server la definirò completa quando ci sarà connettività HTTPS (anche se non correttamente gestita dall’applicativo)</p>
+<p>CHE CAZZO VUOL DIRE???? COSA e’ FLUSSI/INPUT???? COSA e’ IL TRACE????<br/>
+CONNETTIVITA’ HTTPS????? CHE CAZZO SIGIFICA COGLIONE:<br/>
+al che LEZIONE DI INFORMATICA.</p>
+<p>mi spiace che non concordi, e allora cerchiamo di arrivarci con la teoria.<br/>
+Stiamo parlando della comunicazione tra il client A e il server B. Tale comunicazione agisce attraverso la connettivita’ <acronym title="Internet Protocol">IP</acronym> su protocollo TCP su porta 10443 (che sia HTTPS o smtp o <acronym title="File Transfer Protocol">FTP</acronym> al firewall puo’ importare nulla a meno di controlli a livello applicativo che cmq non effettuiamo).<br/>
+Analizziamo quindi i vari livelli</p>
+<p>lasciamo un attimo stare il livello 1 e 2 della scala <acronym title="International Organization for Standardization">ISO</acronym>/OSI dato che uno e’ connettivita’ fisica (il cavo di rete che sembra funzionare) e l’altra connettivita’ logica (MAC Address e ARP request) che anche queste vanno.<br/>
+a livello ip (livello 3 <acronym title="International Organization for Standardization">ISO</acronym>/OSI) come puoi vedere i due server si raggiungono, dato che esistono sul client  i pacchetti di ritorno (cio’ implica che il routing e la connettivita’ quindi siano corretti), spero converrai.<br/>
+a livello TCP (livello 4 <acronym title="International Organization for Standardization">ISO</acronym>/OSI) la comunicazione e’ evidenziata dalle flag<br/>
+come vedi il pacchetto 1 e’ il SYN, il 2 e’ il SYN-ACK del server (che significa che la porta 10443 ha risposto alla connect)<br/>
+il pacchetto 4 e’ il PUSH del client, i pacchetti 4 6 sono gli ack del server, e il 7 e’ il push del server, dopodiche’ il server manda un FIN (il client a questopunto continua i suoi ack che evidentemente ancora non erano arrivati con i pacchetti 9 e 10 e poi risponde con  il FIN-ACK al server e il server risponde un ack.<br/>
+Questo e’ un flusso TCP completo.<br/>
+Dentro ogni ack (e ogni push) esiste una parte del pacchetto chiamata parte dati dove realmente i dati transitano.<br/>
+Il Firewall si ferma qui.. non controlla la parte DATA del pacchetto. Cio’ implica che se avessimo un problema di firewall la comunicazione verrebbe interrrotta gia’ a questo punto, mentre come vedi e’ completa.<br/>
+Cio’ implica che la comunicazione se non funziona non e’ completa a livello applicativo (livelli 5/6/7 della scala <acronym title="International Organization for Standardization">ISO</acronym>/OSI).<br/>
+Questo significa che dovreste controllare le richieste <acronym title="HyperText Transfer Protocol">HTTP</acronym> (e non TCP/<acronym title="Internet Protocol">IP</acronym>) che arrivano sul client come risposta, e vedrete che troverete qualche anomalia.</p>
+<p>Spero sia chiara la spiegazione</p>
+<p>PORCO DIO. LUI CONTINUA EH.. MICA CAPISCE CHE e’ UN POVERO IGNORANTE, MESSO LI A RUBARE SOLDI ALLA COMUNITA’ PORCO IL SUO TELNET.</p>
+<p>Dalla mail di Cipolleta (wget effettuate con successo) sembra che non vi siano anomalie sul sw in collaudo.<br/>
+Non ho mai detto che era colpa del firewall ma semplicemente che la connettività HTTPS non c’e’<br/>
+(il Telnet e la connettività TCP sono condizioni necessarie ma non sufficienti)<br/>
+Stiamo facendo ulteriori verifiche.</p>
+<p>INTANTO GIA’ CHE HAI UN AMICO CHE SI CHIAMA CIPOLLETTA HAI PERSO.<br/>
+ma poi PORCO DIO PERCHE’ SCRIVI A  ME E MI FAI PERDERE TEMPO.</p>
+<p>DIO E’ UN POSTO BRUTTO, CHI CI CREDE PUZZA.</p>
+<p></p>

@@ -1,0 +1,97 @@
+---
+title: Posix, massi’, perche’ no?
+date: '2007-03-02T14:54:00+02:00'
+url: /2007/03/02/posix-massi-perche-no/
+aliases:
+- /blog-static/2007/03/02/posix-massi-perche-no/
+wp_id: 778
+authors:
+- theosprey
+avatar: TheOsprey.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 1927
+  author: padrebraun
+  date: '2007-03-02T18:34:00+02:00'
+  body: "<p>La merda sono i server nfs… leggiti nfs(5).</p>\n<p>posix   Mount  the  NFS  filesystem  using  POSIX semantics.  This allows<br/>\n          an NFS filesystem to properly support the POSIX pathconf command<br/>\n          by querying the mount server for the maximum length of a filename.<br/>\n          To do this, the remote host must support version two of the <acronym title=\"Remote Procedure Call\">RPC</acronym><br/>\n          mount protocol.  Many NFS servers support only version one.</p>"
+- id: 1928
+  author: TheOsprey
+  date: '2007-03-02T18:45:00+02:00'
+  body: <p>cosi’ dimostri solo di non aver capito un cazzo di quello che e’ successo e di non capire altrettanto un cazzo di inglese. rileggiti il tuo fottuto manuale e PENTITI NELL’ANO</p>
+  by_post_author: true
+- id: 1929
+  author: padrebraun
+  date: '2007-03-02T19:30:00+02:00'
+  body: <p>se non sai neanche leggere il motivo per cui mount si comporta in un modo e non in un altro… PUPPA e lamentatelo!</p>
+- id: 1930
+  author: TheOsprey
+  date: '2007-03-02T20:06:00+02:00'
+  body: <p>AH, MA CERTO, allora spiegami perche’ il server nfs su aix e’ posix compliant, mentre il client nfs di linux se ne fotte altamente degli standard e fa le richieste posix solo se lo costringi a farlo. Ah, che sbadato, forse perche’ posix e’ uno standard per tutti gli unix e linux non lo e’?</p>
+  by_post_author: true
+- id: 1934
+  author: blasfemo
+  date: '2007-03-03T02:53:00+02:00'
+  body: <p>no..semplicemente xche non solo IDDIO E’ UN GRAN LURIDO MAIALE DI MERDA, ma anche MARIA DELL’INCORONATA PROSTITUTA fa la sua bella parte</p>
+- id: 1939
+  author: Fanculo
+  date: '2007-03-04T17:18:00+02:00'
+  body: '<p>ignazio:~# mount 172.16.0.244:/mnt /mnt/ -t nfs -o nfsvers=3,posix,intr,soft,udp</p>
+
+    <p>ti prego me la spieghi? sono ignorante ma voglio porcoddiare pure io!</p>'
+  author_url: http://antistar27.splinder.com
+- id: 1944
+  author: Shodan
+  date: '2007-03-05T13:19:00+02:00'
+  body: '<p>Ma…<br/>
+
+    per quale motivo stronzo e’ sempre pieno di saputelli del cazzo alla <acronym title="Read The Fucking Manual">RTFM</acronym> o STFU che devono sempre tentare di mostrare quanto ce l’hanno lungo??</p>
+
+    <p>Diocane che DUE coglioni…</p>
+
+    <p>Il sito e’ stupendo cosi’ com’e’. Le Lamentazioni sono arte, mi scompiscio dalle risate a leggerle e ME NE FOTTO della manpage e di qualsiasi stronzetto arrogante pronto a sbatterla in faccia per dimostrare una (supposta) superiorita’.</p>
+
+    <p>Dio cane a tutti</p>'
+- id: 1946
+  author: TheOsprey
+  date: '2007-03-05T21:59:00+02:00'
+  body: '<p>anfatti diocane, siamo mica n’elpdesc per rottinculi che propugnano anche le manpage della carta da culo!<br/>
+
+    CHE DIO SIA IMMANTINEMENTE PORCIFICATO!</p>'
+  by_post_author: true
+- id: 1951
+  author: guly
+  date: '2007-03-06T20:37:00+02:00'
+  body: '<p>AHAHAHAHAHA<br/>
+
+    col man spazzatici il culo!!</p>'
+- id: 2005
+  author: Quagliata
+  date: '2007-03-15T21:55:00+02:00'
+  body: '<p>cioe`, io da gente che comunque su ste cose ci lavora anche non mi aspetto di leggere questa marea di _CAZZATE_. E non me l’aspetto perche` io non vado a dire in giro che linux e` una merda se non so montare una partizione o leggere uno stupido manuale in inglese</p>
+
+    <p>Il tuo problema e` che non sai installare e usare linux, Quindi nemmeno montare una stronza partizone di merda.. Prenditela con te stesso.</p>
+
+    <p>PORCODIO</p>'
+- id: 2047
+  author: ninja
+  date: '2007-03-23T17:05:00+02:00'
+  body: <p>BESTIA DEDDIO! L’informatica e tutte le sue sfaccettature sono un silos di bestemmie! E’ questo il bello! Bestemmiare bestemmiare e bestemmiare! Evviva alla sintassi merdosa del dio cane! Evviva alle bestemmie che ne derivano! Evviva agli errori incomprensibili che ti ispirano a creare nuovi metodi per bestemmiare e inveire contro il Dio merda! Chi ama l’informatica odia Dio! E’ per questo che il Papa odia le nuove tecnologie! Perché fanno incazzare i suoi fottuti sudditi che inesorabilmente iniziano a bestemmiare e offendere il creatore del cielo e della merda!</p>
+  author_url: http://diocane.it
+---
+<p>Obiettivo : montare una cazzo di directory nfs esportata da un server aix 5.3 verso un client linux</p>
+<p>Opinioni contrarie: il cristo, l’uomo stalla , tutto il clero</p>
+<p>Opinioni favorevoli: ovviamente nessuna</p>
+<p>L’operazione di per se e’ semplice, configuri nfs su aix, editi /etc/exports, exportfs -a ; tutto il mondo monta quella directory ma LINUX NO!</p>
+<blockquote><p>ignazio:~# mount -t nfs 172.16.0.244:/mnt /mnt</p></blockquote>
+<blockquote><p>MOUNT: Mount failed!</p></blockquote>
+<p>A parte che anche il mio pesce rosso, che non ho, e’ piu’ loquace di questo ORRORE, passo delle paripatetiche ore su google quando alle 2:30 di notte scopro che, orrore orrantibus:</p>
+<blockquote><p>ignazio:~#  mount 172.16.0.244:/mnt /mnt/ -t nfs -o nfsvers=3,posix,intr,soft,udp</p>
+<p align="center">
+</p><p align="center"><img align="middle" alt="AH!" src="http://adactio.com/sxsw05/images/scream.jpg"/></p>
+</blockquote>
+<div align="center"><strong>funziona.</strong></div>
+<p align="center">
+</p><p>Cioe’, rendiamoci conto, siamo nel 2007, AIX 5.3 E’ POSIX, su linux se vuoi il posix lo devi chiedere in ginocchio su un tappeto di cazzi surgelati.</p>
+<p><strong>MA VAFFANCULO GNULINUSS VA’</strong></p>

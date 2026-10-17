@@ -1,0 +1,4 @@
+---
+title: brighella
+slug: brighella
+---

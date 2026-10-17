@@ -1,0 +1,45 @@
+---
+title: il sistemista funambolico
+date: '2006-03-24T12:53:00+02:00'
+url: /2006/03/24/il-sistemista-funambolico/
+aliases:
+- /blog-static/2006/03/24/il-sistemista-funambolico/
+wp_id: 406
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 541
+  author: David
+  date: '2006-03-24T15:04:00+02:00'
+  body: <p>p.d., debian e’ la morte!</p>
+- id: 542
+  author: sand
+  date: '2006-03-24T16:19:00+02:00'
+  body: <p>sicuramente hai sbagliato <strong>TU</strong>, e Debian ti ha giustamente MORTIFICATO per non aver seguito la sua WAY, la WAY che porta alle CHIAPPE di DEB e IAN</p>
+  author_url: http://www.spatof.org
+- id: 557
+  author: bisco
+  date: '2006-03-28T01:14:00+02:00'
+  body: <p>no mamma, non uso debian!</p>
+---
+<p>Sembra che sia tempo per i sistemi di fottersi ed andar a fanculo (vedi post di Asbesto su lamentazioni.org).</p>
+<p>Da un paio di giorni, una macchina <strong>DEBIAN</strong> che ho qui, dava strani problemi.</p>
+<p>Un giorno facendo un:</p>
+<p><code>dpkg --configure -a</code></p>
+<p>mi accorsi che la macchina <strong>SI SPEGNEVA</strong> come se di facesse lo shutdown. SPENTA FISICAMENTE. SGOMENTO. TENTAVO OGNI E VOLTA. SEMPRE STESSO RISULTATO.</p>
+<p>siccome server per gli sviluppatori, mi sono deciso di non toccarla per un po’, ieri mentre tutti erano andati via, decido di riprovare da casa… BOOM. stesso problema.</p>
+<p>stamattina arrivo, la riaccendo, <strong>LA MORTE</strong>.</p>
+<p>File system / in sola lettura, QUANDO SUCCEDE CIO’ IO TREMO SEMPRE.</p>
+<p>Faccio il boot con un cd Gentoo, ed eseguo i fsck su tutte le partizioni con non molti problemi. Faccio anche badblocks per sicurezza, tutto ok.</p>
+<p>Rebootto, mi parte il kernel, ma al momento che init lancia gli script di runlevel 2, scopro IL PROBLEMA, mancano TUTTI i file su /etc/rc?.d/!!!!</p>
+<p>cosi’ preso dalla disperazione copio sti file da una macchina debian che avevo vicino…</p>
+<p>rebootto, riparte, partono i servizi, ma c’e’ qualcosa di strano, al prompt di login metto root E NON MI CHIEDE LA PASSWORD.</p>
+<p>“Sara’ il cancro PAM”, penso tra me e me… cosi’ guardo su /etc/pam.d e non trovo common-auth…. e’ cosi’ che ho deciso di fare IL SEGUENTE COMANDO DELLA MORTE:</p>
+<p><code> for i in `dpkg --list | grep ^ii | grep ^^rc`; do apt-get --yes --reinstall install $i; done</code></p>
+<p>\o/</p>
+<p>funziona, certo non sara’ MOLTO BELLO aver fatto cio’ MA FUNZIONA TUTTO ADESSO :)</p>
+<p>sono il sistemista funambolo ahahaha e Debian e’ anche un PO’ MERDA</p>

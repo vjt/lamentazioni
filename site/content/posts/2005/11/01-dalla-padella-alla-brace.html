@@ -1,0 +1,52 @@
+---
+title: Dalla padella alla brace
+date: '2005-11-01T22:49:00+02:00'
+url: /2005/11/01/dalla-padella-alla-brace/
+aliases:
+- /blog-static/2005/11/01/dalla-padella-alla-brace/
+wp_id: 187
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>Delle volte per avere maggiori comodita’ ottieni SOLO STRESS E FRUSTAZIONE.<br/>
+Ero qui, che facevo i backup, alle prese con masterizzazioni, mount ed unmount vari dei dvd.<br/>
+Mi sono detto: “ora metto su autofs”.<br/>
+Siccome sul mio pc fisso casalingo c’e’ una Debian (<strong>SI LO SO, NON DITEMI NIENTE</strong>), uso apt, e lo installo.</p>
+<p>metto il timeout a 3 su /etc/default/autofs :</p>
+<p><code>hal9k1:/home/backup# cat /etc/default/autofs<br/>
+# Timeout value in seconds (default: 300)<br/>
+TIMEOUT=3</code></p>
+<p>questo e’ /etc/auto.master:</p>
+<p><code>/mnt    /etc/auto.misc -v --timeout=3<br/>
+#/smb   /etc/auto.smb<br/>
+#/misc  /etc/auto.misc<br/>
+#/net   /etc/auto.net<br/>
+</code></p>
+<p>questo e’ /etc/auto.misc:</p>
+<p><code>cd              -fstype=iso9660,ro,user         :/dev/hdc<br/>
+dvd             -fstype=iso9660,ro,user         :/dev/hdb<br/>
+floppy          -fstype=vfat,rw,user,sync       :/dev/fd0<br/>
+usbcamera       -fstype=vfat,rw,user            :/dev/sda1<br/>
+</code></p>
+<p>Questi i link simbolici:</p>
+<p><code>hal9k1:/home/backup# ls -l /media/<br/>
+totale 4<br/>
+lrwxrwxrwx   1 root      root     7 2005-11-01 18:19 cd -&gt; /mnt/cd<br/>
+lrwxrwxrwx   1 root      root     8 2005-11-01 18:19 dvd -&gt; /mnt/dvd<br/>
+lrwxrwxrwx   1 root      root    11 2005-11-01 18:19 floppy -&gt; /mnt/floppy<br/>
+lrwxrwxrwx   1 root      root    14 2005-11-01 18:19 usbcamera -&gt; /mnt/usbcamer</code></p>
+<p>faccio ls /media/dvd e monta.</p>
+<p>MA PORCODDIO L’EXPIRE NON VA, DOPO 3 SECONDI NON FA UN CAZZO, DEVO ASPETTARE CIRCA 20 SECONDI PORCODDIO.<br/>
+MA PERCHE’!??!?!<br/>
+PERCHE’ SONO ANCORA A SCLERARE DOPO ORE!?!??!?!</p>
+<p>IO PENSO CHE E’ COLPA DI DEBIAN!</p>
+<p><strong>update</strong></p>
+<p>Pare che il floppy si comporti correttamente:</p>
+<p><code>Nov  1 21:55:15 hal9k1 automount[2445]: attempting to mount entry /mnt/floppy<br/>
+Nov  1 21:55:18 hal9k1 ntpd[4076]: adjusting local clock by -120.284147s<br/>
+Nov  1 21:55:20 hal9k1 automount[3309]: rm_unwanted: /mnt/floppy<br/>
+Nov  1 21:55:20 hal9k1 automount[3309]: expired /mnt/floppy</code></p>

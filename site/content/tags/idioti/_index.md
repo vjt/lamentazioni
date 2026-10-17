@@ -1,0 +1,4 @@
+---
+title: idioti
+slug: idioti
+---

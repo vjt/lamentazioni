@@ -1,0 +1,87 @@
+---
+title: 'PostgreSQL: RDBMS DEL CAZZO'
+date: '2006-09-25T00:27:00+02:00'
+url: /2006/09/25/postgresql-rdbms-del-cazzo/
+aliases:
+- /blog-static/2006/09/25/postgresql-rdbms-del-cazzo/
+wp_id: 669
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 1279
+  author: pallotron
+  date: '2006-09-25T01:13:00+02:00'
+  body: '<p>ore 1:15 -&gt; HO RISOLTO! :)<br/>
+
+    meno male CHE BACULA ROXA! :p</p>'
+  author_url: http://www.pallotron.freaknet.org
+  by_post_author: true
+- id: 1281
+  author: alino
+  date: '2006-09-25T04:54:00+02:00'
+  body: <p>questi permessi…</p>
+  author_url: http://www.semiasse.rotto.tuttobene.tesoro.org
+- id: 1286
+  author: pallotron
+  date: '2006-09-25T10:12:00+02:00'
+  body: <p>ma quali permessi, era quell’applicativo java tomcat di merda, postgres e’ morto e quella merda di app ha cominiciato a loggare a bestia 5 GIGA IN UN GIORNO.</p>
+  author_url: http://www.pallotron.freaknet.org
+  by_post_author: true
+- id: 1288
+  author: eagle1
+  date: '2006-09-25T10:54:00+02:00'
+  body: <p>da quello che so pgsql ha di meglio solamente che e’ piu’ fedele alla sintassi RFC. dicono che pgsql sia standard, mysql no. porcodio vaffanculo agli standard e uso mysql.</p>
+  author_url: http://www.maledet.to
+- id: 1292
+  author: nightolo
+  date: '2006-09-25T20:39:00+02:00'
+  body: <p>te l’avevo detto che col backup risolvevi :P</p>
+- id: 1294
+  author: pallotron
+  date: '2006-09-26T00:01:00+02:00'
+  body: <p>be si nightolo, grazie del supporto ANALE :p</p>
+  author_url: http://www.pallotron.freaknet.org
+  by_post_author: true
+- id: 1342
+  author: stetzu
+  date: '2006-10-03T15:34:00+02:00'
+  body: '<p>ho isto postblabla UNA volta e mi sembrava solo TAAANTE inutili e confusionarie OPZIONI in piu’.<br/>
+
+    myslq rulal di brutto…</p>'
+  author_url: http://lollingtime.blogspot.com
+---
+<p><a href="/wp-content/upload/2006/09/logo_postgres.jpg" rel="attachment" title="postgresql"><img alt="postgresql" src="/wp-content/upload/2006/09/logo_postgres.jpg"/></a></p>
+<p><strong>Sia ben chiaro! io ho sempre usato MYSQL, MAI ESSE CU ELLE.</strong></p>
+<p>E’ ok, MA SOPRATTUTTO FUNZIONA. NON COME <strong>QUESTA MERDA DI POSTGRESQL</strong>. Gia’ solo il nome suscita ANTIPATIA SFRENATA.</p>
+<p>Da quando lavoro in questa ditta (da Settembre 05), sono entrato anche io <strong>NEL MAGICO MONDO DI POSTRES-MERDA-<acronym title="Structured Query Language">SQL</acronym>, </strong>non ho mai capito cosa abbia di meglio rispetto a mysql.</p>
+<p>Inanzitutto posso dire che ha una sintassi di merda, che il modo di utilizzarlo e’ COMPLETAMENTE DIVERSO MALATO E DEVIATO (con tutti quei fottuti utenti di sistema che vuole).</p>
+<p>Cosicche’, stasera/notte, me ne stavo per andare a letto, quando un certo punto vado su:</p>
+<p>http://miasocieta/forum: ORRORE! Non trova i language.</p>
+<p>Poi vado su  http://miasocieta/programma-selfcoded-per-tracciamento-sfruttamento-dipendenti</p>
+<p>ORRORE, non autentica.</p>
+<p>Qui qualcosa mi puzza! Me ne sarei fottuto, e sarei andato a letto, ci potrei pensare domani mattina, ma sono malato, e a me quando qualcosa non funziona MI VIENE LA RABBIA E NON DORMO.</p>
+<p>Ed ecco eccomi qui, ad appurare l’accaduto. Una sintesi:</p>
+<ul>
+<li>partizione / del webserver PIENA, la alleggerisco</li>
+<li>poi scopro che tcpserver di DJB non funziona, controllo, non carica libcrypto-0.9.6 (AH! avevo aggiornato openssl a causa bug, ma non avevo fatto il revdep-rebuild, porcoddio a me e a gentoo), ricompilo ucspi-tcp o quello che e’, e riavvio qmail, funziona</li>
+<li>spamd si lamenta che per problemi di permessi non carica le regole, un chmod -R qscand:qscand  risolve anche questo</li>
+</ul>
+<p>Passiamo ora al database:</p>
+<p>psql forum forum</p>
+<p>\d —&gt; <strong>NIENTE TABELLE NIENTE NIENTE!</strong></p>
+<p>psql trackview trackview</p>
+<p>\d <strong>IL VOID </strong></p>
+<p><strong>MA COME! HO PERSO TUTTO!!??!! NON CI CREDO, NON PUO’ ESSERE! </strong></p>
+<p>Alcuni grep della disperazioni mi dicono che forse non tutto e’ perso (e poi ho anche i backup della datadir di psql ogni notte):</p>
+<p><code> webserver data # grep afailla * -r<br/>
+Il file binario base/17232/16408 corrisponde<br/>
+Il file binario base/17232/17431 corrisponde<br/>
+Il file binario base/81600/81603 corrisponde </code></p>
+<p>Cosi’ ho il sentore che qualcosa potro’ recuperare, nel frattempo trovo questo link:</p>
+<p><a href="/" title="http://www.hjackson.org/blog/archives/2004/12/postgresql_data.html">http://www.hjackson.org/blog/archives/2004/12/postgresql_data.html </a></p>
+<p>Ma allora e’ proprio una merda, ora sono qui, aspettando che bacula mi restori la datadir…</p>
+<p>E NON SONO A LETTO… MALEDETTO PSQL.</p>

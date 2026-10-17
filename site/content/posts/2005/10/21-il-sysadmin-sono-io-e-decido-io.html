@@ -1,0 +1,57 @@
+---
+title: Il sysadmin sono io e DECIDO IO!
+date: '2005-10-21T11:46:00+02:00'
+url: /2005/10/21/il-sysadmin-sono-io-e-decido-io/
+aliases:
+- /blog-static/2005/10/21/il-sysadmin-sono-io-e-decido-io/
+wp_id: 175
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 131
+  author: sand
+  date: '2005-10-22T15:33:00+02:00'
+  body: '<p>IL SYSADMIN SONO IO<br/>
+
+    E <strong>DEICIDA</strong> IO</p>'
+  author_url: http://www.spatof.org
+---
+<p>Cioe’, altro che user friendly, MANDRAKE E’ UNA MERDA.<br/>
+Sono giorno che sclero, non funziona vm-pop3d. CHE SI FOTTA.<br/>
+Gli utenti non autenticano! Il servente dice “cannot lock mailbox”.<br/>
+MA PORCODDIO!</p>
+<p>Guardo i file di log… cerco… cerco… poi faccio un:</p>
+<p><code><br/>
+[root@www root]# ls -l /home/ | grep mail<br/>
+drwx--x--x    3 root     mail         4096 ott 21 11:22 mail/<br/>
+</code></p>
+<p>NON CHIEDETEMI PERCHE’ E’ SU /HOME/MAIL… E’ UNA LUNGA STORIA…</p>
+<p><acronym title="By The Way">BTW</acronym> quei permessi non mi piacciono, faccio un:</p>
+<p><code>chmod 775 /home/mail</code></p>
+<p>E magicamente vm-pop3d funziona… POI DOPO CIRCA UN ORA. NIENTE.<br/>
+COSI’ RIGUARDO I PERMESSI, E SONO DI NUOVO COME PRIMA.<br/>
+AH! SARA’ CRONTAB!</p>
+<p><code>[root@www root]# ls -l /etc/cron.hourly/<br/>
+totale 0<br/>
+lrwxrwxrwx    1 root     root           14 lug 15  2003 msec -&gt; /usr/sbin/msec</code></p>
+<blockquote><p><code>#!/bin/sh<br/>
+#----------------------------<br/>
+# Project         : Mandrake Linux<br/>
+# Module          : share<br/>
+# File            : msec<br/>
+# Version         : $Id: msec,v 1.8 2002/08/19 21:07:17 flepied Exp $<br/>
+# Author          : Frederic Lepied<br/>
+# Created On      : Thu Dec 13 11:36:50 2001<br/>
+# Purpose         : entry script to run hardness script or change<br/>
+#                  the security level.<br/>
+#---------------------------</code></p></blockquote>
+<p>MA VAFFANCULO CODER DI MERDA! SONO IO IL SYSADMIN E IO VOGLIO I PERMESSI COSI’ PORCODDIO!</p>
+<p><code># chmod -x /etc/cron.hourly/msec<br/>
+# [root@www root]# run-parts /etc/cron.hourly/<br/>
+run-parts: component /etc/cron.hourly//msec is not an executable plain file<br/>
+</code></p>
+<p><strong>V A F F A N C U L O O O O O !!!!</strong></p>

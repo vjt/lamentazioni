@@ -1,0 +1,4 @@
+---
+title: wannabe
+slug: wannabe
+---

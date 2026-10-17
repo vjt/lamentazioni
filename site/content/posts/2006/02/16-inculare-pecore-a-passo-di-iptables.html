@@ -1,0 +1,72 @@
+---
+title: inculare pecore a passo di iptables
+date: '2006-02-16T17:56:00+02:00'
+url: /2006/02/16/inculare-pecore-a-passo-di-iptables/
+aliases:
+- /blog-static/2006/02/16/inculare-pecore-a-passo-di-iptables/
+wp_id: 357
+authors:
+- sand
+avatar: sand.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 427
+  author: tripz
+  date: '2006-02-16T18:13:00+02:00'
+  body: <p>In effetti, e’ merda. \o</p>
+  author_url: http://tripz.sfrajone.org
+- id: 428
+  author: io
+  date: '2006-02-16T18:18:00+02:00'
+  body: '<p>per tutti quei trattini devi ringraziare quelli del gnu getopt</p>
+
+    <p>postcappella: <acronym title="Read The Fucking Manual">RTFM</acronym></p>'
+- id: 429
+  author: sand
+  date: '2006-02-16T18:29:00+02:00'
+  body: <p>eh lo so che e’ uno  GNU/ISMO, porco grisu’ :(</p>
+  author_url: http://www.spatof.org
+  by_post_author: true
+- id: 431
+  author: pallotron
+  date: '2006-02-16T18:42:00+02:00'
+  body: <p>OpenBSD + pf + pfsync + carp + isakmpd + sasyncd E’ IL BENE o/ :)</p>
+  author_url: http://www.pallotron.freaknet.org
+- id: 432
+  author: asbesto
+  date: '2006-02-16T19:36:00+02:00'
+  body: <p>e andate TUTTI A FFANCULO VOI e i vostri COMMENTI DEL CAZZO, QUA CI LAMENTIAMO E BASTA, SAND HA RAGIONE e quando una cosa’ e’ MERDA</p>
+  author_url: http://www.freaknet.org/~asbesto/
+- id: 434
+  author: io
+  date: '2006-02-16T22:19:00+02:00'
+  body: <p>siamo frustrati perche’ non ci possiamo lamentazionare anche noi, porkoddioh!</p>
+- id: 435
+  author: nightolo
+  date: '2006-02-17T01:28:00+02:00'
+  body: <p>FATE IN CULO CIAO</p>
+- id: 436
+  author: LeN
+  date: '2006-02-17T08:38:00+02:00'
+  body: <p>ci si lamenta che non tutti possono lamentarsi insomma… trsjkyt</p>
+  author_url: http://www.l3n.org
+---
+<p>iptables e’ veramente <strong>osceno</strong>.<br/>
+Non mi ricordo mai NULLA della sua sintassi e decido di chiedere a google… cerco “<em>iptables quick reference</em>” perche’ porco dio, voglio un fottuto schema molto veloce, mi sembra giusto no? Trovo due documenti, che sono tutto fuorche’ <strong>quick</strong>, e tutt’altro fuorche’ <strong>reference</strong> — sono due <strong>pseudo-tutorial</strong> su alcune feature di iptables, <em>mannaggia a cristo incollato a una rete da materasso lanciata giu’ da una scalinata di un tempio buddista</em>, porco dio, non sono CUIC RIFERENS !!!</p>
+<p>Perche’ per scrivere una regola devo alternare la pressione di SHIFT?<br/>
+<code>iptables -A INPUT -p tcp -j ACCEPT</code><br/>
+MA COSA SIETE, T33N mOnGoLi DoWn ?!?1!</p>
+<p>Trovo che:<br/>
+<code>pass in on eth0 inet proto tcp from 1.2.3.4 port 22 to any port 3030 flags S/SA keep state</code></p>
+<p>Sia molto piu’ <strong>chiaro, semplice e leggibile</strong> di:</p>
+<p><code>iptables -A INPUT -p tcp -i eth0 -m state --state NEW -s 1.2.3.4 --sport 22 --dport 3030</code><br/>
+(e non so manco se l’ho scritta bene)</p>
+<p>Sara’ ben giusto lamentarmi <strong>DI TUTTI STI CAZZO DI TRATTINI IN UNA MADONNAMERDA DI REGOLA PER IL FIREWALL NO?</strong><br/>
+<strong>MENO MENO MELO MENO</strong></p>
+<p><acronym title="Internet Protocol">IP</acronym> TAVOLE, LE DODICI TAVOLE DI SMEGMA, IL CALDERONE DI GESU’ ROSPO CAZZONE, IO IO LA MUCCA DI GIOVE, VARFANCULO !</p>
+<p>IN.ADDR.ARPA-NCULO</p>
+<p>VIOLENZA DOMESTICA, IL KERNEL A PEZZI STA</p>
+<p><strong>Post Scrotum</strong><br/>
+Ricordo agli acuti commentatori che lamentazioni non e’ un forum di richieste di aiuto, bensi’ un luogo dove alcuni amici hanno modo di sfogarsi; risposte saccenti o altri atteggiamenti da <strong><acronym title="Read The Fucking Manual">RTFM</acronym></strong> non sono graditi, <strong>perche’ non fanno ridere</strong>, e se poi giudichiamo che qualcosa sia <strong>MERDA</strong>, quella cosa e’ inevitabilmente <strong>MERDA</strong> — <em>e non c’e’ soluzione</em>, E’ COSI’. <strong>DVX</strong>.</p>

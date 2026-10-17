@@ -1,0 +1,24 @@
+---
+title: WRAPPA LA CAZZA
+date: '2005-11-30T01:00:00+02:00'
+url: /2005/11/30/wrappa-la-cazza/
+aliases:
+- /blog-static/2005/11/30/wrappa-la-cazza/
+wp_id: 248
+authors:
+- sand
+avatar: sand.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>Io non riesco a capacitarmi di una cosa, da mesi. Ogni volta che devo reinstallare <a href="http://ndiswrapper.sourceforge.net/">http://ndiswrapper.sourceforge.net/</a>, scarico l’ultima versione <strong>stable</strong> e… <strong>non funziona.</strong> A volte non compila, altre volte, come adesso (<a href="http://sourceforge.net/project/showfiles.php?group_id=93482&amp;package_id=99148&amp;release_id=374651">1.6</a>), compila ma non funziona.</p>
+<p>(e anche un grosso FAFFANCULO a quelli di <a href="http://www.sourceforge.net">sourceforge</a> che hanno complicato ulteriormente l’interfaccia, cosi’ che per scaricare un file devi passare per <strong>quattro</strong> pagine con altrettanti <strong>banner</strong>)</p>
+<p>Ogni volta finisco per risolvere scaricando una versione piu’ vecchia; per esempio adesso sto con la 1.5, che comunque ho dovuto “patchare” <strong>A CASO</strong> perche’ non compilava; perche’ a caso? Perche’ l’errore era a proposito di un <strong><em>URB</em>_ASYNC_UNLINK</strong>, e io senza pensarci, dissi “<strong>URB???</strong> Che DEFICENTI, sara’ <acronym title="Universal Serial Bus">USB</acronym>!” Eppure c’ho piato:</p>
+<blockquote><p>
+fuffo:~/ndiswrapper-1.5% grep -sr USB_ASYNC_UNLINK *<br/>
+driver/usb.c:#ifdef USB_ASYNC_UNLINK</p></blockquote>
+<p>Fatta la correzione, compilava perfettamente. E funziona tutt’ora.</p>
+<p>In realta’ URB esiste e fa parte della fantastica famiglia delle COSE uessebbi’:</p>
+<blockquote><p>(URB stands for <acronym title="Universal Serial Bus">USB</acronym> Request Block)</p></blockquote>
+<p>CODER FATTONI, NE HO GONFI I COGLIONI!</p>

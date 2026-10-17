@@ -1,0 +1,47 @@
+---
+title: La palla di Tar il Bizippo
+date: '2005-12-26T08:53:00+02:00'
+url: /2005/12/26/la-palla-di-tar-il-bizippo/
+aliases:
+- /blog-static/2005/12/26/la-palla-di-tar-il-bizippo/
+wp_id: 295
+authors:
+- alpt
+avatar: AlpT.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>Era un mese che cercavo di aggiornare il kernel su Nihil, ma niente, arrivavo sempre a questo <a href="http://marc.theaimsgroup.com/?l=linux-kernel&amp;m=113543199109829&amp;w=2">[oe]rrore</a>.</p>
+<p>Non c’era verso per compilare il dannato 2.6.14, ho cambiato di tutto in quel codice.<br/>
+Alla fine mi decido a mandare quel report in lista.</p>
+<p>Stamani svegliandomi alle 5 decido di compilarlo. Come al solito nulla. Ero arrivato a patcharlo fino alla 2.6.15-rc7. Stesso errore.<br/>
+Ma emerde mi ha salvato, ecco come e’ andata:</p>
+<p>“Forse sono gli header, non so che c’entrano, ma potrebbero essere gli header in /usr/include”.<br/>
+Bene:<br/>
+<code>emerde linux-headers-2.6.15_rc6.ebuild</code><br/>
+Ed egli comincia a scaricare il tar.bz2 del 2.6.14 per poi patcharlo. Lo fermo e gli dico:</p>
+<p>“Aspetta, ti aiuto io: cp /usr/src/linux-2.6.14.tar.bz2 /usr/portage/distfiles/”</p>
+<p>Lui mi ringrazia di cuore e continua il download delle patch fino a quando non si accorge della verita’:</p>
+<p><strong>MD5 CHECKSUM ERROR</strong></p>
+<p>Il tarball che usavo da un mese del 2.6.14 era danneggiato!</p>
+<p>Non ho idea di come possa essere accaduto, ma so’ benissimo perche’ non me ne sia mai accorto:<br/>
+1) tar decomprimeva perfettamente<br/>
+2) Le patch applicate da ketchup andavano a buon fine<br/>
+3) L’errore che ottenevo era:<br/>
+<code><br/>
+include/asm-generic/pgtable.h:114: Error: no such instruction: `static inline void ptep_mkdirty(pte_t *ptep)'<br/>
+include/asm-generic/pgtable.h:115: Error: junk at end of line, first unrecognized character is `{'<br/>
+include/asm-generic/pgtable.h:116: Error: invalid character '_' in mnemonic<br/>
+include/asm-generic/pgtable.h:117: Error: invalid character '_' in mnemonic<br/>
+include/asm-generic/pgtable.h:118: Error: junk at end of line, first unrecognized character is `}' ~&gt; make[1]: ***<br/>
+</code></p>
+<p>In pgtable.h riga 114 la funziona ptep_mkdirty era definita in modo perfetto…<br/>
+peccato solamente che nelle nuove versioni del kernel quella funzione non esiste piu’.</p>
+<p>In sostanza, Tar scompattando il tarball danneggiato, <strong>codava codice</strong> inesistente.</p>
+<p>Ora, quello che piu’ mi duole e’ il fatto che abbia sovrascritto il vecchio tarball con una nuova copia. Fino ad oggi non avrei mai potuto pensare che la decompressione di un tarball danneggiato, che non da’ segni di errore, possa arrivare a tal punto.<br/>
+“Ovviamente” la nuova copia del tarball compila.</p>
+<p>Reboot.</p>
+<p>Per ora non posso fare altro che ringraziare Emerde, tar e /dev/urandom.</p>
+<p><strong>GRAZIE DI TUTTO Tar il Bizippo</strong></p>
+<p><img alt="Tar il Bizippo" src="http://www.bellaneeq.net/shawnsteve.jpg"/></p>

@@ -1,0 +1,4 @@
+---
+title: soffice
+slug: soffice
+---

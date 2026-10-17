@@ -1,0 +1,52 @@
+---
+title: VAFFANCULO AL MAC STYLE
+date: '2005-11-23T12:44:00+02:00'
+url: /2005/11/23/vaffanculo-al-mac-style/
+aliases:
+- /blog-static/2005/11/23/vaffanculo-al-mac-style/
+wp_id: 234
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 187
+  author: sand
+  date: '2005-11-23T13:04:00+02:00'
+  body: <p>svcs crucifix strap-on/lesbogroup–analTCP enable –notcp</p>
+  author_url: http://www.spatof.org
+- id: 193
+  author: yama
+  date: '2005-11-23T16:59:00+02:00'
+  body: <p>AMEN!</p>
+---
+<p>io lo odio, questo fottuto modo di fare le cose A MODO LORO.<br/>
+IL MAC STYLE, L’IMBECILLE STILE DI FARE LE COSE PORCODDIO.<br/>
+Qualche settimana fa avevo aggiornato X11.app sulla mela perche’ gimp.app non funzava, ora funza, PER’ X11 mi paret con <em>-nolisten tcp</em>, cosicche’ proprio ora che devo isntallare L’ORACOLO su un server non posso exportarmi il DISPLAY, cosi’ sclero 2 ore cercando I FILE DI AVVIO DI X. niente.<br/>
+POI SCOPRO:</p>
+<p><code><br/>
+$ defaults read com.apple.x11<br/>
+{<br/>
+    "NSWindow Frame x11_prefs" = "345 255 478 338 0 0 1024 746 ";<br/>
+    "apps_menu" = (<br/>
+        (Terminal, xterm, n),<br/>
+        (win, "rdesktop 192.168.0.7", ""),<br/>
+        (EasyTag, easytag, "")<br/>
+    );<br/>
+    depth = -1;<br/>
+    "done_xinit_check" = 1;<br/>
+    "enable_fake_buttons" = 1;<br/>
+    "enable_key_equivalents" = 1;<br/>
+    "enable_system_beep" = 1;<br/>
+    "no_auth" = 1;<br/>
+<strong>"nolisten_tcp" = true;</strong><br/>
+    rootless = 1;<br/>
+    "sync_keymap" = 1;<br/>
+    "wm_ffm" = true;<br/>
+}<br/>
+</code></p>
+<p>MA VAFFANCULO!!!!</p>
+<p><code><strong>$ defaults write com.apple.x11 nolisten_tcp false</strong></code></p>
+<p><strong>ORA FUNZIONA! STEVE JOBS VAFFANCULO!</strong></p>

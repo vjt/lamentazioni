@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Lamentazioni &#187; perl</title>
+	<atom:link href="http://www.lamentazioni.org/tag/perl/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.lamentazioni.org</link>
+	<description>Ci lamentiamo di tutto perche' AMIAMO NIENTE - siamo PAZZI, non fateci CAZO</description>
+	<lastBuildDate>Wed, 05 Aug 2009 13:10:47 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.8.3</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>Io ti odio!</title>
+		<link>http://www.lamentazioni.org/blog-static/2009/02/14/io-ti-odio/</link>
+		<comments>http://www.lamentazioni.org/blog-static/2009/02/14/io-ti-odio/#comments</comments>
+		<pubDate>Sat, 14 Feb 2009 11:22:22 +0000</pubDate>
+		<dc:creator>pallotron</dc:creator>
+				<category><![CDATA[niente a senso]]></category>
+		<category><![CDATA[colleghi]]></category>
+		<category><![CDATA[nerd]]></category>
+		<category><![CDATA[odio]]></category>
+		<category><![CDATA[perl]]></category>
+		<category><![CDATA[saputelli]]></category>
+		<category><![CDATA[sed]]></category>
+
+		<guid isPermaLink="false">http://www.lamentazioni.org/?p=1125</guid>
+		<description><![CDATA[Caro collega,
+stavolta lo scrivo qui: ieri ti ho odiato, per l&#8217;ennesima volta!
+Quando il nostro collega DBA indiano e&#8217; venuto da me chiedendomi:
+«Angelo, come faccio ad inserire una stringa &#8220;NAME&#8221; su un file &#8220;tmp.log&#8221; da 1 GB tra la quarta e la quinta riga con VI/VIM?»
+Tu hai sentito&#8230; ti sei voluto alzare&#8230; con quell&#8217;aria da saccente&#8230; [...]]]></description>
+			<content:encoded><![CDATA[<p>Caro collega,</p>
+<p>stavolta lo scrivo qui: ieri ti ho <strong>odiato</strong>, per l&#8217;ennesima volta!</p>
+<p>Quando il nostro collega <acronym title="Database Administrator">DBA</acronym> indiano e&#8217; venuto da me chiedendomi:</p>
+<blockquote><p>«Angelo, come faccio ad inserire una stringa &#8220;NAME&#8221; su un file &#8220;tmp.log&#8221; da 1 <acronym title="Gigabyte">GB</acronym> tra la quarta e la quinta riga con VI/VIM?»</p></blockquote>
+<p><strong>Tu hai sentito&#8230; ti sei voluto alzare&#8230; con quell&#8217;aria da saccente&#8230; *dovevi* intrometterti&#8230; il tuo istinto da &#8220;nerdone-primo-della-classe-so-tutto-io&#8221; ti ha fatto venire alla mia scrivania mentre io scrivevo il one-liner perl necessario alla magia, consigliandomi di poterlo fare cosi&#8217; e coli&#8217;&#8230; con sed piuttosto che con awk, e blabla&#8230;</strong></p>
+<p style="center;"><a href="http://www.lamentazioni.org/wp-content/upload/2009/02/nerd.jpg"><img class="aligncenter size-full wp-image-1126" src="http://www.lamentazioni.org/wp-content/upload/2009/02/nerd.jpg" alt="" width="300" height="370" /></a></p>
+<p>Non e&#8217; stato sufficiente che ti dicessi di farti i cazzi tuoi&#8230; dovevi gareggiare&#8230; dovevi farti sputtanare&#8230; e dopo 2 minuti hai avuto anche la sfacciataggine di mandare una email al collega col subject &#8220;sed version&#8221;, scrivendo questa zozzeria:</p>
+<pre>$ cat tmp.log | sed 's/^\(\W*\w\+\W\+\w\+\W\+\W*\w\+\)/\1 fff/g'</pre>
+<p>Ma ti ho punito con la eleganza del Perl:</p>
+<pre>$ perl -lpne 's/^((\w+\W+){3})/$1NAME /;' tmp.log</pre>
+<p><strong>Sei old! OLD! Mettitelo in testa. Guarda quella linea, e&#8217; ILLEGGIBILE. Con tutte quelle sequenze di escape!<br />
+</strong></p>
+<p><strong>Peccato che il <acronym title="Database Administrator">DBA</acronym> abbia scelto il tuo sed. In questo mondo non c&#8217;e&#8217; giustizia.<br />
+</strong></p>]]></content:encoded>
+			<wfw:commentRss>http://www.lamentazioni.org/blog-static/2009/02/14/io-ti-odio/feed/</wfw:commentRss>
+		<slash:comments>11</slash:comments>
+		</item>
+	</channel>
+</rss>

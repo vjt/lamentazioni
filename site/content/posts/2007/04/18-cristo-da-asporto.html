@@ -1,0 +1,37 @@
+---
+title: cristo da asporto
+date: '2007-04-18T18:37:00+02:00'
+url: /2007/04/18/cristo-da-asporto/
+aliases:
+- /blog-static/2007/04/18/cristo-da-asporto/
+wp_id: 809
+authors:
+- sand
+avatar: sand.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p><code><br/>
+Linux is a portable operating system.<br/>
+</code></p>
+<p>Da prendere e da portare al MACERO.</p>
+<p><code>Building <acronym title="Operating System">OS</acronym>-dependent module<br/>
+If you get No such file error messages for files x509.h, ssl.h,<br/>
+pem.h, buffer.h, bio.h, and crypto.h, that means that OpenSSL<br/>
+is not installed on your system. Either install OpenSSL first<br/>
+or build with command: make lnx SSLTYPE=none<br/>
+`cat CCTYPE` -c `cat CFLAGS` `cat OSCFLAGS` -c osdep.c<br/>
+osdep.c:170:20: x509v3.h: No such file or directory<br/>
+osdep.c:171:17: ssl.h: No such file or directory<br/>
+osdep.c:173:17: pem.h: No such file or directory<br/>
+osdep.c:174:20: buffer.h: No such file or directory<br/>
+osdep.c:175:17: bio.h: No such file or directory<br/>
+osdep.c:176:20: crypto.h: No such file or directory<br/>
+osdep.c:177:18: rand.h: No such file or directory<br/>
+osdep.c:188: error: syntax error before "SSL_CTX"<br/>
+</code><br/>
+Subito dopo questo vomito di no SUCK file, ecco PAGINE E PAGINE DI ERRORI DI GCC. Ora, programmatore ORRENDO, ti aspetti che io riesca a vedere quel tuo fottuto messaggio in mezzo a svariate righe di messaggi di errore ? E’ OVVIO che non compila per colpa di OpenSSL, perche’ DAL MOMENTO ZERO DELLA VITA nulla compila liscio con quelle fottute librerie. NULLA. Pero’ cristo scoppiettante, sono finiti i tempi in cui IL PROGRAMMATORE installava il software, vivendo con un debugger appiccicato alla faccia. FI-NI-TI.<br/>
+E visto che mi hai fatto un Makefile PIENO ZEPPO di opzioncine e commentini, me le potevi butta’ giu’ du righe riguardo i path per le lib ssl ? no eh?</p>
+<p>PRESO DA UN ENEMA, FACCIO FACCIA SCEMA, ASBESTO TORNA PRESTO, O CAGO SU ME STESSO.</p>
+<p><strong>HATA UNIX COME IL TUO PROSSIMO.</strong></p>

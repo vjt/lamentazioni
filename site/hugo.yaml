@@ -1,0 +1,39 @@
+baseURL: https://lamentazioni.diomaiale.com/
+languageCode: it
+title: Lamentazioni
+theme: gloriousfuture
+timeZone: Europe/Rome
+enableRobotsTXT: false
+services:
+  rss:
+    limit: 20
+outputs:
+  home: [HTML, RSS]
+  section: [HTML]
+  taxonomy: [HTML]
+  term: [HTML]
+pagination:
+  pagerSize: 8
+params:
+  tagline: "Ci lamentiamo di tutto perche' AMIAMO NIENTE – siamo PAZZI, non fateci CAZO"
+  mainSections: [posts]
+taxonomies:
+  tag: tags
+  category: categories
+  author: authors
+permalinks:
+  term:
+    tags: /tag/:slug/
+    categories: /category/:slug/
+    authors: /author/:slug/
+  taxonomy:
+    tags: /tag/
+    categories: /category/
+    authors: /author/
+markup:
+  goldmark:
+    extensions:
+      typographer: false
+      linkify: false
+    renderer:
+      unsafe: true

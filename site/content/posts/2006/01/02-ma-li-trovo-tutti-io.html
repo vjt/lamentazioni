@@ -1,0 +1,51 @@
+---
+title: ma li trovo tutti io ?
+date: '2006-01-02T13:23:00+02:00'
+url: /2006/01/02/ma-li-trovo-tutti-io/
+aliases:
+- /blog-static/2006/01/02/ma-li-trovo-tutti-io/
+wp_id: 303
+authors:
+- sand
+avatar: sand.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 258
+  author: sand
+  date: '2006-01-02T18:24:00+02:00'
+  body: '<p>Ebbene, pare di si.<br/>
+
+    Sfogliando internet alla ricerca di tips per screen, trovai una configurazione che nello ~/.screenrc speficava la shell, con un semplice</p>
+
+    <p>shell zsh</p>
+
+    <p>Cosi’ pensai di fare la stessa cosa.<br/>
+
+    Peccato che poi mi ritrovo con $SHELL = “zsh”, che alla exec non piace:</p>
+
+    <p>16974 execve(”bash”, ["bash", "-c", "/bin/sh /tmp/mc-daniel/mcextnt0YXc"], [/* 61 vars */]) = -1 ENOENT (No such file or directory)</p>
+
+    <p>$SHELL deve contenere il path COMPLETO.</p>'
+  author_url: http://www.spatof.org
+  by_post_author: true
+- id: 259
+  author: sand
+  date: '2006-01-02T18:26:00+02:00'
+  body: '<p>aggiungo, specificare la shell nello screenrc…<br/>
+
+    <strong>NON SERVE A UN CAZZO</strong></p>'
+  author_url: http://www.spatof.org
+  by_post_author: true
+---
+<p>Porco dio, abbiamo delle macchinette del caffe’ <strong>TERRIBILI</strong>, che ovviamente quando io voglio andare a prendere un caffe’ <strong>RISULTANO ROTTE</strong>; quando io ho solo <strong>5</strong> euro e sono obbligato a ficcarli nella chiavetta,  C’E’ IL BURINO “TECNICO”, DIOMERDA.</p>
+<p>Volevo cercare di capire perche’ mc impazzisce, ma i sorgenti sono indentati in maniera bolscevica, quindi je parto de indent, e…</p>
+<blockquote><p>% indent -kr *<br/>
+indent: achown.c:383: Warning:old style assignment ambiguity in “=-”.  Assuming “= -”</p>
+<p>indent: achown.c:384: Warning:old style assignment ambiguity in “=-”.  Assuming “= -”</p>
+<p>indent: achown.c:385: Warning:old style assignment ambiguity in “=-”.  Assuming “= -”</p>
+<p>zsh: 30838 segmentation fault  indent -kr *</p></blockquote>
+<p><strong>MADONNA COATTA E PORCODDIO PANINARO.</strong></p>
+<p>Ma li ho solo io questi problemi!? Mah.<br/>
+Ah no, ecco. Cosi’ funziona <strong>indent -kr *.{c,h} </strong>, senno’ <strong>SEGFAULT</strong>. Grazie Richard.</p>

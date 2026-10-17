@@ -1,0 +1,4 @@
+---
+title: zsh
+slug: zsh
+---

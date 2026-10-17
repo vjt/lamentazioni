@@ -1,0 +1,48 @@
+---
+title: Ah questo P2P!
+date: '2005-12-29T17:56:00+02:00'
+url: /2005/12/29/ah-questo-p2p/
+aliases:
+- /blog-static/2005/12/29/ah-questo-p2p/
+wp_id: 299
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p><img alt="P2p" src="/wp-content/upload/P2PKad.jpg"/></p>
+<p>Era una giornata che risentivo di una strana lentezza della nostra fiammante ADSL 4 Mega (che poi 4 non sono, ma questa e’ un’altra storia…).</p>
+<p>Non ho ancora configurato il firewall a dovere per attivare il <acronym title="Quality of Service">QoS</acronym> in modo da poter avere sessioni <acronym title="Secure Shell">SSH</acronym> come Dio comanda anche in situazioni di traffico intenso… </p>
+<p>percio’, dopo la pausa pranzo, mi sono deciso a capire cosa succedeva, cosi’ apro un tcpdump sulla porta del segmento LAN e scopro che l’ip 192.168.1.112 (facente parte del pool degli ip assegnati via DHCP) stava facendo un traffico p2p (probabilmente bittorrent) pauroso!</p>
+<p>faccio un nmap sull’host e scopro che e’ una macchina windows, netbios aperto, ed un telnet alla porta <acronym title="File Transfer Protocol">FTP</acronym> mi dice “Micro$oft <acronym title="File Transfer Protocol">FTP</acronym>”.</p>
+<p>Deciso a capire chi fosse lo sprovveduto, cerco un modo con samba per ottenere il nome netbios dell’host.<br/>
+Provo con smbfind ma niente.</p>
+<p>Alla fine, decido di editare questo script, che sento mi sara’ molto utile:</p>
+<p><code>------- BOF /root/bin/bloccaip.sh ------------</code><br/>
+<code>#!/bin/sh</code><br/>
+<code>if [ "$1" != "" ]; then</code><br/>
+<code>echo "block in quick on fxp2 from $1 to any" | pfctl -f -<br/>
+echo "block out quick on fxp2 from any to $1"  | pfctl -f -<br/>
+pfctl -k $1</code><br/>
+<code>else</code><br/>
+<code>      echo "you must insert an ip address!"</code><br/>
+<code>fi</code><br/>
+<code>------- <acronym title="End of file">EOF</acronym> /root/bin/bloccaip.sh ------------</code></p>
+<p>Lancio lo script, e dopo qualche minuto:</p>
+<p>$user: non mi funziona la rete!</p>
+<p>Viene verso di me (che sto vicino ad uno switch), per controllare il cavo.</p>
+<p>$io: come non ti funziona, mi dici che ip hai per favore?<br/>
+$user: 192.168.1.112<br/>
+$io: ah! sei tu allora che stai saturando la banda col <acronym title="Peer to Peer">P2P</acronym>!<br/>
+$user: no, io non sto scaricando niente! vado a 0kb/s!<br/>
+$io: ci credo…<br/>
+$user: ma prima scaricavo a 10kb!<br/>
+$io: quella e’ la velocita’ di download del file che stai scaricando, ma nel frattempo il tuo client p2p sta facendo un sacco di traffico con un serie INFINITA di altri peer!</p>
+<p>Non avrei dovuto farlo, ma, per sbaglio mi sono capitati gli occhi sul suo client bittorrent.</p>
+<p>$titolo_filmato_porno1<br/>
+$titolo_filmato_porno2</p>
+<p>….</p>
+<p>:)</p>
+<p>Ah! Questo p2p! meglio scaricarsi a casa certe cose piuttosto che a lavoro! :)</p>

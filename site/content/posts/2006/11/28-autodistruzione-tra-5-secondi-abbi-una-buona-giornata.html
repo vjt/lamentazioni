@@ -1,0 +1,81 @@
+---
+title: Autodistruzione tra 5 secondi, abbi una buona giornata!
+date: '2006-11-28T01:42:00+02:00'
+url: /2006/11/28/autodistruzione-tra-5-secondi-abbi-una-buona-giornata/
+aliases:
+- /blog-static/2006/11/28/autodistruzione-tra-5-secondi-abbi-una-buona-giornata/
+wp_id: 727
+authors:
+- theosprey
+avatar: TheOsprey.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 1647
+  author: LupoCri
+  date: '2006-11-28T11:14:00+02:00'
+  body: '<p>E adesso?<br/>
+
+    Urgerà istituire una bestemia apposita!<br/>
+
+    Lups.</p>'
+- id: 1648
+  author: unixman
+  date: '2006-11-28T13:50:00+02:00'
+  body: <p>mi ha sempre trasmesso ORRORRO il porting di XFS su linux ….. ma tutto e’ ORRORRO e male malerrimo, si sa</p>
+- id: 1650
+  author: tripz
+  date: '2006-11-28T15:06:00+02:00'
+  body: <p>Direi che “have a nice day” e’ la cigliegina sulla MORTA.</p>
+  author_url: http://tripz.sfrajone.org
+- id: 1652
+  author: atomik
+  date: '2006-11-28T18:08:00+02:00'
+  body: '<p>Bellissimo!<br/>
+
+    Questo messaggio segna la via nella scrittura dei messaggi d’errore gravi!</p>'
+---
+<p>NO, non esistono le buone giornate, si puo’ solo scegliere tra pessime o peggio, e dio e’ cosi’ buono che ce lo ricorda costantemente.</p>
+<p>L’orro si forma sinuoso nel tardo pomeriggio come un asintomatico “AH, non funziona piu’ l’effetippi’ server”. E tu ti illudi che sia qualcosa di semplicemente legato ad aver aggiornato proNftpd all’ultima rilis per non farti trapanare le macchine come succede al culo della madonna. Ma NO, guardi i log e ti si spalanca il vuoto cosmico, passi ore a guardare le stelle anche se e’ giorno e non si vedono. La pace regna bucolica finche’ non noti un messaggio poco conciliante:</p>
+<p align="left">Nov 27 19:12:59 Holy proftpd[17293]: Holy.ws.patata.homeip.net (192.168.1.7[192.168.1.7]) – USER osprey: Login successful.<br/>
+Nov 27 19:12:59 Holy proftpd[17293]: Holy.ws.patata.homeip.net (192.168.1.7[192.168.1.7]) – osprey chdir(”/home/osprey”): Input/output error<br/>
+Nov 27 19:12:59 Holy proftpd[17293]: Holy.ws.patata.homeip.net (192.168.1.7[192.168.1.7]) – <acronym title="File Transfer Protocol">FTP</acronym> session closed.
+</p>
+<p align="left">Allorche’ un molto poco bucolico afrore di morte inizia a perquotermi il cervello, con sempre maggiore insistenza qualcosa mi dice che qualcos’altro si e’ rotto. ROTTO</p>
+<p align="center"><strong>ROTTO</strong></p>
+<p align="center">
+</p><p align="center"><img alt="rotto" src="http://wave.prohosting.com/picsonly/funny_pictures/cracked_egg.jpg"/></p>
+<p align="left">Ma si sa, la morte svolazza sul suo cavallo di pezzi dei miei server vagando bendata e colpendo in modo subdolo nel sogghignare turpe delle proprie malefatte.</p>
+<p align="left">Mi loggo sul server nfs che fornisce le home della ignara gente gia’ triste perche’ nell’impossibilita’ di scaricarsi il porno fresco nella propria casa, la pasta ai porni pronti star.</p>
+<p align="left">Nel dmesg di suddetto assieme di brandelli di ferro si scatena l’ESPLOSIONE DI ORRORE, <strong>BRANDELLI DI KERNEL SULLE PARETI DI CASA</strong>, nfsd a pezzi sta, e il mio quore si infrange mentre conficco spilli arrugginiti nel crocefisso chiuso nel cassetto.</p>
+<p align="left">nfsd: page allocation failure. order:5, mode:0xd0<br/>
+[] __alloc_pages+0×291/0×2ab<br/>
+[] __get_free_pages+0×1f/0×3b<br/>
+[] kmem_getpages+0×1d/0xaf<br/>
+[] cache_grow+0×9b/0×120<br/>
+[] cache_alloc_refill+0×154/0×184<br/>
+[] __kmalloc+0×4e/0×61
+</p>
+<p align="left">Tento in modo ignorante di riavviare nfsd, ma e’ chiaro ormai che il viaggio e’ verso un’inferno senza fondo di dolore</p>
+<p align="left">xfs_force_shutdown(md1,0×8) called from line 1088 of file fs/xfs/xfs_trans.c.  R<br/>
+eturn address = 0xc8ad4b11<br/>
+Filesystem “md1″: Corruption of in-memory data detected.  Shutting down filesyst<br/>
+em: md1<br/>
+Please umount the filesystem, and rectify the problem(s)<br/>
+nfsd: non-standard errno: -990
+</p>
+<p align="left"><strong>NON STANDARD ORRORROOOOO</strong></p>
+<p align="left">Smonto il <strong>fail</strong>system ignaro di recarmi su una trappola mortale</p>
+<p align="left">nfsd: last server has exited<br/>
+nfsd: unexporting all filesystems<br/>
+rpciod: active tasks at shutdown?!<br/>
+RPC: failed to contact portmap (errno -5).<br/>
+xfs_force_shutdown(md1,0×1) called from line 353 of file fs/xfs/xfs_rw.c.  Retur<br/>
+n address = 0xc8ad4b11<br/>
+XFS unmount got error 16<br/>
+linvfs_put_super: vfsp/0xc7ff89e0 left dangling!<br/>
+VFS: Busy inodes after unmount. Self-destruct in 5 seconds.  Have a nice day…
+</p>
+<p align="left"><strong>AUTODISTRUZIONE IN 5 SECONDI, BUONA GIORNATA A TUTTI</strong></p>
+<p align="left"> </p>

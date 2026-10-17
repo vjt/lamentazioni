@@ -1,0 +1,92 @@
+---
+title: 'linux: cosa vuoi rompere oggi?'
+date: '2008-11-08T12:12:00+02:00'
+url: /2008/11/08/linux-cosa-vuoi-rompere-oggi/
+aliases:
+- /blog-static/2008/11/08/linux-cosa-vuoi-rompere-oggi/
+wp_id: 1100
+authors:
+- ciambellano
+avatar: ciambellano.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 3349
+  author: Matteo
+  date: '2008-11-08T16:05:00+02:00'
+  body: '<p>Sulla rinuncia a Youporn risponderei con questo: <a href="http://tinyurl.com/2pebsh" rel="nofollow">http://tinyurl.com/2pebsh</a><br/>
+
+    Visto che al mio ultimo tentativo di utilizzare Ubuntu64 (qualche giorno fa) Flash funzionava senza problemi, sembrerebbe che il discorso non sia più valido. Invece lo è, perchè funziona grazie a un paio di librerie e non grazie a chi insiste a non compilarlo a 64bit (per Linux).</p>
+
+    <p>Per quanto riguarda tutto il resto: boh, uso Ubuntu/Gnome e non ho mai avuto di questi problemi, di più non saprei dirti :)</p>'
+  author_url: http://www.matteomoro.net
+- id: 3350
+  author: l'intelligente
+  date: '2008-11-08T19:23:00+02:00'
+  body: <p>Matteo SCAPPA da quì!</p>
+- id: 3352
+  author: ienabellamy
+  date: '2008-11-10T12:24:00+02:00'
+  body: '<p>“mi domando perche’ nel 2008 mettere un <acronym title="Operating System">OS</acronym> a 64bit voglia dire rinunciare a youporn”</p>
+
+    <p>Questa è poesia pura.</p>'
+  author_url: http://ienabellamy.wordpress.com
+- id: 3358
+  author: baghera
+  date: '2008-11-13T20:29:00+02:00'
+  body: "<p>inserisci</p>\n<p>Section “ServerFlags”<br/>\n\tOption\t\t“AutoAddDevices”\t\t“false”<br/>\nEndSection</p>\n<p>in /etc/X11/xorg.conf e evdev viene ignorato, userà la vecchia configurazione.</p>"
+- id: 3361
+  author: ciambellano
+  date: '2008-11-15T09:55:00+02:00'
+  body: '<p>eccolo qua, ogni volta il $so_tutto_io di turno puntuale compare.<br/>
+
+    il $ho_la_sindrome_della_crocerossina che ti DEVE aiutare anche se tu non vuoi.</p>
+
+    <p>il problema me l’ero gia’ risolto da solo, senza vantarmene su lamentazioni.</p>
+
+    <p>chi commenta non ha *ancora* capito, dopo che piu’ o meno tutti l’hanno scritto, che lamentazioni non e’ un blog tecnico, un blog dove si chiede aiuto.</p>
+
+    <p>ci si lamenta e basta.</p>
+
+    <p>NO MORE CROCEROSSINE ON OUR COMMENTS, THANKS</p>'
+  author_url: http://www.bruciati.net/wp/
+  by_post_author: true
+- id: 3362
+  author: quella
+  date: '2008-11-15T16:21:00+02:00'
+  body: <p>Andate a fare in culo, ci avete spacciato linuxdimerda come fosse l’elisir di lunga vita. Peccato che usandolo ti venga questa impellente voglia di decedere. La parola d’ordine che mi è stata inculcata (il termine giusto sarebbe inculata) è “Aggiorna sempre, aggiorna sempre fai così fai colì”. E poi QUELLO a cadere dalle nuvole ogni volta che, finita la prassi magica, non posso leggere la posta, non vedo le foto, non mando messaggi, non fa più questo e quello e se ho tot tempo per fare quello che volevo fare questo tempo lo passo a bestemmiare. Allora, visto che siete così bravi a correggervi i vs. danni da soli, cercate almeno di non ungere con il virus linux coloro che come me non spengono il pc perchè non sanno dov’è il pulsante. Adesso corro a prostituirmi per comparmi un bel computer NUOVO con  windows forza 10 e antivirus auto reverse che previene pure l’aids. Provo a spedire questo messaggio e per spegnere questa merda la butto dalla finestra con tutti i linuxini dentro. Senza pietà verso chi pietà sconosce. Vivisettori di utenti ignari Fottetevi.</p>
+---
+<p>PARTE A</p>
+<p>ieri mattina aggiorno il linux del portatile. continuo ad usarlo, spengo torno a casa riaccendo. sotto X non va piu’ la tastiera. entro in ssh dal fisso, greppo un sacco di EE dai log, ancora <strong>evdev</strong>, ma che palle, io voglio continuare ad usare i cazzo di driver normali che funziona tutto pure i tastini multimediali che mi sono costati una giornata di keytouch.</p>
+<p>no. non si puo’. o evdev o /dev/null.</p>
+<p>con evdev i tasti multimediali non vanno piu’, lancio xev per vedere se sono cambiati i keycode, si, e’ cosi’, ma… che vedo?! ora i tasti sono riconosciuti tutti come XF86qualcosa! yuppi, quindi li vede direttamente X e non c’e’ piu’ bisogno di keytouch!!!</p>
+<p>orsu’, settiamo degli shotcuts in kde4!</p>
+<p>no. khotkeys semplicemente <strong>NON VA</strong>.</p>
+<p>googlo, trovo bugs risolti nelle trunk del ‘15-’18, ma a me continua a <strong>NON ANDARE</strong>.</p>
+<p>xbindkeys, qualcosa si muove, ma non ho piu’ l’osd quando cambio volume e non mi vanno i tasti per amarok.</p>
+<p>sono passato da una configurazione perfettamente funzionante a:</p>
+<ul>
+<li>un driver di input che fa quel che gli pare</li>
+<li>impossibilita’ di settare shortcuts dal DE</li>
+<li>impossibilita’ di usare un programma apposito per i tasti multimediali perche’ non vede tasti multimediali</li>
+<li>impossibilita’ di settare shortcuts da console</li>
+<li>nessun OSD per il volume</li>
+<li>nessun controllo per il player audio</li>
+</ul>
+<p>————————————————————————————–</p>
+<p>PARTE B</p>
+<p>metto kde 4.1.2 sul fisso. va, piu’ o meno.</p>
+<p>di punto in bianco, un brutto giorno, comincia a freezarsi.</p>
+<p>premo tab in console e si pianta</p>
+<p>cancello un file da dolphin e si pianta</p>
+<p>aspetto EONI che si ripigli</p>
+<p>completa, cancella</p>
+<p>l’applet di superkaramba che mi fa da system monitor? scordatela</p>
+<p>un’icona disco per montarlo velocemente? scordatela</p>
+<p>————————————————————————–</p>
+<p>io, come asbesto, mi domando perche’ sto <acronym title="Operating System">OS</acronym> invece che progredire stia andando indietro.</p>
+<p>mi domando perche’ la gente si svegli la mattina e decida che e’ buon gusto rompere $questo o $quello</p>
+<p>mi domando perche’ la stessa gente di prima si meravigli che linux non sia l’unico sistema operativo del mondo, che piangono quando dici che windows/osx almeno funzionano senza che l’utente sappia cosa sia un keycode o lo ZAxisMapping</p>
+<p>mi domando perche’ nel 2008 mettere un <acronym title="Operating System">OS</acronym> a 64bit voglia dire rinunciare a youporn</p>
+<p>e mi domando anche perche’ sembra che io sia l’unico ad avere il cat6 piu’ duro di un <em>cazzon sempron duron</em> (cit.)</p>

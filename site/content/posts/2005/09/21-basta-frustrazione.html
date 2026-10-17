@@ -1,0 +1,56 @@
+---
+title: BASTA FRUSTRAZIONE!
+date: '2005-09-21T14:48:00+02:00'
+url: /2005/09/21/basta-frustrazione/
+aliases:
+- /blog-static/2005/09/21/basta-frustrazione/
+wp_id: 124
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>Cioe’, sono qui da poco! E MI RENDO CONTO CHE TUTTO IL MONDO E’ PAESE!</p>
+<p>Devo rifare <strong>TUTTO DACCAPO DOVUNQUE VADO OGNI VOLTA?!????!!</strong></p>
+<p>HANNO TUTTI DELLE RETI DIMMERDA, NESSUN BACKUP, NIENTE, ANCHE LE COSE PIU’ BANALI!</p>
+<p>Maledico I CODER! Questi organismi codatori dovrebbero fare SOLO QUELLO, e invece le aziende prendono un coder, magari il piu’ bravo, e <strong>QUINDI SPESSO IL PIU’ PERVERSO</strong>, e gli fanno fare task da sysadmin.</p>
+<p>E questo si installa server a mmerda, TUTTO A MERDA!</p>
+<p><strong>C’e’ un server che NON HA MANCO <acronym title="Secure Shell">SSH</acronym>, SOLO TELNET!!!!!</strong></p>
+<p>dico: «Ora gli metto openssh!»</p>
+<p>Mi loggo: <strong>E’ UNA MANDRAKE COMMUNITY DIMMERDA 10.0</strong></p>
+<p><code># rpm -qa | grep ssh<br/>
+openssh-clients-3.6.1p2-12mdk<br/>
+openssh-3.6.1p2-12mdk<br/>
+</code></p>
+<p>sto povero Cristo non ha messo manco sshd! solo il client!</p>
+<p>Cerco i fottuti rpm di Mandrake, <strong>MA NON SI SA PERCHE’ NON C’E’ UN CAZZO DA NESSUNA PARTE!!</strong></p>
+<p>allora decido per TUTTO COME DICO IO:</p>
+<p><code># rpm -e openssh-clients-3.6.1p2-12mdk openssh-3.6.1p2-12mdk<br/>
+error: Failed dependencies:<br/>
+        /usr/bin/ssh is needed by (installed) cvs-1.11.11-1mdk<br/>
+</code></p>
+<p>RPM E’ UN SISTEMA DI MMERDA! E SOPRA ALLE DISTRO RPM BASED CI FANNO LE CERTIFICAZIONI!!!!</p>
+<p>MA DOVE ANDREMO A FINIRE?!?!?!</p>
+<p>ok mi suco i sorgenti:</p>
+<p><code># wget ftp://ftp.esat.net/pub/OpenBSD/OpenSSH/portable/openssh-4.2p1.tar.gz<br/>
+bash: wget: command not found<br/>
+</code></p>
+<p>MA CRISTO!</p>
+<p>alla fine faccio con ncftpget (almeno quello c’e'). poi starro e compilo:<br/>
+<code><br/>
+# ./configure<br/>
+</code></p>
+<p><code>stracut</code></p>
+<p><code>configure: error: *** zlib too old - check config.log ***<br/>
+Your reported zlib version has known security problems.  It's possible your<br/>
+vendor has fixed these problems without changing the version number.  If you<br/>
+are sure this is the case, you can disable the check by running<br/>
+"./configure --without-zlib-version-check".<br/>
+If you are in doubt, upgrade zlib to version 1.2.3 or greater.<br/>
+See http://www.gzip.org/zlib/ for details.<br/>
+</code></p>
+<p>E DOVREI REINSTALLARE ZLIB?!?!?! MA VAFFANCULO! FATEVI FOTTERE I SORGENTI E LA POSTA! ME NE FOTTO PER ORA!</p>
+<p>BASTAAAAAAAAAAAAAAAAAA! PIALLO TUTTO!!!!!!!!!!!!!!</p>
+<p>DEBIAN + GENTOO + *BSD!</p>

@@ -1,0 +1,4 @@
+---
+title: cpu
+slug: cpu
+---

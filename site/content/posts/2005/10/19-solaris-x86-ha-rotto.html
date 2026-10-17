@@ -1,0 +1,90 @@
+---
+title: Solaris x86 ha rotto…
+date: '2005-10-19T12:26:00+02:00'
+url: /2005/10/19/solaris-x86-ha-rotto/
+aliases:
+- /blog-static/2005/10/19/solaris-x86-ha-rotto/
+wp_id: 171
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>Cioe’ dico, a parte il discorso che la versione x86 e’ davvero una merda, e cio’ fu esposto qualche post fa’…<br/>
+Dopo aver capito che devo tenermi l’UDMA disabilitato… la prima cosa che ho pensato fu’:</p>
+<p><em>“adesso mi configuro la rete, cosi’ mi sposto sulla mela, mi loggo via ssh sul solaris merda, e mi configuro jboss+postresql parlando di cazzate con gli amici di #mortodentro…” </em> :)</p>
+<p>prontamente, la bastardaggine e merda di slowaris9 x86 emerge in tutta la sua magnificenza… NON TROVA LA SCHEDE DI RETE ONBOARD…</p>
+<p>MIO DIO. PREVEDO MORTE E PAZZIA!</p>
+<p>cosi’ mi informo in giro, googlando, chiedo ad amici SUNNISTI, e mi dicono:</p>
+<p><em>“usa prtconf, <acronym title="Read The Fucking Manual">RTFM</acronym>!”</em> </p>
+<p>E la mia cappella gia’ si gonfia… ma che cazzo e’ ’sto coso?</p>
+<p>ok…:</p>
+<p><code># prtconf -pv | more</code></p>
+<p>Questo comando ritorna un OUTPUT DELLA MADONNA! con tutte le info sui device, sugli indirizzi di memoria… in mezzo a tutto quel bordello intraverdo:</p>
+<p><code><br/>
+        Node 0x1a7bf8<br/>
+            assigned-addresses:  81002010.00000000.0000d400.00000000.00000100.82002014.<br/>
+00000000.cfff8000.00000000.00001000.82002030.00000000.fffe0000.<br/>
+00000000.00020000<br/>
+            class-code:  00020000<br/>
+            compatible: 'pci1039,900.1849.900.90' + 'pci1039,900.1849.900' + 'pci1849,900' + 'pci1039,900.90' + 'pci1039,900' + 'pciclass,020000' + 'pciclass,0200'<br/>
+            device-id:  00000900<br/>
+            devsel-speed:  00000001<br/>
+            fast-back-to-back:<br/>
+            interrupts:  00000001<br/>
+            max-latency:  0000000b<br/>
+            min-grant:  00000034<br/>
+            model:  'PCI: 1849,900 - class: Ethernet controller'<br/>
+            name:  'pci1849,900'<br/>
+            power-consumption:  00000001.00000001<br/>
+            reg:  00002000.00000000.00000000.00000000.00000000.01002010.<br/>
+00000000.00000000.00000000.00000100.02002014.00000000.<br/>
+00000000.00000000.00001000.02002030.00000000.00000000.00000000.<br/>
+00020000<br/>
+            revision-id:  00000090<br/>
+            slot:  00000000<br/>
+            subsystem-id:  00000900<br/>
+            subsystem-vendor-id:  00001849<br/>
+            unit-address:  '4'<br/>
+            vendor-id:  00001039<br/>
+</code></p>
+<p>AH! ora e’ tutto piu’ chiaro eh! certo!<br/>
+C’e’ il <em>nodo 0×1a7bf8</em> che e’ model: <em> ‘PCI: 1849,900 – class: Ethernet controller’</em>. GRAZIE AMICO SOLARIS!</p>
+<p>Cosi’ google… e google.. e ancora google… sunsolve non serve ad un cazzo…</p>
+<p>cerco pci1849,900… NIENTE.</p>
+<p>cosi’ faccio man prtconf… faccio un:</p>
+<p><code><br/>
+bash-2.05# prtconf -D | grep pci1849,900<br/>
+        pci1849,900</code></p>
+<p>mentre per altre cosa vedo ad es.:</p>
+<p><code>bash-2.05# prtconf -D | grep pci1849,7002<br/>
+        pci1849,7002, instance #0 (driver name: usba10_ehci)</code></p>
+<p>Ovvero che un driver e’ stato caricato per quel device… CAPISCO CHE SOLARIS NON HA IL DRIVER PER LA SCHEDA… PORCODDIO!</p>
+<p>Allora rebootto con un cd live linux, faccio un dmseg | grep eth0, scopro che la scheda e’ una oboard sis900… cerco con google e giungo qui:</p>
+<p><a href="http://homepage2.nifty.com/mrym3/taiyodo/eng/">http://homepage2.nifty.com/mrym3/taiyodo/eng/</a></p>
+<p><strong>FREE NIC DRIVER FOR SOLARIS</strong></p>
+<p>Leggo tra le righe:</p>
+<blockquote><p>I started some following works with porting Linux nic drivers into Solaris. But I have re-written all of them not to use Linux driver codes, as I was pointed out that it was violation of <acronym title="GNU General Public License">GPL</acronym> to link <acronym title="GNU General Public License">GPL</acronym> drivers into properiety kernel.</p></blockquote>
+<p><strong><br/>
+MENO MALE CHE CI SONO I PAZZI AMICI!!!!</strong></p>
+<p>Cosi’ scarico il driver sfe, lo metto su un cdrw, si perche’ ormai qui i floppy SONO ESTINTI!</p>
+<p>metto il cd su solaris, copio su /usr/local/src. Leggo il README.txt, PORCODDIO CI VUOLE IL COMPILATORE…</p>
+<p>posso usare o suncc o gcc… cosi’ sclero 2 ore per cercare come isntallare suncc, ci vuole il fottuto cd dei develoPPER tools… mi secco… vado su:</p>
+<p><a href="http://www.iforceready.it/sunfreeware/indexintel9.html">http://www.iforceready.it/sunfreeware/indexintel9.html</a></p>
+<p>E TROVO IL SITO SANTO! SANTO SUBITO!</p>
+<p>Scarico il package di gcc… lo installo, compilo il driver, faccio una sequenza di comandi assurdi per installare il driver…<br/>
+<code><br/>
+# /usr/ccs/bin/make install<br/>
+# ./adddrv.sh<br/>
+# modload obj/sfe<br/>
+# devfsadm -i sfe<br/>
+# ifconfig sfe0 plumb<br/>
+# ifconfig sfe0 192.168.0.233 up<br/>
+# ping 192.168.0.2<br/>
+# vi /etc/hostname.sfe0<br/>
+# init 6</code></p>
+<p>FUNZIONA!!!</p>
+<p>SONO DISTRUTTO NON NE POSSO PIU’… E MO MI ASPETTA JBOSS E COMPANY…</p>
+<p>MORTE!</p>

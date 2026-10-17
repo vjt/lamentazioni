@@ -1,0 +1,10 @@
+{{ define "main" }}
+<div data-pagefind-ignore="all">
+<div class="post" id="post-{{ .Params.wp_id }}">
+  <h2 class="title"><a href="/" rel="bookmark">{{ .Title }}</a></h2>
+  <div class="entry">
+{{ .Content }}
+  </div>
+</div>
+</div>
+{{ end }}

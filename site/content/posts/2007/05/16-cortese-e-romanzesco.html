@@ -1,0 +1,43 @@
+---
+title: Cortese e romanzesco
+date: '2007-05-16T18:30:00+02:00'
+url: /2007/05/16/cortese-e-romanzesco/
+aliases:
+- /blog-static/2007/05/16/cortese-e-romanzesco/
+wp_id: 824
+authors:
+- sand
+avatar: sand.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 2215
+  author: Mr.Mime
+  date: '2007-05-16T22:43:00+02:00'
+  body: '<p>Le ultime tre righe sono geniali, quasi poetiche.<br/>
+
+    Da ignorante in materia non ho però capito la echo del comando, ma va bene lo stesso. E’ il contenuto che conta.</p>'
+- id: 2216
+  author: adolf
+  date: '2007-05-17T00:01:00+02:00'
+  body: <p>grazie per avermi citato. ti scrivo dalla mia fedora HARDcore, panzer edition.Sig heil.</p>
+- id: 2217
+  author: sand
+  date: '2007-05-17T03:03:00+02:00'
+  body: <p>Mr.Mime, l’output di tcpdump indica che l’unico traffico in chiaro (l’espressione “not esp”) sono le richieste ARP (funzionamento corretto) mentre con il client buggato vedevo in chiaro alcuni pacchetti in uscita… e’ un casino, cosi’ come lo e’ IPSEC. Grazie per la poesia, ma diciamo che e’ frutto di piu’ di un cretino ;)</p>
+  author_url: http://www.spatof.org
+  by_post_author: true
+---
+<p>Ossequi cari lettori, oggi vi parlero’ di come l’open source possa risultare sovente una delusione, mettendo in secondo piano tutti i benefici e i pregi; o forse no, parlero’ di come un vile ladro abbia deturpato il mio motorino portandosi via le manopole in gomma del manubrio, o forse vi parlero’ di come il suddetto motorino si sia fermato il giorno dopo, e di come quel manigoldo del meccanico-troll si stia rivelando l’ennesimo ciarlatano. Invece propongo un breve aneddoto riguardante IPSEC, figlio bastardo di piu’ meretrici/madri, maledetto da un numero tendente ad ENNE di implementazioni, graffiato quindi dall’incapacita’ dei programmatori di collaborare e adottare licenze appropiate, rovinato dai prodotti commerciali che, grazie ai soldi che esigono, fanno contenti gli omini vestiti in giacca e cravatta, fautori delle scelte finali in fatto di tecnologia.<br/>
+C’era una volta una LAN sprotetta, il cui proprietario sentia forte il desio di proteggere da nasi indiscreti, e decise quindi di avvolgere dolcemente i pacchetti transitanti sulla suddetta rete con un velo crittografico, un campanellino per provarne l’autenticita’, e un nano da giardino per evitare il temibile fattore <strong>replay</strong>, che come si sa causa forti disturbi di personalita’ al pacchetto; tutto sembrava andare a meraviglia (tranne il volubile client VPN per Windows, un orribile prodotto commerciale da circa 60$ <strong>annui</strong>), ma lo scaltro proprietario della LAN vide che non tutto andava come previsto. Poggiando il naso nel mezzo del traffico di rete il sagace ragazzo scopri’ che i pacchetti uscenti dal suo host e destinati al peer della VPN (quindi traffico locale) erano in chiaro, mentre quelli originati dal peer della VPN erano protetti, come tutto il rimamente traffico; lo sfortunato giovine si trovo’ quindi in una situazione fastidiosa, perche’ sapeva che alcuni pacchetti sarebbero potuti essere maltrattati dal primo malizioso brigante di passaggio, anche se si trattava di pacchetti Ariani, facenti parte della setta della Connessione <acronym title="Secure Shell">SSH</acronym> e protetti quindi dal Potere Di Hitler (RFC “O-Slash”).<br/>
+Il titubante ragazzo decise allora di fare una passeggiata nel forum dove il popolo discuteva dei problemi di questo client IPSEC, ma con amarezza scopri’ che le uniche conversazioni riguardavano apparati di rete e una nuova misteriosa &amp; candida Release; con la fronte sempre piu’ corrucciata il pischello decise di provare anche questa beta del client, pensando che tanto c’e’ poca differenza, al giorno d’oggi, tra una beta e un prodotto finito (Grazie a Google per aver lanciato questa rovinosa moda), e…</p>
+<p>l’unico traffico in chiaro che vide fu:<br/>
+<code><br/>
+# tcpdump -i ne4 -n host pompino and not esp<br/>
+tcpdump: listening on ne4, link-type EN10MB<br/>
+18:10:48.471519 arp who-has 192.168.0.2 tell 192.168.0.1<br/>
+18:10:48.472973 arp reply 192.168.0.2 is-at 00:11:22:33:44:55<br/>
+</code></p>
+<p>E rise, rise lasciandosi alle spalle tutto, libero di correre nei prati del Niente, scrivendo graffiti polemici sulle mura del Nulla.<br/>
+Va, va piccolo niente.</p>

@@ -1,0 +1,50 @@
+---
+title: Incompetenza
+date: '2007-08-08T12:43:00+02:00'
+url: /2007/08/08/incompetenza/
+aliases:
+- /blog-static/2007/08/08/incompetenza/
+wp_id: 877
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>Io cerco sempre di non prendermela quando mi trovo davanti all’incompetenza delle persone, uno deve riuscire a farlo, ne va della sua sanita’ mentale, ma quando poco fa ho aperto mutt puntandolo sulla mailbox del lavoro, non sono riuscito a trattanermi e la mia espressione facciale assomigliava a qualcosa di questo tipo:</p>
+<p><img alt="incompetenza.jpg" src="/wp-content/upload/2007/08/incompetenza.jpg"/></p>
+<p>E’ incredibile, a volte pensare, che due righe di testo come quelle qui sotto possano causare in te vari sintomi come aumento di pressione, rabbia, giugulari gonfie, desiderio di farsi licenziare, etc etc:</p>
+<blockquote><p>&gt; ti informo che oggi non è stato fatto l’upload del codice. Qualche<br/>
+&gt; problema?</p></blockquote>
+<p>Pare che la procedura notturna di checkout &amp;&amp; creazione tar &amp;&amp; upload via scp sul server del cliente non funzioni… un mio collega risponde che lo script in crontab ha dato questo risultato:</p>
+<blockquote><p>[*] Copying tar archive via internet to remote server…<br/>
+[!] Some errors during transfer!</p></blockquote>
+<p><strong>VADO A VERIFICCARE</strong></p>
+<p><strong>(Non dovrei manco farlo, perche’ di mattina sono libero, non dovrei manco farlo <a href="/2007/03/10/pensateci-bene-prima-di-fare-i-sysadmin-soprattutto-se-siete-scorbutici-come-me/">visto quello che mi hanno detto mesi fa</a>, ma l’ho fatto lo stesso perche’ a me quando una cosa non funziona mi vengono le paranoie)</strong></p>
+<p>Allora lancio openvpn da casa… mumble mumble… e gia’ so’ che fra poco bestemmiero’ perche’ sono sicuro che la colpa di tutto cio’ non e’ mia…<br/>
+Mi connetto al server cvs …. mumble mumble mumble…<br/>
+<acronym title="Secure Shell">SSH</acronym> al server….</p>
+<p><code>cvsroot@cvs ~ $ ssh $REMOTE_USER@$REMOTE_SERVER<br/>
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br/>
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @<br/>
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@<br/>
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!<br/>
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!<br/>
+It is also possible that the RSA host key has just been changed.<br/>
+The fingerprint for the RSA key sent by the remote host is<br/>
+e8:d3:su:ca:ad.<br/>
+Please contact your system administrator.<br/>
+Add correct host key in /home/cvsroot/.ssh/known_hosts to get rid of this message.<br/>
+Offending key in /home/cvsroot/.ssh/known_hosts:2<br/>
+RSA host key for $<acronym title="Internet Protocol">IP</acronym> has changed and you have requested strict checking.<br/>
+Host key verification failed.<br/>
+</code></p>
+<p><img alt="incazzato.jpg" src="/wp-content/upload/2007/08/incazzato.jpg"/></p>
+<p><strong>LO SAPEVO, DEVO ODIARE, NON POSSO TRATTENERMI DALL’ODIARE!</strong></p>
+<p><strong>VOI AVETE PIALLATO IL SERVER! AVETE REINSTALLATO TUTTO E LA CHIAVE RSA E’ CAMBIATA, NON MI AVETE MANCO PRESERVATO ~/.SSH/AUTHORIZED_KEYS. E POI MI CHIEDETE PERCHE’ SCRIVENDOMI “QUALCHE PROBLEMA?”…</strong></p>
+<p>E NON DITE CHE NON E’ VERO!<br/>
+COME MAI ALLORA LS -L /HOME HA COME DATA DI CREAZIONE IERI? E COME MAI ANCHE LA HOME DEL MIO UTENTE HA LA STESSA DATA? E ANCHE /TMP? E ANCHE /ETC/PASSWD?</p>
+<p>ANDATEVI A STUDIARE <acronym title="Secure Shell">SSH</acronym>, ANDATEVI A STUDIARE LO UNIX, BASTA CHE SIETE TECHNICAL ARCHITECT, FETENTI!</p>
+<p>SENZA PAROLE… IL BELLO E’ CHE IO STO ANCORA QUI.<br/>
+Ecco perche’ dico sempre che se uno vuole fare il manager deve avere background tecnico, se no di questo passo finiamo tutti nella merda…</p>

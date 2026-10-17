@@ -1,0 +1,4 @@
+---
+title: rails
+slug: rails
+---

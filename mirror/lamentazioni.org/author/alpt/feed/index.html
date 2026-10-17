@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Lamentazioni &#187; AlpT</title>
+	<atom:link href="http://www.lamentazioni.org/author/alpt/feed/" rel="self" type="application/rss+xml" />
+	<link>http://www.lamentazioni.org</link>
+	<description>Ci lamentiamo di tutto perche' AMIAMO NIENTE - siamo PAZZI, non fateci CAZO</description>
+	<lastBuildDate>Wed, 05 Aug 2009 13:10:47 +0000</lastBuildDate>
+	<generator>http://wordpress.org/?v=2.8.3</generator>
+	<language>en</language>
+	<sy:updatePeriod>hourly</sy:updatePeriod>
+	<sy:updateFrequency>1</sy:updateFrequency>
+			<item>
+		<title>Se fossi</title>
+		<link>http://www.lamentazioni.org/blog-static/2006/06/30/se-fossi/</link>
+		<comments>http://www.lamentazioni.org/blog-static/2006/06/30/se-fossi/#comments</comments>
+		<pubDate>Fri, 30 Jun 2006 21:00:05 +0000</pubDate>
+		<dc:creator>AlpT</dc:creator>
+				<category><![CDATA[niente a senso]]></category>
+
+		<guid isPermaLink="false">http://www.lamentazioni.org/blog-static/2006/uno_in_particolare/se-fossi/</guid>
+		<description><![CDATA[cat &#60;&#60;Se_fossi
+Se fossi /dev/urandom
+inonderei la terra
+divenendo /dev/null
+inghiottirei il mondo
+mutando in /dev/mem
+dimenticherei ogni cosa
+ibridandomi con /boot/vmlinuz
+    ti direi unicamente
+
+&#8220;Panic!&#8221;
+Se_fossi]]></description>
+			<content:encoded><![CDATA[<p>cat &lt;&lt;Se_fossi</p>
+<p align="center"><em>Se fossi /dev/urandom<br />
+inonderei la terra</em></p>
+<p align="center"><em>divenendo /dev/null<br />
+inghiottirei il mondo</em></p>
+<p align="center"><em>mutando in /dev/mem<br />
+dimenticherei ogni cosa</em></p>
+<div align="center"><em>ibridandomi con /boot/vmlinuz</em><br />
+<em>    ti direi unicamente</em></div>
+</p>
+<p align="center"><em>&#8220;Panic!&#8221;</em></p>
+<p>Se_fossi</p>]]></content:encoded>
+			<wfw:commentRss>http://www.lamentazioni.org/blog-static/2006/06/30/se-fossi/feed/</wfw:commentRss>
+		<slash:comments>3</slash:comments>
+		</item>
+		<item>
+		<title>La palla di Tar il Bizippo</title>
+		<link>http://www.lamentazioni.org/blog-static/2005/12/26/la-palla-di-tar-il-bizippo/</link>
+		<comments>http://www.lamentazioni.org/blog-static/2005/12/26/la-palla-di-tar-il-bizippo/#comments</comments>
+		<pubDate>Mon, 26 Dec 2005 06:53:39 +0000</pubDate>
+		<dc:creator>AlpT</dc:creator>
+				<category><![CDATA[niente a senso]]></category>
+
+		<guid isPermaLink="false">http://www.lamentazioni.org/blog-static/2005/uno_in_particolare/la-palla-di-tar-il-bizippo/</guid>
+		<description><![CDATA[Era un mese che cercavo di aggiornare il kernel su Nihil, ma niente, arrivavo sempre a questo [oe]rrore.
+Non c&#8217;era verso per compilare il dannato 2.6.14, ho cambiato di tutto in quel codice.
+Alla fine mi decido a mandare quel report in lista.
+Stamani svegliandomi alle 5 decido di compilarlo. Come al solito nulla. Ero arrivato a patcharlo [...]]]></description>
+			<content:encoded><![CDATA[<p>Era un mese che cercavo di aggiornare il kernel su Nihil, ma niente, arrivavo sempre a questo <a href="http://marc.theaimsgroup.com/?l=linux-kernel&#038;m=113543199109829&#038;w=2">[oe]rrore</a>.</p>
+<p>Non c&#8217;era verso per compilare il dannato 2.6.14, ho cambiato di tutto in quel codice.<br />
+Alla fine mi decido a mandare quel report in lista.</p>
+<p>Stamani svegliandomi alle 5 decido di compilarlo. Come al solito nulla. Ero arrivato a patcharlo fino alla 2.6.15-rc7. Stesso errore.<br />
+Ma emerde mi ha salvato, ecco come e&#8217; andata:</p>
+<p>&#8220;Forse sono gli header, non so che c&#8217;entrano, ma potrebbero essere gli header in /usr/include&#8221;.<br />
+Bene:<br />
+<code>emerde linux-headers-2.6.15_rc6.ebuild</code><br />
+Ed egli comincia a scaricare il tar.bz2 del 2.6.14 per poi patcharlo. Lo fermo e gli dico:</p>
+<p>&#8220;Aspetta, ti aiuto io: cp /usr/src/linux-2.6.14.tar.bz2 /usr/portage/distfiles/&#8221;</p>
+<p>Lui mi ringrazia di cuore e continua il download delle patch fino a quando non si accorge della verita&#8217;:</p>
+<p><strong>MD5 CHECKSUM ERROR</strong></p>
+<p>Il tarball che usavo da un mese del 2.6.14 era danneggiato!</p>
+<p>Non ho idea di come possa essere accaduto, ma so&#8217; benissimo perche&#8217; non me ne sia mai accorto:<br />
+1) tar decomprimeva perfettamente<br />
+2) Le patch applicate da ketchup andavano a buon fine<br />
+3) L&#8217;errore che ottenevo era:<br />
+<code><br />
+include/asm-generic/pgtable.h:114: Error: no such instruction: `static inline void ptep_mkdirty(pte_t *ptep)'<br />
+include/asm-generic/pgtable.h:115: Error: junk at end of line, first unrecognized character is `{'<br />
+include/asm-generic/pgtable.h:116: Error: invalid character '_' in mnemonic<br />
+include/asm-generic/pgtable.h:117: Error: invalid character '_' in mnemonic<br />
+include/asm-generic/pgtable.h:118: Error: junk at end of line, first unrecognized character is `}' ~> make[1]: ***<br />
+</code></p>
+<p>In pgtable.h riga 114 la funziona ptep_mkdirty era definita in modo perfetto&#8230;<br />
+peccato solamente che nelle nuove versioni del kernel quella funzione non esiste piu&#8217;.</p>
+<p>In sostanza, Tar scompattando il tarball danneggiato, <strong>codava codice</strong> inesistente.</p>
+<p>Ora, quello che piu&#8217; mi duole e&#8217; il fatto che abbia sovrascritto il vecchio tarball con una nuova copia. Fino ad oggi non avrei mai potuto pensare che la decompressione di un tarball danneggiato, che non da&#8217; segni di errore, possa arrivare a tal punto.<br />
+&#8220;Ovviamente&#8221; la nuova copia del tarball compila.</p>
+<p>Reboot.</p>
+<p>Per ora non posso fare altro che ringraziare Emerde, tar e /dev/urandom.</p>
+<p><strong>GRAZIE DI TUTTO Tar il Bizippo</strong></p>
+<p><img src="http://www.bellaneeq.net/shawnsteve.jpg" alt="Tar il Bizippo" /></p>]]></content:encoded>
+			<wfw:commentRss>http://www.lamentazioni.org/blog-static/2005/12/26/la-palla-di-tar-il-bizippo/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>Il rumore aumenta</title>
+		<link>http://www.lamentazioni.org/blog-static/2005/12/14/il-rumore-aumenta/</link>
+		<comments>http://www.lamentazioni.org/blog-static/2005/12/14/il-rumore-aumenta/#comments</comments>
+		<pubDate>Wed, 14 Dec 2005 20:31:07 +0000</pubDate>
+		<dc:creator>AlpT</dc:creator>
+				<category><![CDATA[niente a senso]]></category>
+
+		<guid isPermaLink="false">http://www.lamentazioni.org/?p=279</guid>
+		<description><![CDATA[Verra&#8217; il giorno in cui il caos e lo spam saranno padroni dei mondi,
+e le tenebre festeggeranno la loro vittoria.
+
+=spam [Msgs:34 New:34 1.4M]
+Velocita&#8217; instantanea Spam = Vs = 1.4M / 1 gg
+Accelerazione Spam = As = 2.7182818284590 M*gg^-2]]></description>
+			<content:encoded><![CDATA[<p>Verra&#8217; il giorno in cui il caos e lo spam saranno padroni dei mondi,<br />
+e le tenebre festeggeranno la loro vittoria.</p>
+<p><img src="http://www9.oekakibbs.com/bbs/tenebra_corvus/data/67.png" alt="Tenebra" /></p>
+<p>=spam [Msgs:34 New:34 <strong>1.4M</strong>]</p>
+<p>Velocita&#8217; instantanea Spam = Vs = 1.4M / 1 gg<br />
+Accelerazione Spam = As = 2.7182818284590 M*gg^-2</p>]]></content:encoded>
+			<wfw:commentRss>http://www.lamentazioni.org/blog-static/2005/12/14/il-rumore-aumenta/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>E&#8217; terribile codare&#8230;</title>
+		<link>http://www.lamentazioni.org/blog-static/2005/10/15/e-terribile-codare/</link>
+		<comments>http://www.lamentazioni.org/blog-static/2005/10/15/e-terribile-codare/#comments</comments>
+		<pubDate>Sat, 15 Oct 2005 13:46:40 +0000</pubDate>
+		<dc:creator>AlpT</dc:creator>
+				<category><![CDATA[niente a senso]]></category>
+
+		<guid isPermaLink="false">http://lamentazioni.spatof.org/2005/uno_in_particolare/e-terribile-codare/</guid>
+		<description><![CDATA[&#8230;quando ci sono quelli di giu&#8217; che si vedono VIA COL VENTO CON IL LORO FOTTUTO HOME THEATER.
+AAaaaaaaaaaaaaaaahhhhhhhhhhhhhhhhh]]></description>
+			<content:encoded><![CDATA[<p>&#8230;quando ci sono quelli di giu&#8217; che si vedono <strong>VIA COL VENTO CON IL LORO FOTTUTO HOME THEATER</strong>.</p>
+<p>AAaaaaaaaaaaaaaaahhhhhhhhhhhhhhhhh</p>]]></content:encoded>
+			<wfw:commentRss>http://www.lamentazioni.org/blog-static/2005/10/15/e-terribile-codare/feed/</wfw:commentRss>
+		<slash:comments>0</slash:comments>
+		</item>
+		<item>
+		<title>IDEoompa ucciso</title>
+		<link>http://www.lamentazioni.org/blog-static/2005/07/05/ideoompa-ucciso/</link>
+		<comments>http://www.lamentazioni.org/blog-static/2005/07/05/ideoompa-ucciso/#comments</comments>
+		<pubDate>Tue, 05 Jul 2005 13:10:34 +0000</pubDate>
+		<dc:creator>AlpT</dc:creator>
+				<category><![CDATA[niente a senso]]></category>
+
+		<guid isPermaLink="false">http://lamentazioni.spatof.org/2005/uno_in_particolare/ideoompa-ucciso/</guid>
+		<description><![CDATA[Mi lamento perche&#8217; il fottutissimo IDEoompa e&#8217; stato ucciso!
+UCCISO!
+ASSASSINI!]]></description>
+			<content:encoded><![CDATA[<p>Mi lamento perche&#8217; il fottutissimo IDEoompa e&#8217; stato ucciso!<br />
+UCCISO!</p>
+<p>ASSASSINI!</p>]]></content:encoded>
+			<wfw:commentRss>http://www.lamentazioni.org/blog-static/2005/07/05/ideoompa-ucciso/feed/</wfw:commentRss>
+		<slash:comments>4</slash:comments>
+		</item>
+		<item>
+		<title>La spazzatura</title>
+		<link>http://www.lamentazioni.org/blog-static/2005/06/30/la-spazzatura/</link>
+		<comments>http://www.lamentazioni.org/blog-static/2005/06/30/la-spazzatura/#comments</comments>
+		<pubDate>Thu, 30 Jun 2005 21:13:19 +0000</pubDate>
+		<dc:creator>AlpT</dc:creator>
+				<category><![CDATA[niente a senso]]></category>
+
+		<guid isPermaLink="false">http://lamentazioni.spatof.org/2005/uno_in_particolare/la-spazzatura/</guid>
+		<description><![CDATA[La spazzattura giace indistinta ed ammassata nei cassonetti, mentre le idee
+degli uomini, sono lodate e nominate, ed i loro autori distinti
+scrupolosamente fra loro.]]></description>
+			<content:encoded><![CDATA[<p>La spazzattura giace indistinta ed ammassata nei cassonetti, mentre le idee<br />
+degli uomini, sono lodate e nominate, ed i loro autori distinti<br />
+scrupolosamente fra loro.</p>]]></content:encoded>
+			<wfw:commentRss>http://www.lamentazioni.org/blog-static/2005/06/30/la-spazzatura/feed/</wfw:commentRss>
+		<slash:comments>2</slash:comments>
+		</item>
+		<item>
+		<title>Ora mi lamento, per l&#8217;Ipv6 di ISIDE!</title>
+		<link>http://www.lamentazioni.org/blog-static/2005/06/29/ora-mi-lamento-per-lipv6-di-iside/</link>
+		<comments>http://www.lamentazioni.org/blog-static/2005/06/29/ora-mi-lamento-per-lipv6-di-iside/#comments</comments>
+		<pubDate>Wed, 29 Jun 2005 21:40:29 +0000</pubDate>
+		<dc:creator>AlpT</dc:creator>
+				<category><![CDATA[niente a senso]]></category>
+
+		<guid isPermaLink="false">http://lamentazioni.spatof.org/?p=50</guid>
+		<description><![CDATA[Intanto incominciamo col dire che lamentarsi e&#8217; inutile ed e&#8217; uno spreco di energia. Percio&#8217; mi lamento di lamentarmi, ma visto che niente a senso continuo a farlo.
+Da dove incominciare?
+Bhe&#8217;, si incominciamo col dire:
+IPV6 MERDA MALE MALE MORTE
+E&#8217; PAZZESCO
+P A Z Z E S C O
+Hanno fatto una merda, hanno complicato TUTTO.
+Perche&#8217; usare 128bit per [...]]]></description>
+			<content:encoded><![CDATA[<p>Intanto incominciamo col dire che lamentarsi e&#8217; inutile ed e&#8217; uno spreco di energia. Percio&#8217; mi lamento di lamentarmi, ma visto che <em>niente a senso</em> continuo a farlo.<br />
+Da dove incominciare?<br />
+Bhe&#8217;, si incominciamo col dire:</p>
+<p>IPV6 MERDA MALE MALE MORTE</p>
+<p>E&#8217; PAZZESCO<br />
+P A Z Z E S C O</p>
+<p>Hanno fatto una merda, hanno complicato TUTTO.<br />
+Perche&#8217; usare 128bit per un indirizzo <acronym title="Internet Protocol">IP</acronym>????????????<br />
+NON C&#8217;E&#8217; BISOGNO DI 340282366920938463463374607431768211456 (2^128) di indirizzi ip,<br />
+bastava semplicemente un ip da 64bit se proprio si voleva allargare di molto<br />
+il range. MA NO, DAI, USIAMO QUATTRO INTEGER da 32bit, cosi&#8217; siamo piu&#8217;<br />
+felici. Per fare una semplice operazione di somma o di sottrazione bisogna<br />
+lavorare con 4 int, e quindi se uno non vuole impazzire con le divisioni deve<br />
+usare le libgmp: Gnu Mathematic Precision, una libreria che lavora con numeri<br />
+che tendono all&#8217;INFINITO.</p>
+<p>Hanno reso TUTTO automatico, per non far funzionare NULLA. Adesso esiste<br />
+l&#8217;addrconf stateless che ti gestisce automaticamente gli indirizzi da<br />
+prendere, poi non c&#8217;e&#8217; piu&#8217; bisogno dell&#8217;arp ma c&#8217;e&#8217; il NDP che lavora<br />
+in MULTICAST, ale&#8217; o/</p>
+<p>Ancora nel 2004 ci sono RFC che dichiarano pezzi di ipv6 DEPRECATED<br />
+e propongono dei sistemi alternatici che sono ancora UNDER DEVElOPMENT.</p>
+<p>Ora nel concreto:</p>
+<p>Per mandare dei semplici pacchetti udp in broadcast devo usare il<br />
+MULTICAST, e devo stare attento alla configurazione automatica del kernel e<br />
+non togliere l&#8217;ip con SCOPE link-local perche&#8217; la SCOPERTA DEL VICINATO non<br />
+funzionerebbe, perche&#8217; il broadcast non esiste piu&#8217;.</p>
+<p>Quindi per usare il vecchio semplice broadcast ho dovuto scrivere +100 righe<br />
+di codice dove per l&#8217;ipv4 ne uso QUATTRO.<br />
+DANNAZIONE io voglio mandare solamente un pacchetto a quei dannati di nodi che<br />
+mi stanno accanto, non voglio usare il MULTICAST.<br />
+Ma vabbe&#8217;&#8230;</p>
+<p>Impazzendo col caffe&#8217;, alla fine il codice ti e&#8217; sempre fedele.</p>
+<p>Parlando con dei tizi vengo a scoprire per caso che nel Settembre del 2004 e&#8217;<br />
+apparso un nuovo RFC che dichiara deprecati gli indirizzi site scoped, questo<br />
+significa che gli indirizzi che potevano essere utilizzati per creare una<br />
+sottorete privata sono considerati DEPRECATI.<br />
+BENE! ma allora come faccio a creare una sottorete privata che sia separata da<br />
+Internet?<br />
+Mi rispondono dicendo di farmi dare dal mio <acronym title="Internet Service Provider">ISP</acronym> un&#8217;allocazioni di idirizzi ip<br />
+da usare per la rete privata.<br />
+ahahaha, che soluzione stupenda.<br />
+Dopo un intero pomeriggio di lacrime e sudore, riesco a fare capire ai tizi che mi SERVE<br />
+ASSOLUTAMENTE avere una sottorete privata per una fottutissima mesh network<br />
+dove ogni nodo puo&#8217; collegarsi ad internet.<br />
+Cosa mi rispondono?<br />
+> Ah, perche&#8217; non lo dicevi prima?<br />
+> Si, allora hai un problema.<br />
+Ecco, LO SO GIA&#8217; CHE HO UN PROBLEMA A CAUSA DEL VOSTRO FOTTUTISSIMO AMATO<br />
+IPV6, THE NEXT GENERATION INTERNET PROTOCOL.</p>
+<p>Forse a Settembre di quest&#8217;anno esce un altro RFC che dice che i site scoped<br />
+addresses non sono piu&#8217; deprecated.</p>
+<p>A parte questo decido di fottermene della compatibilita&#8217; con Internet e quindi<br />
+rinunciare ad una sottorete privata.</p>
+<p>Peccato pero&#8217; che il multicast mi viene in aiuto confermando ancora una volta<br />
+quanto sia misericordioso l&#8217;Ipv6:<br />
+Visto che con l&#8217;Ipv6 un interfaccia puo&#8217; avere piu&#8217; di un indirizzo ip<br />
+associato ad essa, quando viene mandato un pacchetto in un multicast<br />
+LINK-SCOPED asdasd, il nodo che lo riceve vede come ip mittente solo l&#8217;ip<br />
+link-local.<br />
+Ora gli indirizzi link-local non servono ad un emirito NULLA poiche&#8217; sono<br />
+validi solamente sul link: Se c&#8217;e&#8217; il nodo x collegato ad y allora possono<br />
+comunicare tra loro usando un ip link-local, ma se c&#8217;e&#8217; z collegato solo a y,<br />
+x non puo&#8217; parlare con il fottutissimo z usando un link-local ip. OK?<br />
+PERO&#8217; il link-local non si puo&#8217; togliere, perche&#8217; se no MUORI. I furbastri<br />
+dell&#8217;ipv6 hanno deciso di togliere l&#8217;arp ed usare il Neighbourd Discovery<br />
+Protocol che senza indirizzi link=local NON FUNZIONA, percio&#8217; NON FARE MAI UN<br />
+ip addr flush dev eth0, o filtrare il traffico di indirizzi che incominciano<br />
+con FE80:, NON FUNZIONA NULLA.<br />
+Ora ritornando a noi: se non voglio ricevere come ip mittente un ip link-local<br />
+devo usare un multicast diverso.<br />
+BENE, USO il SITE-SCOPED.<br />
+PECCATO CHE NON FUNZIONI! E CHE IL KERNEL MI MANDI AFFANCULO.</p>
+<p>Conclusione?<br />
+Morte all&#8217;Ipv6. Netsukuku girera&#8217; sull&#8217;Ipv4, almeno fino a quando un altro RFC<br />
+non decidera&#8217; di sistemare un po&#8217; le cose.<br />
+L&#8217;unico motivo che mi spingeva ad usare l&#8217;ipv6 erano quei bei indirizzi grassi<br />
+e tozzi, ma ora BASTA.</p>
+<p>GRAZIE, dico grazie a tutti gli sviluppaturi dell&#8217;ipv6.</p>
+<p>Che sia benedetto.</p>
+<p>Pace, Amore e Prosperita&#8217; e morte all&#8217;Ipv6</p>
+<p>Vi ricorda qualcosa il 6? Ipv666</p>]]></content:encoded>
+			<wfw:commentRss>http://www.lamentazioni.org/blog-static/2005/06/29/ora-mi-lamento-per-lipv6-di-iside/feed/</wfw:commentRss>
+		<slash:comments>1</slash:comments>
+		</item>
+	</channel>
+</rss>

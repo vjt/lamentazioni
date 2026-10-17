@@ -1,0 +1,54 @@
+---
+title: Non c’ho il treddì
+date: '2006-06-13T12:28:00+02:00'
+url: /2006/06/13/non-cho-il-treddi/
+aliases:
+- /blog-static/2006/06/13/non-cho-il-treddi/
+wp_id: 537
+authors:
+- ddt
+avatar: ddt.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>fanculo a tutti… anche i bambini di 2 mesi hanno il loro fichissimo *book .. tutto il mondo ha visto il filmato cretino di quel deficente che prende a sberle un portatile da 3000 euro per fargli cambiare il desktop.</p>
+<p>E ora pare che si può fare pure con linux, basta avere il cazzo di sensore posizionale 3d. Che poi è un coso che si accorge se lo muovi. Anche il mio cazzo si accorge se lo muovi, ma non ho fatto un filmato per farlo vedere su internet a tutti il mondo.</p>
+<p>Anche se lo avessi fatto, nessuno lo saprebbe mai. Non direi in giro “ehi quello è il mio cazzo di sensore di movimento”.</p>
+<p>Maledetti sukers, col vostro costosissimo portatile di merda. E io volevo innocentemente far funzionare xgl sul mio linux che sono sempre più convinto che sia MERDA. Ok ci provo sul serio, voglio essere un lamer pure io voglio il desktoppe fighissimo che si muove tutto, tanto ho una ati sul portatile il driver 3d ati esiste da decenni dovrà funzionare no?</p>
+<p>.</p>
+<p>.</p>
+<p>No.</p>
+<p>Non funziona. Perchè? Ecco perchè:</p>
+<p>luki@lukipela:~$ lspci  | grep -i VGA<br/>
+0000:01:05.0 VGA compatible controller: ATI Technologies Inc RS300M AGP [Radeon Mobility 9100IGP]<br/>
+luki@lukipela:~$</p>
+<p>Dalle release notes del driver fglrx:</p>
+<p>The ATI Proprietary Linux driver is designed to support the following ATI Integrated products:</p>
+<table border="1" cellpadding="5" cellspacing="0">
+<tr>
+<td><a name="179920"></a> Radeon® Xpress 200 series</td>
+<td><a name="179893"></a> Radeon® 9100 IGP</td>
+</tr>
+<tr>
+<td><a name="179912"></a> Radeon® 9200 IGP</td>
+<td><a name="179895"></a> Mobility™ Radeon® 9000 IGP series</td>
+</tr>
+<tr>
+<td><a name="179914"></a> Mobility™ Radeon® 9100 IGP series</td>
+<td><a name="179897"></a></td>
+</tr>
+</table>
+<hr/>
+<table border="0" cellpadding="5" cellspacing="0">
+<tr>
+<td><img height="38" src="https://a248.e.akamai.net/f/674/9206/0/www2.ati.com/drivers/linux/images/linux82518/caution.gif" width="25"/></td>
+<td valign="top"><strong>Caution:</strong></td>
+<td valign="top">This software driver provides 2D support only for the ATI Radeon® 9100 IGP and ATI Radeon® 9100 PRO IGP.</td>
+</tr>
+</table>
+<p>e urlo: PORCODDIO! Ho l’unica fottutissima scheda video ATI che non supporta il TREDDI’!</p>
+<p>Tra un po usciranno i portatili senza schermo con l’hud come quello degli aerei, o col proiettore olografico interattivo alla minority report, e IO non CI HO NEMMENO IL TREDDI’! Ho un fottuto portatile acer di merda da 4kg e alto 20 cm col super pentium4 da 200 <acronym title="Gigahertz">GHz</acronym> che tanto NON SERVE AD UN CAZZO, perchè sta sempre al 70% in iowait perchè tanto l’hard disk è una MERDA con un throughput di 1kappa al secondo quando va bene.</p>
+<p>VAFFANCULO al mondo intero.</p>
+<p>E FORZA GHANA e REPUBBLICA CECA (gli usa no che mi stanno sul cazzo quasi più dell’italia).</p>
+<p>Addio.</p>

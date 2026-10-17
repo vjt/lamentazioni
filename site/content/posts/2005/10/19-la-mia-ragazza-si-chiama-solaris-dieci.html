@@ -1,0 +1,79 @@
+---
+title: La mia ragazza si chiama Solaris Dieci
+date: '2005-10-19T12:46:00+02:00'
+url: /2005/10/19/la-mia-ragazza-si-chiama-solaris-dieci/
+aliases:
+- /blog-static/2005/10/19/la-mia-ragazza-si-chiama-solaris-dieci/
+wp_id: 172
+authors:
+- sand
+avatar: sand.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 127
+  author: nightolo
+  date: '2005-10-19T23:45:00+02:00'
+  body: '<p>vi /etc/nsswitch.conf<br/>
+
+    host: files -&gt; host:dns<br/>
+
+    pkill -HUP nscd</p>
+
+    <p>se non ti funziona CHIAMA UN SISTEMISTA SUN</p>'
+- id: 128
+  author: nightolo
+  date: '2005-10-19T23:46:00+02:00'
+  body: '<p>host: files dns</p>
+
+    <p>VOLEVO DIRE</p>'
+- id: 129
+  author: sand
+  date: '2005-10-20T12:39:00+02:00'
+  body: '<p>host<strong>s</strong>, con la ESSE di ESSE ESSE :)<br/>
+
+    Mi sa che lo step che mi mancava era lo HUPPO….</p>'
+  author_url: http://www.spatof.org
+  by_post_author: true
+---
+<p>Solaris 10 e’ <strong>GENIALE</strong>!<br/>
+Ha dei comportamenti quasi <em>umani</em>, tendenti all’<strong>universo femminile</strong>.</p>
+<blockquote><p>foobar:/home/danz# ping www.google.it<br/>
+ping: unknown host www.google.it<br/>
+zsh: 411 exit 1     ping www.google.it</p>
+<p>foobar:/home/danz# host www.google.it<br/>
+www.google.it is an alias for www.google.com.<br/>
+www.google.com is an alias for www.l.google.com.<br/>
+www.l.google.com has address 64.233.183.104<br/>
+www.l.google.com has address 64.233.183.99</p></blockquote>
+<p>Siccome poi la gente dice “eh no sand, sei <em>te</em> down”, io rispondo: SANTA POLENTA!<br/>
+Durante l’installazione avviene la configurazione della rete, che io <strong>ho fatto</strong>, configurando il default router, i name server etc etc… L’installer lamenta di non poter raggiungere i name server (cristo dio, potro’ pluggare il cavo <em>dopo</em>?), quindi immagino che sia questo il motivo per il quale, una volta finita l’installazione, /etc/resolv.conf <strong>NON C’E’</strong>.</p>
+<p>E che sara’ mai… scriviamocelo da noi questo maledetto file di configurazione no?<br/>
+<strong>No</strong>.<br/>
+Prima di pingare (vedi su), io lo avevo scritto quel cazzo di file.</p>
+<p>Daje di google.<br/>
+Je do’ di google e scopro <strong>/etc/nsswitch.conf</strong> e i suoi amichetti nsswitch.*; sembra che vada configurato anche questo (NIS, LDAP, <acronym title="Domain Name Server">DNS</acronym>… sta roBBa qua), ma…</p>
+<blockquote><p># diff -u /etc/nsswitch.conf /etc/nsswitch.dns<br/>
+No differences encountered</p></blockquote>
+<p>Ehm… googlo ancora e ancora e ancora, e alla terza serie di <em>keyword</em>, trovo qualcosa di <a href="http://blog.heavyj.com/blog/2005/01/solaris-10-in-works.html">interessante</a>, che riporto qui per ‘gli archivi’:</p>
+<blockquote><p>[...]<br/>
+But then <acronym title="Domain Name Server">DNS</acronym> client wasn’t working. Which is kinda funny, because recently me and Lee and been joking with some employee prospects that they needed to know how to set up a Sun system as a <acronym title="Domain Name Server">DNS</acronym> client. nsswitch.conf and resolv.conf and boom, right? Not in Solaris 10. You still have to do that alright (my nsswitch.conf file was setup properly, but strangely the resolv.conf was not – interesting since I specified <acronym title="Domain Name Server">DNS</acronym> as my only naming service at install time and hand put in the <acronym title="Domain Name Server">DNS</acronym> servers…).<br/>
+After a futile 2 hours or so if svcadm this and svcs that, in a fit of frustration I rebooted, and boom – <acronym title="Domain Name Server">DNS</acronym> client works.<br/>
+[...]</p></blockquote>
+<p>ReBButto e…</p>
+<blockquote><p># ping httpd.apache.org<br/>
+httpd.apache.org is alive</p></blockquote>
+<p>Semplicemente <strong>GENIALE</strong>.</p>
+<p>E per concludere, vi riporto un altro episodio riguardante la mia ignoranza solaresca.<br/>
+Installazione completa totale e globale di solaris 10 superpippo, via seriale.<br/>
+Termina l’installazione e… prompt.<br/>
+“Ah che merda, il terminale sminchiato, fammici andare in ssh”<br/>
+Ma ssh non va…<br/>
+Ssh non e’ partito al boot…<br/>
+Sshd_config ha “PermitRootLogin off”…</p>
+<p>Per fare partire ssh al boot ho dovuto fare questo, ma non so il perche’:</p>
+<blockquote><p># svcadm disable autofs<br/>
+# svcadm enable ssh
+</p></blockquote>
+<p>SOLARIS IO TI AMO, VOGLIO UN FIGLIO DA TE.</p>

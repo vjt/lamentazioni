@@ -1,0 +1,31 @@
+---
+title: I log si leggono porcoddio!
+date: '2005-09-19T17:08:00+02:00'
+url: /2005/09/19/i-log-si-leggono-porcoddio/
+aliases:
+- /blog-static/2005/09/19/i-log-si-leggono-porcoddio/
+wp_id: 119
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>Mi rompi il cazzo che non ti funziona il mouse su X! <strong>MI FAI ALZARE MENTRE FACCIO UNA COSA IMPORTANTE!</strong></p>
+<p>mi loggo, faccio:</p>
+<p><code>tail -f /vat/log/Xfree86.0.log<br/>
+</code><br/>
+e lui dice: cannot open device /dev/mouse, allora faccio:</p>
+<p><code># ls /dev/mouse<br/>
+</code><br/>
+e lui dice: “no such file or directory”</p>
+<p>dunque:</p>
+<p><code># ls /dev/psaux<br/>
+</code></p>
+<p>psaux esiste!</p>
+<p><code># vi /etc/X11/XF86Config-4<br/>
+   :s/\/dev\/mouse/\/dev\/psaux/g<br/>
+# /etc/init.d/dm restart<br/>
+</code></p>
+<p><strong>E LEGGILI I LOG PORCODDIO!</strong></p>

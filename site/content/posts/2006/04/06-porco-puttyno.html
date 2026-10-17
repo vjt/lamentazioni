@@ -1,0 +1,55 @@
+---
+title: Porco PuTTYno !!!
+date: '2006-04-06T15:18:00+02:00'
+url: /2006/04/06/porco-puttyno/
+aliases:
+- /blog-static/2006/04/06/porco-puttyno/
+wp_id: 427
+authors:
+- darkpand
+avatar: darkpand.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 589
+  author: ao
+  date: '2006-04-07T13:23:00+02:00'
+  body: <p>ma che cazzo hai incollato si può sapere?</p>
+- id: 592
+  author: theclash
+  date: '2006-04-07T17:38:00+02:00'
+  body: <p>una canzone di RON, il sistema è entrato in paranoia..</p>
+  author_url: http://www.acido.be
+- id: 595
+  author: unixman
+  date: '2006-04-08T00:36:00+02:00'
+  body: <p>Secondo me gli hai pastato javeh e lui non lo ha digerito molto ….</p>
+- id: 611
+  author: Lucea
+  date: '2006-04-20T11:54:00+02:00'
+  body: <p>tu sei glodo, ti ho riconosciuto</p>
+---
+<p>Continuando l’attivita’ dell’altra volta della compilazione STITICA, creo il cazzo di binario sulla macchina solaris, tutto ok, tutto a posto, l’unica pecca e’ che per politica aziendale della $GROSSA_TELCO_MOBILE si usano solo le postazioni fisse che ci sono, con sopra WINDOWS 2000, DUE-<strong>MICACAZZI</strong>.<br/>
+Appiccio il fido PuTTY, e faccio:<br/>
+# ldd  stunnel<br/>
+        libdl.so.1 =&gt;    /usr/lib/libdl.so.1<br/>
+        libsocket.so.1 =&gt;        /usr/lib/libsocket.so.1<br/>
+        libnsl.so.1 =&gt;   /usr/lib/libnsl.so.1<br/>
+        libpthread.so.1 =&gt;       /usr/lib/libpthread.so.1<br/>
+        libc.so.1 =&gt;     /usr/lib/libc.so.1<br/>
+        libmp.so.2 =&gt;    /usr/lib/libmp.so.2<br/>
+        libthread.so.1 =&gt;        /usr/lib/libthread.so.1<br/>
+        /usr/platform/SUNW,Sun-Fire-V240/lib/libc_psr.so.1<br/>
+che per i miei gusti e’ abbastanza statico.</p>
+<p>Seleziono il tutto per mandarlo per mail e per mia GOFFAGINE VIOLENTA, DOLOROSA e incessantemente <strong>PARKINSONIANA</strong>, CLICCO sul tasto <strong>DESTRO</strong>, che su putty significa <strong>INCOLLA</strong>.<br/>
+<strong>OVVIAMENTE</strong> in quel momento ero <strong>ROOT</strong>.<br/>
+<strong>CROLLA</strong> la connessione, si chiude BRUTALMENTE la finestra.<br/>
+In quel momento PALLE di sudore IN-PER-L’ANO la mia fronte, cerco di riconnettermi e <strong>NON VA</strong>, MALEDICO il <strong>SIGNORE DIO PADRE ONNI-IMPOTENTE</strong> in preda al PANICO scendo al CED, mi collego in seriale e vedo la macchina <strong>PIANTATA</strong> e <strong>TREMEBONDA</strong>.<br/>
+SPENGO brutale, riaccendo la macchina che <strong>NON RIPARTE</strong>, non riuscendo a caricare libdl.so.1, boot da cd, fsck della / con dolore, file persi ovunque, <strong>SPARIZIONE</strong> di <strong>/etc/system</strong>; finalmente monto la / e vedo il <strong>DELIRIO</strong>:<br/>
+# ls -l /mnt/usr/lib/libdl.so.1<br/>
+-rwxr-xr-x   1 root     bin         0 Apr 13  2004 /usr/lib/libdl.so.1</p>
+<p>PER FORTUNA che nelle TELCO italiane hanno l’abitudine di installare le macchine GEMELLE, almeno ho potuto risolvere…<br/>
+ALMENO quello.<br/>
+ALMENO quel momento <strong>DIO</strong> si era distratto.</p>
+<p>OVVIAMENTE adesso devo REINVENTARMI l’/etc/system, visto che ora NON PARTE PIU NULLA.</p>

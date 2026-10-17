@@ -1,0 +1,4 @@
+---
+title: suicidio
+slug: suicidio
+---

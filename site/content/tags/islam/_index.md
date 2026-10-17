@@ -1,0 +1,4 @@
+---
+title: islam
+slug: islam
+---

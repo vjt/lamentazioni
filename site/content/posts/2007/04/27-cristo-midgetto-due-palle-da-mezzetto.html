@@ -1,0 +1,69 @@
+---
+title: cristo midgetto due palle da mezz’etto
+date: '2007-04-27T16:54:00+02:00'
+url: /2007/04/27/cristo-midgetto-due-palle-da-mezzetto/
+aliases:
+- /blog-static/2007/04/27/cristo-midgetto-due-palle-da-mezzetto/
+wp_id: 812
+authors:
+- sand
+avatar: sand.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>No perche’ poi la gente pensa che sono pazzo. Devo compilare una fottuta estensione del <acronym title="Pre-Hypertext Processing">PHP</acronym> di merda, e con somma felicita’ scopro che nel giro di un paio di versioni hanno <strong>TOLTO</strong> dai sorgenti questa cara estensione, per buttarla su <strong>PECL</strong>, ovvero il <strong>CPAN</strong> dei poveri; mi sembra ovvio che la notizia di questo “<em>spostamento</em>” fosse scritta nell’infinito ChangeLog, in mezzo a mille altre cagate… si puo’ facilmente immaginare la mia faccia quando configure diceva che la flag –enable di quel modulo mi dava <strong>errore.</strong><br/>
+C’e’ una piccola premessa da fare, e cioe’ che una versione precedente di <acronym title="Pre-Hypertext Processing">PHP</acronym> compila tranquillamente con quel modulo, ma tanto prima o poi bisognera’ aggiornare, quindi tanto vale impazzire da subito. E la vita mi fa SCHIFO.</p>
+<p>Oltretutto aggiungo un’altra piccola nota, di cui probabilmente mi saro’ gia’ lamentato, ma ecco, vorrei ricordare che per compilare il fottuto supporto per <acronym title="Internet Message Access Protocol">IMAP</acronym> ho dovuto commentare a caso un include (si, a caso, perche’ non posso fare come negli anni ‘80 e “leggermi (TUTTI) i sorgenti” per capire, si fotta questa filosofia da disadattati evangelisti unix):</p>
+<p><code><br/>
+configure: error: utf8_mime2text() has old signature, but U8T_CANONICAL is present. This should not happen. Check config.log for additional information.<br/>
+</code><br/>
+Gia’, non dovrebbe succedere, ma torniamo A NOI o/</p>
+<p>Uno dei modi per installare questi infami moduli e’ con lo <strong>STITICO</strong> compilatore: ficchi i sorgenti del modulo dentro i sorci del php, rigeneri il configure (con un comando che genera orrore), ridai il configure, compili.<br/>
+No.<br/>
+Il configure cerca la directory “ext/pdf/”, ma il modulo si chiama “pdflib”, e anche la flag e’ “–with-pdflib=”, e la “guida” dice di strippare la versione dal nome della directory, non di fargli IMITARE un’altra porcoddiomadonna di directory. No, non puoi dare make ignorando l’errore, si fermera’.<br/>
+Ok, allora vai col DSO, PHPIZZAMI IL CLITAZZO, FAI TE.</p>
+<p>Provo prima <strong>a caso</strong>:<br/>
+<code><br/>
+# pear install pdflib<br/>
+No releases available for package "pear.php.net/pdflib" - package pecl/pdflib can be installed with "pecl install pdflib"<br/>
+Cannot initialize 'pdflib', invalid or missing package file<br/>
+Package "pdflib" is not valid<br/>
+install failed<br/>
+</code></p>
+<p><strong>L’ennesimo tool che ti suggerisce cosa fare, senza farlo.</strong></p>
+<p><code><br/>
+# pecl install pdflib<br/>
+downloading pdflib-2.1.3.tgz ...<br/>
+Starting to download pdflib-2.1.3.tgz (55,675 bytes)<br/>
+.............done: 55,675 bytes<br/>
+10 source files, building<br/>
+running: phpize<br/>
+Configuring for:<br/>
+<acronym title="Pre-Hypertext Processing">PHP</acronym> Api Version:         20041225<br/>
+Zend Module Api No:      20060613<br/>
+Zend Extension Api No:   220060519<br/>
+ERROR: `phpize' failed<br/>
+</code></p>
+<p>Ok caro amico CHE SCHIFO, provo a manella:<br/>
+<code><br/>
+root@x:~/work/pdflib-2.1.3# phpize<br/>
+Configuring for:<br/>
+<acronym title="Pre-Hypertext Processing">PHP</acronym> Api Version:         20041225<br/>
+Zend Module Api No:      20060613<br/>
+Zend Extension Api No:   220060519<br/>
+</code></p>
+<p>Anvedi, li mortacci de pippo, mannaggia ai sandali del signore, spatof, non orrorra! Genera invece un altro, sempre meno simpatico, fottutissimo shell script chiamato dai piu’ “<strong>configure</strong>“. E cosa scopre l’avvilito me stesso?<br/>
+Che il makefile genera effettivamente un…<br/>
+<code><br/>
+gcc -shared  .libs/pdf.o  -L/usr/PDFlib/bind/c/lib -lpdf  -Wl,-rpath -Wl,/usr/PDFlib/bind/c/lib -Wl,-soname -Wl,pdf.so -o .libs/pdf.so<br/>
+</code><br/>
+fottutissimo <strong>pdf.so</strong>. Non <strong>libpdf.so</strong>. Probabilmente bastava ignorare la poca documentazione di questo “PECL”, chiamare la directory del modulo “pdf” e forse allora avrebbe compilato stitico. Ma chissa’ se funzionera’…<br/>
+<code></code></p>
+<tr>
+<td class="e"><acronym title="Portable Document Format">PDF</acronym> Support </td>
+<td class="v">enabled </td>
+</tr>
+<p><br/>
+Funziona.</p>
+<p>Per concludere possiamo chiaramente affermare che, procedendo “alla buona” e provando “a naso”, forse si sarebbero skippati uno o due passi, e il risultato sarebbe stato il medesimo, ma purtroppo questa attitudine non va bene, affatto; non e’ sempre possibile procedere “alla buona”, ne si puo’ sempre fare affidamento sull’intuito, stile “eh ma dopo tanti anni lo sai come funziona l’inux”, e lo affermo proprio perche’ SO COM’E’ FATTO L’INUX: MALE.</p>

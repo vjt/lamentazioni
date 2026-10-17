@@ -1,0 +1,4 @@
+---
+title: nerd
+slug: nerd
+---

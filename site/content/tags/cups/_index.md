@@ -1,0 +1,4 @@
+---
+title: CUPS
+slug: cups
+---

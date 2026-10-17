@@ -1,0 +1,51 @@
+---
+title: Il mito CISCO! PUAH!
+date: '2005-11-07T13:39:00+02:00'
+url: /2005/11/07/il-mito-cisco-puah/
+aliases:
+- /blog-static/2005/11/07/il-mito-cisco-puah/
+wp_id: 199
+authors:
+- pallotron
+avatar: pallotron.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>Ma com’e’ che so’ tutti fissati con sta CISCO DIMMERDA! Fanno cose dimmerda! COMPLICATE! FRUSTRANTI DA USARE.</p>
+<p><strong>ESEMPIO: MONITORARE LA RETE SU UN CISCO PIX 515E</strong></p>
+<p>A lavoro mi dicono che l’internet E’ LENTO. Cosi’ do un occhio sul firewall al traffico.<br/>
+A parte che odio questo PIX CON TUTO IL CUORE, DECIDO DI FARLO:</p>
+<p><code>ssh pix@192.168.0.2:<br/>
+enable<br/>
+config terminal<br/>
+show traffic<br/>
+show local-host<br/>
+debug packet inside<br/>
+</code></p>
+<p><code>--------- PACKET ---------</code></p>
+<p><code>-- <acronym title="Internet Protocol">IP</acronym> --<br/>
+192.168.0.2     ==&gt;     192.168.0.129</code></p>
+<p><code>        ver = 0x4       hlen = 0x5      tos = 0x0       tlen = 0x3c<br/>
+        id = 0x7a65     flags = 0x0     frag off=0x0<br/>
+        ttl = 0xff      proto=0x6       chksum = 0xbf82</code></p>
+<p><code>        -- TCP --<br/>
+<strong>source port = 0x16      dest port = 0xcd9cack psh </strong></code></p>
+<p><code>               seq = 0xf187e8e5<br/>
+                ack = 0xd66d9891<br/>
+                hlen = 0x5              window = 0x1000<br/>
+                checksum = 0x4d4b       urg = 0x0<br/>
+        -- DATA --<br/>
+                00000028: 00 00 00 0a 66 d5 61 77 e9 b0 7e 18 e3 0f 4f 7d  |  ....f.aw..~...O}<br/>
+                00000038: a7 d2 ae f9 8a                                   |  .....</code></p>
+<p><code>--------- END OF PACKET ---------<br/>
+</code></p>
+<p>COMODO!!!!!!! LE PORTE IN ESADECIMALE!!!!!! UHMMMMMMMMM! CHE COMODO!!!!!!!</p>
+<p>e per giunta quando parte il debug MICA LO STOPPI CON ^C EH!<br/>
+NOOOOOOOO! TI DEVI LOGGARE SU UN’ALTRA SHELLE E FARE:</p>
+<p><code>ssh pix@192.168.0.2<br/>
+enable<br/>
+config t<br/>
+no debug packet inside<br/>
+</code></p>
+<p>SARO’ IGNORANTE DI CISCO MA STA ROBA MI STA PROPRIO SUL CAZZO</p>

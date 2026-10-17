@@ -1,0 +1,54 @@
+---
+title: Merda nell’urbe pigra
+date: '2005-11-12T16:17:00+02:00'
+url: /2005/11/12/merda-nellurbe-pigra/
+aliases:
+- /blog-static/2005/11/12/merda-nellurbe-pigra/
+wp_id: 207
+authors:
+- sand
+avatar: sand.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 151
+  author: sand
+  date: '2005-11-12T18:25:00+02:00'
+  body: '<p>Ma chi me lo fa fare?<br/>
+
+    bastano una manciata di righe di shell:</p>
+
+    <p>fuffo:~/dev/ifchrist% ./parsa.zsh<br/>
+
+    INTERFACCIA: eth0<br/>
+
+    ifconfig eth0 inet 10.0.0.1 255.255.0.0 NONE</p>
+
+    <p>INTERFACCIA: wlan0<br/>
+
+    sh -c iwconfig wlan0 essid XXX key s:yyy<br/>
+
+    ifconfig wlan0 inet 10.0.0.2 255.255.0.0 NONE</p>'
+  author_url: http://www.spatof.org
+  by_post_author: true
+---
+<p>ndiswrapper e URB<br/>
+ndiswrapper, ultima release (1.5.0), non compila perche’:</p>
+<blockquote><p>usb.c: In function `wrap_alloc_urb’:<br/>
+usb.c:311: error: `URB_ASYNC_UNLINK’ undeclared (first use in this function)<br/>
+usb.c:311: error: (Each undeclared identifier is reported only once<br/>
+usb.c:311: error: for each function it appears in.)<br/>
+usb.c: In function `wrap_get_descriptor’:<br/>
+usb.c:943: warning: implicit declaration of function `usb_get_string’</p></blockquote>
+<p>Io frastornato penso “<strong>URB</strong>? Sta a vede’ che sti cazzoni hanno fatto un’ALTRA release che <em>non compila senza ritocchi</em>….”</p>
+<p><strong>ED E’ COSI’!</strong></p>
+<blockquote><p># grep -sr URB_ASYNC_UNLINK *<br/>
+driver/usb.c:   urb-&gt;transfer_flags |= URB_ASYNC_UNLINK;<br/>
+# grep -sr USB_ASYNC_UNLINK *<br/>
+driver/usb.c:#ifdef USB_ASYNC_UNLINK</p></blockquote>
+<p>E dopo la mia ‘patch’, funziona PERFETTAMENTE!!!!<br/>
+NON VE LE FATE LE CANNE SE DOVETE FARE LA RELEASE DI UN PROGRAMMA COSI’ PUBBLICO, BRUTTI STORONSI.</p>
+<p>E poi slackware…<br/>
+Gli script di boot sono cosi’ intricati e privi di documentazione che la soluzione migliore e’ <strong>non usarli</strong>, cristo dio. Complicazioni inutili per DUE COMANDI, due fottuti comandi con i quali la mia interfaccia di smegma diventa operativa, due merdoni comandi.<br/>
+A PATRICK RIPIATE!</p>

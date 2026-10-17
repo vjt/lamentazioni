@@ -1,0 +1,7 @@
+{{- if gt .TotalPages 1 }}
+<p class="pagenav">
+  {{ with .Next }}<span class="navleft">&laquo; <a href="{{ .URL }}">Lamentazioni precedenti</a></span>{{ end }}
+  <span class="pagecount">pagina {{ .PageNumber }} di {{ .TotalPages }}</span>
+  {{ with .Prev }}<span class="navright"><a href="{{ .URL }}">Lamentazioni successive</a> &raquo;</span>{{ end }}
+</p>
+{{- end }}

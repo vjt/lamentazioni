@@ -1,0 +1,4 @@
+---
+title: amore
+slug: amore
+---

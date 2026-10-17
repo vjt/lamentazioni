@@ -1,0 +1,21 @@
+<div id="sidebar">
+<ul>
+<li><h3>Disclaimer</h3><div class="textwidget">Attento visitatore! I contenuti di questo sito sono offensivi verso tutte le religioni, decisamente volgari, spesso inappropriati e in generale BRUTTI. Se ti senti offeso, non guardare assolutamente a sinistra e vai via!</div></li>
+<li><h3>Le ultime</h3><ul>
+{{ range first 10 (where site.RegularPages "Section" "posts").ByDate.Reverse }}
+<li><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a></li>
+{{ end }}
+</ul></li>
+<li><h3>Autori</h3><ul>
+{{ range site.Taxonomies.authors.ByCount }}
+<li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> ({{ .Count }})</li>
+{{ end }}
+</ul></li>
+<li><h3>Categorie</h3><ul>
+{{ range site.Taxonomies.categories.ByCount }}
+<li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> ({{ .Count }})</li>
+{{ end }}
+</ul></li>
+<li><h3>Tags</h3><ul><li><a href="/tag/">tutti i tag</a></li></ul></li>
+</ul>
+</div>

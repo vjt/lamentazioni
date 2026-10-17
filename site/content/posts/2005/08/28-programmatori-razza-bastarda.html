@@ -1,0 +1,84 @@
+---
+title: Programmatori RAZZA BASTARDA
+date: '2005-08-28T14:43:00+02:00'
+url: /2005/08/28/programmatori-razza-bastarda/
+aliases:
+- /blog-static/2005/08/28/programmatori-razza-bastarda/
+wp_id: 82
+authors:
+- asbesto
+avatar: asbesto.jpg
+categories:
+- niente-a-senso
+tags: []
+---
+<p>Prendiamo ad esempio procmail. A parte che leggere i sorgenti di questo programma e’ un <strong>INFERNO</strong>,  perche’ l’autore evidentemente <strong>NON SA COSA SIA UN PARSER</strong>, diamo un’occhiata al file di configurazione. in esso troviamo <strong>stronzate tipo queste</strong>:</p>
+<p><code><br/>
+# not directly to me? (USER@informatik.uni-kiel.de)<br/>
+:0:<br/>
+* !^(To|Cc):.*informatik.uni-kiel.de<br/>
+* !^(To|Cc):.*\&lt; (USER)\&gt;<br/>
+$UNWANTED</code></p>
+<p>but make sure you are not on some mailing lists or you filter these first, e.g.,</p>
+<p>:0:<br/>
+* ^TOhaskell<br/>
+haskell<br/>
+</p>
+<p>leggibile? si, <strong>leggibile come STO PAIO DI PALLE QUA</strong></p>
+<p>proviamo con un esempio banale:</p>
+<p><code><br/>
+:0<br/>
+  * ^List-Post: <mailto :cristo=""><br/>
+  {<br/>
+     :0 c<br/>
+       $LISTEDIR/cristo-list<br/>
+     :0<br/>
+       $LISTEDIR/backup/cristo-list-`date +%Y-%m`<br/>
+  }<br/>
+</mailto></code></p>
+<p>questa <strong>carognata in cuneiforme</strong> legge il messaggio, e se trova l’header “list-post” fatto in quel modo li, smista il messaggio nella cristo-list  e ne fa un backup in un’altro file.</p>
+<p>Uno che non conosce procmail, e vede cose tipo</p>
+<p><code><br/>
+:0<br/>
+*<br/>
+Toaeh<br/>
+bBf<br/>
+0: fBw<br/>
+</code></p>
+<p>che cosa <strong>STRACAZZO PENSERA’ MAI</strong>, NELLA SUA TESTA???<br/>
+FORSE CHE STA LEGGENDO <strong>SBRUFFI DI MERDA SULLA TASTIERA?</strong> oppure che si tratta di /dev/urandom pastato <strong>a caso, porco dio?</strong></p>
+<p>se i sorgenti <strong>di merda di procmail DI MERDA</strong> fossero scritti come <strong>DIO</strong> comanda, avremmo al suo interno una cosa che da circa <strong>823 anni</strong> viene universalmente riconosciuto e studiato a tutti i livelli nelle scuole di tutto il mondo, comprese le <strong>merdose MADRASSE DI MERDA</strong>: e cioe’ </p>
+<p><strong>UN PARSER</strong></p>
+<p>avendo un parser, e le definizioni di cio’ che si chiama <strong>GRAMMATICA</strong>, e’ facile cambiare quest’ultima, e sostituire quegli <strong>sbruffi di MERDAZZA</strong>con qualcosa che renda i file di cfg  DAVVERO <strong>HUMAN READABLE</strong>, PORCODIO, qualcosa del tipo:</p>
+<p><code><br/>
+Begin {</code></p>
+<p>If Header(List-Post) Contain "porcodio@sperma.org {<br/>
+    CopyTo ($DIRDIMMERDA/lista-spermazzi);<br/>
+    CopyTo ($DIRDIMMERDA/backup/listaspermazzi-backuppata);<br/>
+    DelProcessed;<br/>
+    }<br/>
+}<br/>
+</p>
+<p>PORCO DIO, <strong>QUESTO SI che e’ HUMAN READABLE</strong></p>
+<p>e mi <strong>SALE LA SCIMMIA QUANDO LEGGO</strong>, cercando una alternativa UMANA a procmail, questa STRONZATA relativa a PMS:</p>
+<blockquote><p>
+PMS is a mail sorter written in perl. Designed to provide the same basic features of procmail (i.e. sorting incoming mail into specified mailboxes), it provides a more “basic” approach to this task. The config file is more human readable (…)
+</p></blockquote>
+<p><strong>MORE HUMAN READABLE</strong> rispetto a procmail ? minchia, voglio proprio vedere. vado a vedere, ed ecco qua:</p>
+<p><code><br/>
+   :$			= Begin new chunk (manditory)<br/>
+<h>		= look in 'H'eader or 'B'ody<br/>
+    &lt; ,value| &gt;		= if 'H'eader then ',<value>' is the header name.<br/>
+		  	  if 'B'ody then no value (i.e. B = '</value><value>')</value></h></code></p>
+<p>    -----------------------------------------------------------------------</p>
+<p>     NOTE: Special keys (i.e. don't use except for where specified): =</p>
+<p>     EXAMPLES:</p>
+<p>      :$<br/>
+      H,From='mygirlfriend@host.com'<br/>
+      /home/nick/mail/gf-mail</p>
+<p>      :$<br/>
+      B='FREE'<br/>
+      /dev/null<br/>
+</p>
+<p>8(</p>
+<p><strong>MA VAFFANCULO, PROGRAMMATORI TESTE DI GRAN CAZZO</strong></p>

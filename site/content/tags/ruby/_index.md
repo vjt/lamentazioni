@@ -1,0 +1,4 @@
+---
+title: ruby
+slug: ruby
+---

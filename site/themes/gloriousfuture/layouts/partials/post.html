@@ -1,0 +1,26 @@
+{{- /* one post, full; ctx = page, .Scratch "single" toggles comments */ -}}
+<div class="post" id="post-{{ .Params.wp_id }}">
+  {{- if eq .Section "posts" }}
+  <p class="box right">
+    <span class="month">{{ .Date.Format "Jan" }}</span>
+    <span class="day">{{ .Date.Format "2" }}</span>
+    <span class="year">{{ .Date.Format "2006" }}</span>
+  </p>
+  {{- with .GetTerms "authors" }}{{ with index . 0 }}{{ $a := . }}
+  <p class="box left">{{ with $.Params.avatar }}<img src="/wp-content/themes/gloriousfuture/img/{{ . }}" alt="Profile Image of {{ $a.Title }}" title="Profile Image of {{ $a.Title }}"><br>{{ end }}<a href="{{ .RelPermalink }}" title="Posts by {{ .Title }}">{{ .Title }}</a></p>
+  {{- end }}{{ end }}
+  {{- end }}
+  <h2 class="title"><a href="{{ .RelPermalink }}" rel="bookmark">{{ .Title }}</a></h2>
+  {{- if eq .Section "posts" }}
+  <div class="meta"><p>Posted at {{ .Date.Format "3:04 pm" }}{{ with .GetTerms "categories" }} under {{ range $i, $c := . }}{{ if $i }}, {{ end }}<a href="{{ $c.RelPermalink }}" rel="category tag">{{ $c.Title }}</a>{{ end }}{{ end }}</p></div>
+  {{- end }}
+  <div class="entry">
+{{ .Content }}
+    {{- with .GetTerms "tags" }}
+    <p class="post-tags">Tags: {{ range $i, $t := . }}{{ if $i }}, {{ end }}<a href="{{ $t.RelPermalink }}" rel="tag">{{ $t.Title }}</a>{{ end }}</p>
+    {{- end }}
+  </div>
+  {{- if eq .Section "posts" }}
+  <p class="comments">{{ with .Params.comments }}<a href="{{ $.RelPermalink }}#comments">{{ len . }} {{ if eq (len .) 1 }}response{{ else }}responses{{ end }}</a>{{ else }}No responses yet{{ end }}</p>
+  {{- end }}
+</div>

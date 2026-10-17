@@ -1,0 +1,64 @@
+---
+title: XENORRO
+date: '2007-02-08T13:39:00+02:00'
+url: /2007/02/08/xenorro/
+aliases:
+- /blog-static/2007/02/08/xenorro/
+wp_id: 763
+authors:
+- unixman
+avatar: unixman.jpg
+categories:
+- niente-a-senso
+tags: []
+comments:
+- id: 1933
+  author: Freddie
+  date: '2007-03-02T23:34:00+02:00'
+  body: '<p>Huauauahuhauhauhauhauhauhau!!!!<br/>
+
+    Devo dirti, sono sul tuo blog da una ventina di minuti e mi sono letteralmente pisciato della risate!!!!<br/>
+
+    Sei troppo forte! XD</p>
+
+    <p>Continua (a bestemmiare) così!!!</p>
+
+    <p>Freddie</p>'
+  author_url: http://none
+---
+<p>Preso da un attacco di fastidio, decido di optare per l’orro e mi dico, ora metto su una bella macchina con <a href="http://www.cl.cam.ac.uk/research/srg/netos/xen/">XEN</a> e ci entro su tutti i  servizi che normalmente si usano. Vado dal mio spaccino di ferraglia e mi caga una bella ASUS P2B-DS con tanto di due penZium 3 a 450Mhz alla merdica cifra di 20 neuri.</p>
+<p><img alt="Sono felice" src="/wp-content/upload/2007/02/snoopy.thumbnail.jpg"/></p>
+<p><strong>PERFETTO</strong>. La piastra funziona e in men che non si fiotti, e’ gia’ dentro la macchina da battaglia. Un po’ di bestemmie per capire come cazzo vuole accoppiate le DIMM (che in realta’ non s’e’ mica capito perche’ in teoria dovrebbe sucarle anche singole e sopportare anche moduli da 256MB, ma vabbe’ questo e’ un altro fastidio che vedro’ POIH), alla fine ha i suoi bravi 384MB di ram, meglio che un dito in culo insomma.<br/>
+Ci salgo su la brava Slackware 10.2, che va su al primo colpo (a parte il dovergli cambiare la board video, che una Mach64 non si sa mica quali cazzo di parametri si prenda per settare il framebuffer, vabbe’, ricorriamo alla solita vecchia e affidabile Matrox).</p>
+<p><img alt="Sono _STANCO_" src="/wp-content/upload/2007/02/affaticato.thumbnail.jpg"/></p>
+<p>Bene, e’ tempo di mettere su Xen, vado e suco la 3.0.4-1, praticamente la bleeding edge, la FIOTTING EDGE. Che vuole il 2.6.16.33 mentre io ho su il 2.6.17.8.<br/>
+Sticazzi, provo la versione binaria. Che ha un chernel talmente modulare che manco l’ide e ext3. Ok, facciamo un bel ramdisk con mkinitrd. <strong>STICAZZI</strong>. Nulla, non va, si fista cercando di capire dove e’ il fail-system di rut.</p>
+<p>Ok, domani scarico i sorci e torno INDIETRO al 2.6.16.33 (si lo so che a colpi di patch e bestemmie magari va pure con chernel piu’ recenti ma sono le 4 di mattina e io sono _STANCO_).<br/>
+L’indomani scarico i sorci al lavoro (si, sono un digital diviso e me ne INFISTO), la sera giu’ di mkpatches, patching, make menuconfig e make e quant’altro fastidio. Dopo x bestemmie xen boota e con lui il fastidico kernel 2.6.16.33 del dom0.<br/>
+<strong>BENE</strong>. Esausto vado a dormire che sono un’altra volta le 4 del mattino. Il giorno dopo porto il chernel, i moduli e il fiotto sulla macchina da battaglia e<br/>
+ci entro le NIC e i dischi che mi servono.<br/>
+Il Dom0 BOOTA un amore, ottimo, via dalle palle la /lib/tls in /lib/tls.disabled, ora mi suco un po’ di immagini  gia’ pronte per xen cosi’ vediamo come va e qui mi si apre un mondo, aziende che campano solo a far quello, curioso, ma vabbe’, non divaghiamo.<br/>
+Facciamo un bel file di configurazione per sto domU e proviamo a  salirlo, via di /etc/init.d/xend start ….</p>
+<p><code><br/>
+Traceback (most recent call last):<br/>
+  File "/usr/sbin/xend", line 52, in ?<br/>
+    from xen.xend.server import SrvDaemon<br/>
+  File "/usr/lib/python/xen/xend/server/SrvDaemon.py", line 20, in ?<br/>
+    import xen.lowlevel.xc<br/>
+ImportError: libxenctrl.so.3.0: cannot handle TLS data<br/>
+Traceback (most recent call last):<br/>
+  File "/usr/sbin/xend", line 52, in ?<br/>
+    from xen.xend.server import SrvDaemon<br/>
+  File "/usr/lib/python/xen/xend/server/SrvDaemon.py", line 20, in ?<br/>
+    import xen.lowlevel.xc<br/>
+</code></p>
+<p>… ??????</p>
+<p>Googlo e trovo l’<strong>ORRO</strong>, bisogna rebuildare le glibc per usare la 3.0.4<br/>
+perche’ :<br/>
+“Libxenctrl now needs TLS, so you need to use a glibc that supports TLS but<br/>
+is compiled with nonegseg or understands the kernel hint. We’ll investigate<br/>
+providing a suitable glibc package for debian stable for the 3.0.4 release.”</p>
+<p><img alt="ORRO" src="/wp-content/upload/2007/02/aliendrone.JPG"/></p>
+<p>Dovrei rebuildarmi la glibc perche’ a Cambridge si fanno di cocacola con aspirina facendosi le seghe invece di trombarsi le studentesse del programma Orgasmus ?<br/>
+<strong>STICAZZI.</strong> E’ vero, sono un po’ arrugginito nel fisto, ho avuto un paio d’anni veramente di merda alle spalle, ma PORCODIO, meno seghe, che minchia.<br/>
+A me la 3.0.3 e che dio si faccia un bel cannone mentre la salgo cosi’ si diverte lui e io vivo sereno …</p>
