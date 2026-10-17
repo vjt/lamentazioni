@@ -46,5 +46,5 @@ E poi… arriva il freddo, a giugno. Fa freddo come se fosse inverno.
 QUALCUNO PUO’ GENTILMENTE SCOPRIRE I VESTITI TERMOREGOLANTI PER FAVORE?
 
 AIUTO, CI SONO I GRIGERRIMI CUMULNEMBI NEL CIELO DI BROKEN TOWER!!!  
-![il cane NEMBO](http://members.westnet.com.au/makrhod/Images/Pedigree/Nembo.jpg)  
+![il cane NEMBO](/ext/d10c5ff94e-Nembo.jpg)  
 E io voglio giocare con il wireless. ecco. >:(

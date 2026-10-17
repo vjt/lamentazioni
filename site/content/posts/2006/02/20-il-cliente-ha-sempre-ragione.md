@@ -24,4 +24,4 @@ PERCHE’, infine, questi coglioni mandano sia a napoli che a roma le schede SBA
 
 NON ci vengo a napoli, non ci voglio andare, MI STA PURE SUL CAZZO NAPOLI, DIO PIZZETTARO!!
 
-![PIZZAIOLO](http://www.andriaroberto.com/Pizzaiolo.jpg)
+![PIZZAIOLO](/ext/3183dd494c-Pizzaiolo.jpg)

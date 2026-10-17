@@ -48,7 +48,7 @@ comments:
 ---
 Habemus cluster
 
-![habemus...](http://www.vatican.va/holy_father/benedict_xvi/elezione/20050419_elezione.jpg)
+![habemus...](/ext/ab5b6c64a0-20050419_elezione.jpg)
 
 Ti vendono un software, te lo fanno PAGARE, ti dicono: “RHCS e GFS 4 funzionano con Advanced Server 4″. Ok, metto advanced server 4, che già è un bagno di sangue perchè la mia azienda SUKA e per fare dei test devo usare vmware che ovviamente NON supporta la versione che serve a me. Prendo i pacchetti del cluster, e vuole una versione del KERNELLAZZO SUKAZZO diversa da quella che mette il sistema operativo che LORO hanno detto che era supportato, e che ovviamente non è NEANCHE l’ultima disponibile.  
 Ergo, NON POSSO installare il cluster, NON POSSO fare l’aggiornamento strafigo di redhat perchè loro mi farebbero mettere l’ULTIMO KERNEL, che tra l’altro NON PARTE con vmware, onde mi suko i pacchettazzi del kernel che serve a lui, e li INSTALLO, perchè ovviamente lui vuole gli RPM INSTALLATI. Ok, rpm -Uvh *rpm. Bello, ci mette un mese però fa subito. Oh ma guarda un po, ha DISTRUTTO tutto ciò che esisteva precedentemente. I vecchi kernel, lilo.conf, le initrd, i config. Non c’è PIU’ nulla. Allora insulto un pochino ad alta voce l’omino in foto, e dico: speriamo che almeno parta, che NON CI HO VOGLIA di RESCUARE un’installazione di test.

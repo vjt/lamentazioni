@@ -3,7 +3,7 @@ languageCode: it
 title: Lamentazioni
 theme: gloriousfuture
 timeZone: Europe/Rome
-enableRobotsTXT: false
+enableRobotsTXT: true
 services:
   rss:
     limit: 20
@@ -37,3 +37,7 @@ markup:
       linkify: false
     renderer:
       unsafe: true
+module:
+  mounts:  # static/ also as assets/, so head-meta can resources.Get post images for og:image
+    - {source: static, target: static}
+    - {source: static, target: assets}

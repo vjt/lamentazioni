@@ -1,0 +1,63 @@
+{{- /* Social / SEO meta. Link previews target WhatsApp + Telegram: og:image absolute https,
+  JPEG/PNG, < 300KB. og:image = first local post image (static/ is mounted into assets),
+  re-encoded as JPEG when too big or not JPEG/PNG; else /og-default.jpg (1200x630). */ -}}
+{{- $isPost := and .IsPage (eq .Section "posts") }}
+{{- $title := cond .IsHome site.Title .Title }}
+{{- $desc := "" }}
+{{- with .Description }}{{ $desc = . }}{{ else }}{{ $desc = .Plain }}{{ end }}
+{{- $desc = $desc | htmlUnescape | replaceRE `\s+` " " }}{{ $desc = trim $desc " " }}
+{{- if not $desc }}{{ $desc = site.Params.tagline }}{{ end }}
+{{- if gt (len $desc) 200 }}{{ $desc = printf "%s…" (strings.TrimRight " ,.;:" (substr $desc 0 196)) }}{{ end }}
+
+{{- $img := false }}
+{{- $own := false }}
+{{- $max := 300000 }}
+{{- /* first usable local image, in document order: an <a href> to the full-size upload
+  comes before the <img src> thumbnail it wraps; images under 120px a side (smileys, thumbs, banners) are skipped */ -}}
+{{- range findRESubmatch `(?:src|href)="/((?:wp-content/upload|ext)/[^"?#]+\.(?i:jpe?g|png|gif))"` .Content 20 }}
+  {{- if not $img }}
+  {{- with resources.Get (index . 1) }}
+    {{- if and (eq .ResourceType "image") (ge .Width 120) (ge .Height 120) }}
+      {{- $r := . }}
+      {{- $ok := and (in (slice "image/jpeg" "image/png") .MediaType.Type) (lt (len .Content) $max) (le .Width 1200) }}
+      {{- if not $ok }}
+        {{- $spec := cond (gt .Width 1200) "resize 1200x jpg q80" "jpg q80" }}
+        {{- $r = .Process $spec }}
+        {{- if ge (len $r.Content) $max }}{{ $r = .Process "resize 800x jpg q60" }}{{ end }}
+      {{- end }}
+      {{- if lt (len $r.Content) $max }}{{ $img = $r }}{{ $own = true }}{{ end }}
+    {{- end }}
+  {{- end }}
+  {{- end }}
+{{- end }}
+{{- if not $img }}{{ $img = resources.Get "og-default.jpg" }}{{ end }}
+
+<link rel="canonical" href="{{ .Permalink }}">
+<meta name="description" content="{{ $desc }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:locale" content="it_IT">
+<meta property="og:type" content="{{ if $isPost }}article{{ else }}website{{ end }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ $img.Permalink }}">
+<meta property="og:image:secure_url" content="{{ $img.Permalink }}">
+<meta property="og:image:type" content="{{ $img.MediaType.Type }}">
+<meta property="og:image:width" content="{{ $img.Width }}">
+<meta property="og:image:height" content="{{ $img.Height }}">
+<meta property="og:image:alt" content="{{ $title }}">
+{{- if $isPost }}
+<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" }}">
+{{- range .GetTerms "authors" }}
+<meta property="article:author" content="{{ .Title }}">
+{{- end }}
+{{- range .GetTerms "tags" }}
+<meta property="article:tag" content="{{ .Title }}">
+{{- end }}
+{{- end }}
+<meta name="twitter:card" content="{{ if $own }}summary_large_image{{ else }}summary{{ end }}">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $img.Permalink }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.Title }}" href="{{ "index.xml" | absURL }}">
+<link rel="sitemap" type="application/xml" href="{{ "sitemap.xml" | absURL }}">

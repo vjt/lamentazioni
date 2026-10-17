@@ -5,8 +5,6 @@
   {{ with .NextInSection }}<span class="navright"><a href="{{ .RelPermalink }}">{{ .Title }}</a> &raquo;</span>{{ end }}
 </p>
 {{- end }}
-<div data-pagefind-body>
 {{ partial "post.html" . }}
 {{ if eq .Section "posts" }}{{ partial "comments.html" . }}{{ end }}
-</div>
 {{ end }}

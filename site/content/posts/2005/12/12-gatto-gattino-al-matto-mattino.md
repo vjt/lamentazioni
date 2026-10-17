@@ -16,6 +16,6 @@ Caro gattone, capisco che puo’ accadere lo sgradevole fatto del ROVESCIARE LA 
 E’ comprensibile, non e’ grandissima, e siccome pesi CHILI QUATTRO PUNTO QUATTRO, appoggiandoti al bordo per CACARE potrebbe LIEVEMENTE ALZARSI la bacinella.  
 Capisco che dopo di cio’ possa cadere della sabbia per terra, MA NON CAPISCO PERCHE’ CI CASCA ANCHE UNO STRONZO ENORME PER TERRA… EH!
 
-![lettiera-menu MAXI](http://tripz.sfrajone.org/Images/MugenBello300.jpg)
+![lettiera-menu MAXI](/ext/5d46a3f4aa-MugenBello300.jpg)
 
 Evviva Mugen!

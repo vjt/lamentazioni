@@ -19,7 +19,7 @@ comments:
   author_url: http://www.l3n.org
 ---
 E’ **bene** quando un evento che ha tutta l’aria di essere **malefico** , come ad esempio rischiare la morte facendoti investire dal pulmino a due piani scoperto di **Roma Cristiana** ,  
-![Il pullman del male](http://www.orpnet.it/Resource/bus.JPG)  
+![Il pullman del male](/ext/2a20e85b06-bus.jpg)  
 si trasforma nel momento più **soddisfacente** della giornata, come urlare contro gli occupanti del suddetto pulmazzo tutto il tuo disappunto, che nella fattispecie suonava più o meno così:
 
 **PORCODDIO!! PORCODDIOPORCODDIOPORCODDIO!!**

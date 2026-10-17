@@ -1,11 +1,18 @@
 /* additions to the original gloriousfuture CSS: search box, pager, small screens */
+/* style.css clips #header (overflow:hidden as clearfix), which trapped the search drawer inside
+   the header: let it overflow, clear floats with flow-root, and lift the header above #splash/#main */
+#header { overflow: visible; display: flow-root; position: relative; z-index: 1000; }
 #logo { position: relative; }
+#search, #search * { box-sizing: border-box; }
+#search { max-width: 100%; }
 #search { float: right; width: 300px; padding-top: 12px; font-size: 12px;
   --pagefind-ui-scale: .7; --pagefind-ui-primary: #171f36; --pagefind-ui-text: #2e2e2e;
   --pagefind-ui-background: #f4f4ec; --pagefind-ui-border: #818052; --pagefind-ui-border-radius: 0;
   --pagefind-ui-font: Verdana, Tahoma, Arial, sans-serif; }
 #search .pagefind-ui__drawer { position: absolute; right: 10px; width: 520px; max-height: 70vh;
-  overflow-y: auto; background: #fff; border: 1px solid #818052; padding: 8px; z-index: 10; }
+  overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
+  background: #fff; border: 1px solid #818052; padding: 8px; z-index: 1000;
+  box-shadow: 0 4px 16px rgba(0,0,0,.3); }
 #search .pagefind-ui__drawer:empty, #search .pagefind-ui__drawer:not(:has(*)) { display: none; }
 #search a { border: 0; }
 .pagenav .pagecount { color: #999; margin-right: 1em; }
@@ -16,6 +23,7 @@
   #content, #sidebar { float: none; width: auto; }
   #main { background: #fff; }
   #menu { height: auto; line-height: 2.4em; }
-  #search { float: none; width: auto; }
-  #search .pagefind-ui__drawer { left: 10px; width: auto; }
+  #logo { padding: 0 10px; }
+  #search { float: none; width: 100%; }
+  #search .pagefind-ui__drawer { left: 10px; right: 10px; width: auto; max-width: none; max-height: 75vh; }
 }

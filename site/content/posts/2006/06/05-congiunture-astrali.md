@@ -22,7 +22,7 @@ Da un impercettibile indizio…
 
 (Il fatto che sono vestiti tutti così:
 
-![](http://www.repubblica.it/2006/06/gallerie/papa-giovani/papa-giovani/ansa82415900306173612_big.jpg))
+![](/ext/ce4bc22d87-ansa82415900306173612_big.jpg))
 
 Comincio vagamente a sospettare che scendano a San Pietro.
 
@@ -40,14 +40,14 @@ E’ vero che il kamikaze non si vede dalla faccia, ma cerco di farmelo bastare 
 
 E il paesaggio che mi si staglia davanti è questo:
 
-![](http://www.repubblica.it/2006/06/gallerie/papa-giovani/papa-giovani/ansa82415660306173620_big.jpg)  
+![](/ext/53b436bd20-ansa82415660306173620_big.jpg)  
 L’oscura parente diventa sempre più lontana, non la troverò mai. Pensavo già di svignarmela. E invece no, mi chiama.
 
 Sta a Ponte S. Angelo, cioè esattamente dalla parte oppostra tra me e questo muro umano di invasati. Di cui il più tranquillo si
 
 presenta più o meno così:
 
-![](http://www.repubblica.it/2006/06/gallerie/papa-giovani/papa-giovani/ansa82415970306173610_big.jpg)
+![](/ext/cd2c51b2ed-ansa82415970306173610_big.jpg)
 
 Mentre mi accingo ad attraversare la muraglia fondamentalista vorrei gridare “AVETE ROTTO IL CAZZO”, ma realizzo di essere un filino
 

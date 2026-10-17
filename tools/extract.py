@@ -18,6 +18,10 @@ TZ = '+02:00'  # WP had a fixed gmt_offset of 2 (feed UTC 13:08 == page 3:08 pm 
 OWN = re.compile(r'^https?://(?:www\.)?lamentazioni\.org(?:/blog-static)?(/.*)?$', re.I)
 
 # tags that markdown (html2text + goldmark) round-trips cleanly
+# external images mirrored by tools/recover_images.py: {url: {'local': '/ext/..' | None, ...}}
+EXT_MAP = W + '/tools/ext_images.json'
+EXT = json.load(open(EXT_MAP)) if os.path.exists(EXT_MAP) else {}
+
 SIMPLE = {'p', 'br', 'a', 'strong', 'b', 'em', 'i', 'img', 'blockquote', 'ul', 'ol', 'li',
           'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'hr', 'code', 'pre'}
 
@@ -56,7 +60,16 @@ def rewrite_links(node, page_dir, stats):
             v = el.get(attr)
             if not v:
                 continue
-            lp = local_path(v.strip(), page_dir)
+            v = v.strip()
+            if re.match(r'^https?://', v, re.I) and not OWN.match(v):
+                if tag == 'img':
+                    stats['ext_imgs'].setdefault(v, stats.get('cur_date'))
+                if tag in ('img', 'a') and (EXT.get(v) or {}).get('local'):
+                    el[attr] = EXT[v]['local']
+                    if tag == 'img':
+                        stats['ext_local'] += 1
+                continue
+            lp = local_path(v, page_dir)
             if lp is not None:
                 el[attr] = lp
                 if '/wp-content/' in lp:
@@ -186,7 +199,7 @@ def main():
         force_html = {l.strip() for l in open(args.html_list) if l.strip()}
 
     stats = {'local_assets': set(), 'posts': 0, 'md': 0, 'html': 0, 'with_comments': 0,
-             'comments': 0, 'terms': {'tags': {}, 'categories': {}, 'authors': {}}}
+             'comments': 0, 'ext_imgs': {}, 'ext_local': 0, 'terms': {'tags': {}, 'categories': {}, 'authors': {}}}
     manifest = []
     root_b = os.fsencode(MIRROR)
     for dp, dn, fn in os.walk(root_b):
@@ -209,6 +222,7 @@ def main():
         post = soup.select_one('div.post')
         title = post.select_one('h2.title').get_text(strip=True)
         date = parse_date(post)
+        stats['cur_date'] = date
         author_a = post.select_one('p.box.left a[href*="author/"]')
         author_slug = re.search(r'author/([^/]+)/', author_a['href']).group(1)
         author_name = author_a.get_text(strip=True)
@@ -283,8 +297,10 @@ def main():
 
     os.makedirs(W + '/tmp', exist_ok=True)
     json.dump(manifest, open(W + '/tmp/manifest.json', 'w'), ensure_ascii=False)
+    json.dump(stats['ext_imgs'], open(W + '/tmp/external_images.json', 'w'), indent=1, sort_keys=True)
     json.dump(sorted(stats['local_assets']), open(W + '/tmp/local_assets.json', 'w'))
-    s = {k: v for k, v in stats.items() if k not in ('local_assets', 'terms')}
+    s = {k: v for k, v in stats.items() if k not in ('local_assets', 'terms', 'ext_imgs', 'cur_date')}
+    s['ext_imgs'] = len(stats['ext_imgs'])
     s.update({f'terms_{k}': len(v) for k, v in stats['terms'].items()})
     print(json.dumps(s))
 

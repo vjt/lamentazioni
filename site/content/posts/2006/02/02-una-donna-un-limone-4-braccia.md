@@ -18,7 +18,7 @@ comments:
   body: <p>la verita’ risiede in te uomo, mondo marcio uomo.</p>
   author_url: http://tripz.sfrajone.org
 ---
-![FECAL INJURIES](http://www.ianai.net/jokes/forumpix/More%20Shit%20Please.jpg)
+![FECAL INJURIES](/ext/579d2ec80d-More_Shit_Please.jpg)
 
 Ho capito ora. ho capito che quando una donna riuscira’ a capire UNA SEMPLICE COSA, ALLORA UN CAVALLO CACHERA’ IN UN SECCHIO.
 

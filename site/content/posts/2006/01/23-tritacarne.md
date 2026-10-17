@@ -42,4 +42,4 @@ sleep(1);
 return 0;  
 }
 
-![PIATTOLA](http://www.geocities.com/TimesSquare/Arcade/2968/Consulenti/zecca.jpg)
+![PIATTOLA](/ext/824da41d16-zecca.jpg)

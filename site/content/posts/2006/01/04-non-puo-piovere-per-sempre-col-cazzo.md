@@ -40,4 +40,4 @@ Ma il bello e’ venuto dopo … quando ho ricordato da quale film era stata est
 
 IO TI SPARO IN GOLA NON HAI CAPITO…
 
-![DIO DELLA PIOGGIA](http://www.webtre.it/Principale/quadri/maya/maya.h11.jpg)
+![DIO DELLA PIOGGIA](/ext/b4fe7a2201-maya.h11.jpg)

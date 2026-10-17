@@ -78,4 +78,4 @@ IO NON CAPISCO
 non e’ che bisogna fare per forza il programmatore  
 CI SONO TANTI MESTIERI PER CUI NON SERVE LA MATEMATICA
 
-![](http://images.google.it/images?q=tbn:VNbEM2t346kbOM:www.perfectduluthday.com/uploaded_images/dust%2520farmer-711539.jpg)
+![](/ext/5ef0c02acb-images.jpg)

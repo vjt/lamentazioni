@@ -34,4 +34,4 @@ comments:
   body: <p>quoto CRISTOpher</p>
   author_url: http://www.acido.be
 ---
-![](http://www.repubblica.it/2003/e/gallerie/politica/manifestazione-roma/franceschi79052390404205726_big.jpg)
+![](/ext/7260c20136-franceschi79052390404205726_big.jpg)

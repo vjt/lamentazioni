@@ -28,4 +28,4 @@ lo rimetti sul portatile e NON FUNZIONA
 
 dopo ORE di smanettamenti, vai sul pannello preferenze del mouse, gli cambi funzione (chesso’, far partire la [GUERRA TERMONUCLEARE GLOBALE](<http://www.mcmuffin.co.uk/mr_and_mrs_mcmuffin/images/wargames.jpg> "The only winning move is not to play...")), lo fai diventare di nuovo pulsante secondario, e FUNZIONA
 
-![ODIO](http://www.nonconforme.altervista.org/vignette/Il_muro_dell'odio.jpg)
+![ODIO](/ext/78a2affa5f-Il_muro_dell_odio.jpg)

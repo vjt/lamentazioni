@@ -144,4 +144,4 @@ Io vi ammazzo VI AMMAZZO TUTTI
 
 NON AVETE A CHE FARE CON UN FOTTUTO FROCETTO DI RISERVISTA
 
-![](http://www.globalsecurity.org/military/systems/ground/images/m-16-dvic533-s.jpg)
+![](/ext/7a7a941ed0-m-16-dvic533-s.jpg)

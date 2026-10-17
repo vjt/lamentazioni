@@ -31,7 +31,7 @@ vorrei comprendere ma non mi voglio arrendere.
 voglio mangiare ma non voglio pagare.
 
 PAZZO _SENSA_ **SENZO**  
-![RUGGERO CONIGLIO](http://www.omelete.com.br/imagens/games/artigos/coelhos/roger_rabbit.gif)
+![RUGGERO CONIGLIO](/ext/7779f9647b-roger_rabbit.gif)
 
 GESU’ E’ MORTO E RISORTO.  
 MALE.

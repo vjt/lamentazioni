@@ -89,7 +89,7 @@ MA io me ce pulisco er culo.
 
 Ultima della giornata , IO CONTRO XENIX.
 
-![XENIX E JEOVA](http://www.tenox.tc/out/aclock-xenix.jpg)  
+![XENIX E JEOVA](/ext/36ab0d10b5-aclock-xenix.jpg)  
 io dico, e’ possibile che NER DUMILA E OTTO PORCO IDDIO , pe lavora’ IN UN CAZZO DE NEGOZIO DE NA MULTINAZIONALE DEMMERDA PIENA DE SORDI , DEVO USA’ **XENIX** targato OTTANTASEI.  
 e secondo voi cosa’ puo’ succede quando AFFIDI L’INVENTARIO , LE CASSE , TRASFERIMENTI , DE TUTTO , a un sistema OPERATIVO CHE QUANDO PARTE TI DICE  
 NOW PRESS ENTER FOR BOOT THE SISTEM  

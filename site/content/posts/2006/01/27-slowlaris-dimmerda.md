@@ -88,4 +88,4 @@ Type “show copying” to see the conditions.
 There is absolutely no warranty for GDB. Type “show warranty” for details.  
 This GDB was configured as “sparc-sun-solaris2.9″…Errore di Bus (core dumped)
 
-![](http://www.sff.net/people/neile/semaines/2003/graphics/carnivore.jpg)
+![](/ext/dcf3366529-carnivore.jpg)
